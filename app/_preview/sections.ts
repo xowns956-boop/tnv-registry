@@ -41,6 +41,7 @@ export const PREVIEW_GROUPS: { label: string; items: PreviewSection[] }[] = [
   {
     label: "트윈뷰 대시보드",
     items: [
+      { id: "tnv-chart", label: "대시보드 차트", title: "대시보드 차트", keywords: "차트 링 원형 막대 추이 묶음 브러시 radial column trend grouped" },
       { id: "tnv-tabs", label: "버튼형 탭", title: "Tabs · variant=solid", keywords: "탭 solid 대시보드" },
       { id: "tnv-progress", label: "진행 막대", title: "Progress · size · tone", keywords: "진행 막대 가동률 생산량" },
       { id: "tnv-metric", label: "지표 한 줄", title: "MetricRow", keywords: "지표 메트릭 가동률 생산량" },

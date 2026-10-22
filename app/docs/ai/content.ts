@@ -149,7 +149,7 @@ export const componentGroups = [
   { name: "입력", items: ["Input", "Textarea", "Input Group", "Number Input", "Number Stepper", "Checkbox", "Radio Group", "Switch", "Label", "Field"] },
   { name: "선택", items: ["Select", "Dropdown Menu", "Autocomplete", "Multi Select", "Combobox", "Command", "Date Picker", "Calendar"] },
   { name: "표시", items: ["Badge", "Avatar", "Tooltip", "Separator", "Skeleton", "Spinner", "Progress", "Metric Row", "Kbd", "Alert", "Toast"] },
-  { name: "카드·표·차트", items: ["Card", "Stat Card", "Table", "Data Table", "Form Table", "Chart", "Chart Presets"] },
+  { name: "카드·표·차트", items: ["Card", "Stat Card", "Table", "Data Table", "Form Table", "Chart", "Chart Presets", "Chart Dashboard"] },
   { name: "팝업", items: ["Dialog", "Alert Dialog", "Dialog Body", "Sheet", "Popover"] },
   { name: "이동", items: ["Sidebar", "Sidebar Brand", "Nav User", "Tabs", "Page Tabs", "Breadcrumb", "Pagination", "Stepper", "Tree", "Filter Chip", "Accordion", "Toolbar"] },
   { name: "화면 패턴", items: ["Site Header", "Page Heading", "Filter Bar", "Form Action Bar"] },

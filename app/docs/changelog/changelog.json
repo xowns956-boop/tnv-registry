@@ -9,7 +9,15 @@
         "items": [
           "토큰(tnv-foundations): 트윈뷰 색(라이트·다크), 간격, 글자(Pretendard), 둥글기, 그림자(panel·header·primary-glow 포함)",
           "부품·화면 패턴 전체와 전체 묶음(tnv), AI 규칙 문서 docs/tnv.md",
-          "대시보드 부품: Card variant=panel(반투명 큰 패널), TabsList variant=solid, Progress size(sm·md)·tone(primary·operation·production)·% 라벨, MetricRow(지표 한 줄)"
+          "대시보드 부품: Card variant=panel(반투명 큰 패널), TabsList variant=solid, Progress size(sm·md)·tone(primary·operation·production)·% 라벨, MetricRow(지표 한 줄)",
+          "대시보드 차트: ChartRadial · ChartColumn · ChartTrend · ChartBrush · ChartGroupedBar · ChartLegendList, ChartBarItem 지표 색·목표선, 범례 세로 배치"
+        ]
+      },
+      {
+        "title": "바뀜",
+        "items": [
+          "다크 모드의 사이드바·hover·포커스·선택 색을 TNV 남색 계열로 통일 (Mic 회색 제거)",
+          "지표 색 5개(가동·생산·품질·전력·가스)를 Figma 값으로 바로잡음"
         ]
       },
       {

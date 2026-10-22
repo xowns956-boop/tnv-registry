@@ -21,6 +21,18 @@ type Row = Record<string, string | number>
 
 const axisTick = { fontSize: 12, fill: "var(--muted-foreground)" }
 
+// 막대·선 색 (Figma tone): default = chart-1, 나머지는 지표 색
+const chartTone = {
+  default: "var(--chart-1)",
+  operation: "var(--chart-operation)",
+  performance: "var(--chart-performance)",
+  quality: "var(--chart-quality)",
+  production: "var(--chart-production)",
+  electricity: "var(--chart-electricity)",
+  gas: "var(--chart-gas)",
+} as const
+type ChartTone = keyof typeof chartTone
+
 function ChartBar({ data, config, xKey, className }: { data: Row[]; config: ChartConfig; xKey: string; className?: string }) {
   return (
     <ChartContainer config={config} className={cn("aspect-auto h-63 w-full", className)}>
@@ -115,27 +127,41 @@ function ChartBarGradient({
   )
 }
 
-// 막대 하나: 위 값(primary-text) · 막대(chart-1, 72px 폭, 위 둥글기 md) · 아래 이름
+// 막대 하나 · Figma Chart/BarItem (6026:83): 위 값(primary-text, Show Value) · 막대(72px 폭, 위 둥글기 md, tone 색) · 목표선(warning 2px, Show Target) · 아래 이름
 function ChartBarItem({
   label,
   valueText,
   ratio,
+  tone = "default",
+  target,
   className,
 }: {
   label: React.ReactNode
-  valueText: React.ReactNode
+  /** 없으면 값 글자를 숨긴다(Show Value 끔) */
+  valueText?: React.ReactNode
   /** 0~1, 가장 큰 값 대비 높이 */
   ratio: number
+  tone?: ChartTone
+  /** 0~1, 목표선 높이. 없으면 목표선을 숨긴다(Show Target 끔) */
+  target?: number
   className?: string
 }) {
+  const clamp = (v: number) => Math.max(0, Math.min(1, v)) * 100
   return (
     <div data-slot="chart-bar-item" className={cn("flex w-24 flex-col items-center gap-2", className)}>
-      <span className="text-sm font-semibold text-primary-text tabular-nums">{valueText}</span>
-      <div className="flex h-30 w-18 items-end">
+      {valueText != null && <span className="text-sm font-semibold text-primary-text tabular-nums">{valueText}</span>}
+      <div className="relative flex h-30 w-18 items-end">
         <div
-          className="h-(--bar-h) w-full rounded-t-md bg-chart-1"
-          style={{ "--bar-h": `${Math.max(0, Math.min(1, ratio)) * 100}%` } as React.CSSProperties}
+          className="h-(--bar-h) w-full rounded-t-md bg-(--bar-color)"
+          style={{ "--bar-h": `${clamp(ratio)}%`, "--bar-color": chartTone[tone] } as React.CSSProperties}
         />
+        {target != null && (
+          <div
+            aria-hidden
+            className="absolute inset-x-0 bottom-(--target-y) h-0.5 bg-warning"
+            style={{ "--target-y": `${clamp(target)}%` } as React.CSSProperties}
+          />
+        )}
       </div>
       <span className="text-sm font-medium text-foreground">{label}</span>
     </div>
@@ -145,17 +171,19 @@ function ChartBarItem({
 function ChartBarLabeled({
   items,
   formatValue = (v) => v.toLocaleString("ko-KR"),
+  tone = "default",
   className,
 }: {
-  items: { label: string; value: number; valueText?: React.ReactNode }[]
+  items: { label: string; value: number; valueText?: React.ReactNode; tone?: ChartTone; target?: number }[]
   formatValue?: (v: number) => React.ReactNode
+  tone?: ChartTone
   className?: string
 }) {
   const max = Math.max(1, ...items.map((i) => i.value))
   return (
     <div data-slot="chart-bar-labeled" role="img" aria-label={items.map((i) => `${i.label} ${i.value}`).join(", ")} className={cn("flex items-end gap-4", className)}>
       {items.map((i) => (
-        <ChartBarItem key={i.label} label={i.label} valueText={i.valueText ?? formatValue(i.value)} ratio={i.value / max} />
+        <ChartBarItem key={i.label} label={i.label} valueText={i.valueText ?? formatValue(i.value)} ratio={i.value / max} tone={i.tone ?? tone} target={i.target != null ? i.target / max : undefined} />
       ))}
     </div>
   )
@@ -207,4 +235,4 @@ function ChartCombo({
   )
 }
 
-export { ChartBar, ChartLine, ChartPie, ChartBarGradient, ChartBarItem, ChartBarLabeled, ChartCombo }
+export { ChartBar, ChartLine, ChartPie, ChartBarGradient, ChartBarItem, ChartBarLabeled, ChartCombo, chartTone, type ChartTone }

@@ -278,9 +278,12 @@ function ChartLegendContent({
   payload,
   verticalAlign = "bottom",
   nameKey,
+  orientation = "horizontal",
 }: React.ComponentProps<"div"> & {
   hideIcon?: boolean
   nameKey?: string
+  // TNV · Figma ChartLegendContent (6012:447) orientation: horizontal(차트 아래) · vertical(차트 옆, 간격 12, text-sm)
+  orientation?: "horizontal" | "vertical"
 } & RechartsPrimitive.DefaultLegendContentProps) {
   const { config } = useChart()
 
@@ -292,7 +295,11 @@ function ChartLegendContent({
     <div
       className={cn(
         "flex items-center justify-center gap-4",
-        verticalAlign === "top" ? "pb-3" : "pt-3",
+        orientation === "vertical"
+          ? "flex-col items-start justify-start gap-3 text-sm text-foreground"
+          : verticalAlign === "top"
+            ? "pb-3"
+            : "pt-3",
         className
       )}
     >

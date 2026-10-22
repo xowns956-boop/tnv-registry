@@ -2,15 +2,52 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { ChartColumn, ChartGroupedBar, ChartLegendList, ChartRadial, ChartTrend } from "@/components/ui/chart-dashboard"
+import { ChartBarLabeled } from "@/components/ui/chart-presets"
 import { MetricRow } from "@/components/ui/metric-row"
 import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Row, Section } from "./section"
 
+// 미리보기 전용 더미 데이터
+const cols = ["1월", "2월", "3월", "4월", "5월", "6월"].map((m, i) => ({ m, ys: [150, 180, 170, 210, 140, 200][i], ts: [110, 130, 60, 120, 120, 100][i] }))
+const trend = Array.from({ length: 24 }, (_, i) => ({ t: `${i + 1}`, real: 200 + Math.round(Math.sin(i / 2) * 20), fcst: 190 + Math.round(Math.cos(i / 3) * 15) }))
+const billets = Array.from({ length: 68 }, (_, i) => ({
+  pos: String(i + 1).padStart(2, "0"),
+  actual: 110 + Math.round(i * 1.9),
+  ai: 115 + Math.round(i * 1.85),
+  zone: i < 10 ? "preheat" : i < 57 ? "heating" : "soak",
+}))
+const tones = ["default", "operation", "performance", "quality", "production", "electricity", "gas"] as const
+
 // 트윈뷰 대시보드용으로 TNV에서 더한 부품
 export function BatchTnv() {
   return (
     <>
+      <Section id="tnv-chart" title="대시보드 차트" figma="- Charts › Chart (6012:405 · 6026:446 · 6028:352 · 6042:62)">
+        <Row label="Chart/Radial · tone=default·metric · rings=3·1">
+          <ChartRadial values={[75, 90, 65]} caption="Total" valueText="63%" aria-label="종합 63%" />
+          <ChartRadial values={[75, 90, 65]} tone="metric" caption="Total" valueText="63%" aria-label="종합 63%" />
+          <ChartRadial values={[63]} valueText="63%" aria-label="달성률 63%" />
+          <ChartRadial values={[63]} tone="metric" valueText="63%" aria-label="달성률 63%" />
+          <ChartLegendList orientation="vertical" items={[{ label: "가동 : 76%", color: "var(--chart-operation)" }, { label: "성능 : 90%", color: "var(--chart-performance)" }, { label: "품질 : 65%", color: "var(--chart-quality)" }]} />
+        </Row>
+        <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
+          {tones.slice(0, 7).map((t) => (
+            <ChartColumn key={t} data={cols} xKey="m" tone={t} series={[{ key: "ys", label: "생산량" }]} />
+          ))}
+          <ChartColumn data={cols} xKey="m" series={[{ key: "ys", label: "YS" }, { key: "ts", label: "TS" }]} />
+        </div>
+        <ChartBarLabeled
+          items={tones.map((t) => ({ label: t, value: 250, valueText: "250 (2.4%)", tone: t, target: t === "operation" ? 280 : undefined }))}
+        />
+        <div className="grid gap-6 sm:grid-cols-2">
+          <ChartTrend data={trend} xKey="t" series={[{ key: "real", label: "Real" }, { key: "fcst", label: "Fcst" }]} defaultRange={[8, 15]} />
+          <ChartTrend data={trend} xKey="t" tone="metric" series={[{ key: "real", label: "Real" }, { key: "fcst", label: "Fcst" }]} defaultRange={[8, 15]} />
+        </div>
+        <ChartGroupedBar data={billets} xKey="pos" actualKey="actual" predictKey="ai" />
+      </Section>
+
       <Section id="tnv-tabs" title="Tabs · variant=solid" figma="- Tabs › TabsList (51:139) · TabsTrigger (24:15) variant=solid">
         <Tabs defaultValue="group">
           <TabsList variant="solid">
