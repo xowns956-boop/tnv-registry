@@ -1,0 +1,53 @@
+# main에 올리면 미리보기 화면 + 레지스트리(/r/<버전>/*.json) + llms.txt를 GitHub Pages로 배포한다.
+# 현재 버전은 package.json의 version.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+      BASE_PATH: /${{ github.event.repository.name }}
+      REGISTRY_BASE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+      # "AI로 설치하기" 페이지의 설치 주소
+      NEXT_PUBLIC_REGISTRY_BASE: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run tokens
+      # 현재 버전(package.json). 버전을 올릴 때 이미 공유한 옛 주소는 여기에 단계를 더해 함께 만든다(지우지 않는다)
+      - run: node scripts/build-registry.mjs
+      - run: npx shadcn@4.22.1 build -o public/r/$(node -p "require('./package.json').version")
+      - run: node scripts/build-llms.mjs
+      - run: PAGES=1 npm run build
+      - run: touch out/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

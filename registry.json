@@ -1,0 +1,2483 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "tnv",
+  "homepage": "http://localhost:3400",
+  "items": [
+    {
+      "name": "tnv-foundations",
+      "type": "registry:style",
+      "title": "TNV Foundations",
+      "description": "TNV Design System 토큰(Figma TNV Design System 기준) — 색(라이트·다크), 간격, 글자, 둥글기, 그림자",
+      "dependencies": [
+        "pretendard@1.3.9",
+        "tw-animate-css@1.4.0",
+        "shadcn@4.22.1"
+      ],
+      "cssVars": {
+        "theme": {
+          "font-sans": "\"Pretendard Variable\", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif",
+          "font-heading": "var(--font-sans)",
+          "text-2xs": "10px",
+          "text-2xs--line-height": "1.4",
+          "text-display-1": "112px",
+          "text-display-2": "98px",
+          "text-display-3": "84px",
+          "text-display-4": "70px",
+          "text-h1": "56px",
+          "text-h2": "42px",
+          "text-h3": "35px",
+          "text-h4": "28px",
+          "text-h5": "21px",
+          "text-h6": "14px",
+          "leading-default": "1.42",
+          "leading-md": "var(--leading-default)",
+          "container-layout": "1440px",
+          "radius-none": "0px",
+          "radius-px": "1px",
+          "radius-3xs": "2px",
+          "radius-2xs": "4px",
+          "radius-xs": "6px",
+          "radius-sm": "8px",
+          "radius-md": "10px",
+          "radius-lg": "12px",
+          "radius-xl": "16px",
+          "radius-full": "9999px",
+          "shadow-2xs": "0 1px 0 0 #0000000d",
+          "shadow-xs": "0 1px 2px 0 #0000000d",
+          "shadow-sm": "0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a",
+          "shadow-md": "0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a",
+          "shadow-lg": "0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a",
+          "shadow-xl": "0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a",
+          "shadow-panel": "0 4px 20px 0 #00000026",
+          "shadow-header": "0 4px 10px 0 #00000026",
+          "shadow-primary-glow": "0 1px 4px 0 #4e9fff33",
+          "color-background": "var(--background)",
+          "color-foreground": "var(--foreground)",
+          "color-card": "var(--card)",
+          "color-card-foreground": "var(--card-foreground)",
+          "color-popover": "var(--popover)",
+          "color-popover-foreground": "var(--popover-foreground)",
+          "color-primary": "var(--primary)",
+          "color-primary-foreground": "var(--primary-foreground)",
+          "color-secondary": "var(--secondary)",
+          "color-secondary-foreground": "var(--secondary-foreground)",
+          "color-muted": "var(--muted)",
+          "color-muted-foreground": "var(--muted-foreground)",
+          "color-accent": "var(--accent)",
+          "color-accent-foreground": "var(--accent-foreground)",
+          "color-destructive": "var(--destructive)",
+          "color-border": "var(--border)",
+          "color-input": "var(--input)",
+          "color-ring": "var(--ring)",
+          "color-sidebar": "var(--sidebar)",
+          "color-sidebar-foreground": "var(--sidebar-foreground)",
+          "color-sidebar-primary": "var(--sidebar-primary)",
+          "color-sidebar-primary-foreground": "var(--sidebar-primary-foreground)",
+          "color-sidebar-accent": "var(--sidebar-accent)",
+          "color-sidebar-accent-foreground": "var(--sidebar-accent-foreground)",
+          "color-sidebar-border": "var(--sidebar-border)",
+          "color-sidebar-ring": "var(--sidebar-ring)",
+          "color-success": "var(--success)",
+          "color-success-subtle": "var(--success-subtle)",
+          "color-success-subtle-foreground": "var(--success-subtle-foreground)",
+          "color-warning": "var(--warning)",
+          "color-warning-subtle": "var(--warning-subtle)",
+          "color-warning-subtle-foreground": "var(--warning-subtle-foreground)",
+          "color-destructive-emphasis": "var(--destructive-emphasis)",
+          "color-destructive-subtle": "var(--destructive-subtle)",
+          "color-destructive-subtle-foreground": "var(--destructive-subtle-foreground)",
+          "color-dark": "var(--dark)",
+          "color-dark-subtle": "var(--dark-subtle)",
+          "color-dark-subtle-foreground": "var(--dark-subtle-foreground)",
+          "color-chart-4": "var(--chart-4)",
+          "color-chart-4-subtle": "var(--chart-4-subtle)",
+          "color-chart-4-bolder": "var(--chart-4-bolder)",
+          "color-chart-5": "var(--chart-5)",
+          "color-chart-5-subtle": "var(--chart-5-subtle)",
+          "color-chart-5-bolder": "var(--chart-5-bolder)",
+          "color-chart-6": "var(--chart-6)",
+          "color-chart-6-subtle": "var(--chart-6-subtle)",
+          "color-chart-6-bolder": "var(--chart-6-bolder)",
+          "color-success-emphasis": "var(--success-emphasis)",
+          "color-success-subtle-hover": "var(--success-subtle-hover)",
+          "color-success-text": "var(--success-text)",
+          "color-warning-emphasis": "var(--warning-emphasis)",
+          "color-warning-subtle-hover": "var(--warning-subtle-hover)",
+          "color-warning-text": "var(--warning-text)",
+          "color-destructive-active": "var(--destructive-active)",
+          "color-destructive-subtle-hover": "var(--destructive-subtle-hover)",
+          "color-destructive-text": "var(--destructive-text)",
+          "color-chart-1": "var(--chart-1)",
+          "color-chart-2": "var(--chart-2)",
+          "color-chart-3": "var(--chart-3)",
+          "color-chart-1-bold": "var(--chart-1-bold)",
+          "color-chart-1-subtler": "var(--chart-1-subtler)",
+          "color-alpha-primary-90": "var(--alpha-primary-90)",
+          "color-alpha-primary-20": "var(--alpha-primary-20)",
+          "color-alpha-secondary-80": "var(--alpha-secondary-80)",
+          "color-alpha-destructive-90": "var(--alpha-destructive-90)",
+          "color-alpha-destructive-10": "var(--alpha-destructive-10)",
+          "color-alpha-muted-50": "var(--alpha-muted-50)",
+          "color-alpha-border-50": "var(--alpha-border-50)",
+          "color-alpha-sidebar-foreground-70": "var(--alpha-sidebar-foreground-70)",
+          "color-alpha-overlay": "var(--alpha-overlay)",
+          "color-alpha-ring-50": "var(--alpha-ring-50)",
+          "color-alpha-field": "var(--alpha-field)",
+          "color-alpha-outline": "var(--alpha-outline)",
+          "color-alpha-outline-hover": "var(--alpha-outline-hover)",
+          "color-alpha-destructive-solid": "var(--alpha-destructive-solid)",
+          "color-alpha-switch-off": "var(--alpha-switch-off)",
+          "color-alpha-tab-active": "var(--alpha-tab-active)",
+          "color-alpha-destructive-20": "var(--alpha-destructive-20)",
+          "color-alpha-primary-30": "var(--alpha-primary-30)",
+          "color-muted-active": "var(--muted-active)",
+          "color-muted-emphasis": "var(--muted-emphasis)",
+          "color-muted-hover": "var(--muted-hover)",
+          "color-secondary-active": "var(--secondary-active)",
+          "color-secondary-hover": "var(--secondary-hover)",
+          "color-dark-active": "var(--dark-active)",
+          "color-dark-emphasis": "var(--dark-emphasis)",
+          "color-dark-hover": "var(--dark-hover)",
+          "color-dark-foreground": "var(--dark-foreground)",
+          "color-dark-text": "var(--dark-text)",
+          "color-alpha-dark-active": "var(--alpha-dark-active)",
+          "color-alpha-dark-focus": "var(--alpha-dark-focus)",
+          "color-alpha-dark-hover": "var(--alpha-dark-hover)",
+          "color-dark-subtle-active": "var(--dark-subtle-active)",
+          "color-dark-subtle-hover": "var(--dark-subtle-hover)",
+          "color-destructive-foreground": "var(--destructive-foreground)",
+          "color-destructive-subtle-active": "var(--destructive-subtle-active)",
+          "color-info-active": "var(--info-active)",
+          "color-info-emphasis": "var(--info-emphasis)",
+          "color-info-hover": "var(--info-hover)",
+          "color-info-foreground": "var(--info-foreground)",
+          "color-info-text": "var(--info-text)",
+          "color-alpha-info-active": "var(--alpha-info-active)",
+          "color-alpha-info-focus": "var(--alpha-info-focus)",
+          "color-alpha-info-hover": "var(--alpha-info-hover)",
+          "color-info-subtle-active": "var(--info-subtle-active)",
+          "color-info-subtle-hover": "var(--info-subtle-hover)",
+          "color-inverse-active": "var(--inverse-active)",
+          "color-inverse-emphasis": "var(--inverse-emphasis)",
+          "color-inverse-hover": "var(--inverse-hover)",
+          "color-inverse": "var(--inverse)",
+          "color-inverse-foreground": "var(--inverse-foreground)",
+          "color-inverse-subtle-foreground": "var(--inverse-subtle-foreground)",
+          "color-inverse-text": "var(--inverse-text)",
+          "color-alpha-inverse-active": "var(--alpha-inverse-active)",
+          "color-alpha-inverse-focus": "var(--alpha-inverse-focus)",
+          "color-alpha-inverse-hover": "var(--alpha-inverse-hover)",
+          "color-inverse-subtle": "var(--inverse-subtle)",
+          "color-inverse-subtle-active": "var(--inverse-subtle-active)",
+          "color-inverse-subtle-hover": "var(--inverse-subtle-hover)",
+          "color-light-hover": "var(--light-hover)",
+          "color-alpha-light-active": "var(--alpha-light-active)",
+          "color-alpha-light-focus": "var(--alpha-light-focus)",
+          "color-light-subtle-hover": "var(--light-subtle-hover)",
+          "color-primary-active": "var(--primary-active)",
+          "color-primary-hover": "var(--primary-hover)",
+          "color-primary-text": "var(--primary-text)",
+          "color-accent-active": "var(--accent-active)",
+          "color-accent-hover": "var(--accent-hover)",
+          "color-neutral-active": "var(--neutral-active)",
+          "color-neutral-emphasis": "var(--neutral-emphasis)",
+          "color-neutral-hover": "var(--neutral-hover)",
+          "color-neutral-foreground": "var(--neutral-foreground)",
+          "color-neutral-subtle-foreground": "var(--neutral-subtle-foreground)",
+          "color-neutral-text": "var(--neutral-text)",
+          "color-alpha-neutral-active": "var(--alpha-neutral-active)",
+          "color-alpha-neutral-focus": "var(--alpha-neutral-focus)",
+          "color-alpha-neutral-hover": "var(--alpha-neutral-hover)",
+          "color-neutral": "var(--neutral)",
+          "color-neutral-subtle": "var(--neutral-subtle)",
+          "color-neutral-subtle-active": "var(--neutral-subtle-active)",
+          "color-neutral-subtle-hover": "var(--neutral-subtle-hover)",
+          "color-chart-1-bolder": "var(--chart-1-bolder)",
+          "color-chart-1-subtle": "var(--chart-1-subtle)",
+          "color-chart-2-bold": "var(--chart-2-bold)",
+          "color-chart-2-bolder": "var(--chart-2-bolder)",
+          "color-chart-2-subtle": "var(--chart-2-subtle)",
+          "color-chart-2-subtler": "var(--chart-2-subtler)",
+          "color-chart-3-bold": "var(--chart-3-bold)",
+          "color-chart-3-bolder": "var(--chart-3-bolder)",
+          "color-chart-3-subtle": "var(--chart-3-subtle)",
+          "color-chart-3-subtler": "var(--chart-3-subtler)",
+          "color-chart-4-bold": "var(--chart-4-bold)",
+          "color-chart-4-subtler": "var(--chart-4-subtler)",
+          "color-chart-5-bold": "var(--chart-5-bold)",
+          "color-chart-5-subtler": "var(--chart-5-subtler)",
+          "color-chart-6-bold": "var(--chart-6-bold)",
+          "color-chart-6-subtler": "var(--chart-6-subtler)",
+          "color-success-active": "var(--success-active)",
+          "color-success-hover": "var(--success-hover)",
+          "color-success-foreground": "var(--success-foreground)",
+          "color-alpha-success-active": "var(--alpha-success-active)",
+          "color-alpha-success-focus": "var(--alpha-success-focus)",
+          "color-alpha-success-hover": "var(--alpha-success-hover)",
+          "color-success-subtle-active": "var(--success-subtle-active)",
+          "color-tertiary-active": "var(--tertiary-active)",
+          "color-tertiary-emphasis": "var(--tertiary-emphasis)",
+          "color-tertiary-hover": "var(--tertiary-hover)",
+          "color-tertiary-subtle-foreground": "var(--tertiary-subtle-foreground)",
+          "color-tertiary-text": "var(--tertiary-text)",
+          "color-tertiary-foreground": "var(--tertiary-foreground)",
+          "color-alpha-tertiary-active": "var(--alpha-tertiary-active)",
+          "color-alpha-tertiary-focus": "var(--alpha-tertiary-focus)",
+          "color-alpha-tertiary-hover": "var(--alpha-tertiary-hover)",
+          "color-tertiary-subtle": "var(--tertiary-subtle)",
+          "color-tertiary-subtle-active": "var(--tertiary-subtle-active)",
+          "color-tertiary-subtle-hover": "var(--tertiary-subtle-hover)",
+          "color-tertiary": "var(--tertiary)",
+          "color-warning-active": "var(--warning-active)",
+          "color-warning-hover": "var(--warning-hover)",
+          "color-warning-foreground": "var(--warning-foreground)",
+          "color-alpha-warning-active": "var(--alpha-warning-active)",
+          "color-alpha-warning-focus": "var(--alpha-warning-focus)",
+          "color-alpha-warning-hover": "var(--alpha-warning-hover)",
+          "color-warning-subtle-active": "var(--warning-subtle-active)",
+          "color-alpha-row-hover": "var(--alpha-row-hover)",
+          "color-alpha-row-sorted": "var(--alpha-row-sorted)",
+          "color-alpha-link-hover": "var(--alpha-link-hover)",
+          "color-info": "var(--info)",
+          "color-info-subtle": "var(--info-subtle)",
+          "color-info-subtle-foreground": "var(--info-subtle-foreground)",
+          "color-light": "var(--light)",
+          "color-light-foreground": "var(--light-foreground)",
+          "color-light-subtle": "var(--light-subtle)",
+          "color-light-subtle-foreground": "var(--light-subtle-foreground)",
+          "color-light-emphasis": "var(--light-emphasis)",
+          "color-light-text": "var(--light-text)",
+          "color-light-subtle-active": "var(--light-subtle-active)",
+          "color-light-active": "var(--light-active)",
+          "color-primary-emphasis": "var(--primary-emphasis)",
+          "color-muted-fill-foreground": "var(--muted-fill-foreground)",
+          "color-alpha-primary-hover": "var(--alpha-primary-hover)",
+          "color-alpha-primary-active": "var(--alpha-primary-active)",
+          "color-alpha-primary-selected": "var(--alpha-primary-selected)",
+          "color-alpha-destructive-hover": "var(--alpha-destructive-hover)",
+          "color-alpha-destructive-active": "var(--alpha-destructive-active)",
+          "color-alpha-destructive-focus": "var(--alpha-destructive-focus)",
+          "color-destructive-hover": "var(--destructive-hover)",
+          "color-alpha-muted-hover": "var(--alpha-muted-hover)",
+          "color-alpha-muted-active": "var(--alpha-muted-active)",
+          "color-alpha-muted-focus": "var(--alpha-muted-focus)",
+          "color-alpha-row-alt": "var(--alpha-row-alt)",
+          "color-alpha-light-hover": "var(--alpha-light-hover)",
+          "color-alpha-transparent-white": "var(--alpha-transparent-white)",
+          "color-alpha-outline-border": "var(--alpha-outline-border)",
+          "color-alpha-outline-border-hover": "var(--alpha-outline-border-hover)",
+          "color-alpha-list-hover": "var(--alpha-list-hover)",
+          "color-page-background": "var(--page-background)",
+          "color-ees-maintenance": "var(--ees-maintenance)",
+          "color-ees-maintenance-text": "var(--ees-maintenance-text)",
+          "color-ees-maintenance-subtle": "var(--ees-maintenance-subtle)",
+          "color-ees-maintenance-subtle-foreground": "var(--ees-maintenance-subtle-foreground)",
+          "color-chart-electricity": "var(--chart-electricity)",
+          "color-chart-gas": "var(--chart-gas)",
+          "color-chart-operation": "var(--chart-operation)",
+          "color-chart-performance": "var(--chart-performance)",
+          "color-chart-production": "var(--chart-production)",
+          "color-chart-quality": "var(--chart-quality)",
+          "color-card-emphasis": "var(--card-emphasis)",
+          "color-card-emphasis-active": "var(--card-emphasis-active)",
+          "color-card-emphasis-foreground": "var(--card-emphasis-foreground)",
+          "color-table-header": "var(--table-header)",
+          "color-alpha-panel": "var(--alpha-panel)",
+          "color-alpha-operation-20": "var(--alpha-operation-20)",
+          "color-alpha-production-20": "var(--alpha-production-20)",
+          "color-alpha-primary-glow": "var(--alpha-primary-glow)",
+          "color-progress-label": "var(--progress-label)",
+          "color-chart-zone-preheat": "var(--chart-zone-preheat)",
+          "color-chart-zone-heating": "var(--chart-zone-heating)",
+          "color-chart-zone-soak": "var(--chart-zone-soak)",
+          "color-alpha-switch-thumb": "var(--alpha-switch-thumb)"
+        },
+        "light": {
+          "white": "#ffffff",
+          "black": "#000000",
+          "brand-50": "#f1f6fd",
+          "brand-100": "#dfebfb",
+          "brand-200": "#c8dcfa",
+          "brand-300": "#a3c7fc",
+          "brand-400": "#71a8f9",
+          "brand-500": "#468ef6",
+          "brand-600": "#1a73e9",
+          "brand-700": "#0161d2",
+          "brand-800": "#0a51ac",
+          "brand-900": "#1c4887",
+          "brand-950": "#173055",
+          "slate-50": "#f8fafc",
+          "slate-100": "#f1f5f9",
+          "slate-200": "#e2e8f0",
+          "slate-300": "#cbd5e1",
+          "slate-400": "#94a3b8",
+          "slate-500": "#64748b",
+          "slate-600": "#475569",
+          "slate-700": "#334155",
+          "slate-800": "#1e293b",
+          "slate-900": "#0f172a",
+          "slate-950": "#020617",
+          "red-50": "#fef2f2",
+          "red-100": "#fee2e2",
+          "red-200": "#fecaca",
+          "red-300": "#fca5a5",
+          "red-400": "#f87171",
+          "red-500": "#ef4444",
+          "red-600": "#dc2626",
+          "red-700": "#b91c1c",
+          "red-800": "#991b1b",
+          "red-900": "#7f1d1d",
+          "red-950": "#450a0a",
+          "green-50": "#f0fdf4",
+          "green-100": "#dcfce7",
+          "green-200": "#bbf7d0",
+          "green-300": "#86efac",
+          "green-400": "#4ade80",
+          "green-500": "#22c55e",
+          "green-600": "#16a34a",
+          "green-700": "#15803d",
+          "green-800": "#166534",
+          "green-900": "#14532d",
+          "green-950": "#052e16",
+          "amber-50": "#fffbeb",
+          "amber-100": "#fef3c7",
+          "amber-200": "#fde68a",
+          "amber-300": "#fcd34d",
+          "amber-400": "#fbbf24",
+          "amber-500": "#f59e0b",
+          "amber-600": "#d97706",
+          "amber-700": "#b45309",
+          "amber-800": "#92400e",
+          "amber-900": "#78350f",
+          "amber-950": "#451a03",
+          "violet-50": "#f5f3ff",
+          "violet-100": "#ede9fe",
+          "violet-200": "#ddd6fe",
+          "violet-300": "#c4b5fd",
+          "violet-400": "#a78bfa",
+          "violet-500": "#8b5cf6",
+          "violet-600": "#7c3aed",
+          "violet-700": "#6d28d9",
+          "violet-800": "#5b21b6",
+          "violet-900": "#4c1d95",
+          "violet-950": "#2e1065",
+          "cyan-50": "#ecfeff",
+          "cyan-100": "#cffafe",
+          "cyan-200": "#a5f3fc",
+          "cyan-300": "#67e8f9",
+          "cyan-400": "#22d3ee",
+          "cyan-500": "#06b6d4",
+          "cyan-600": "#0891b2",
+          "cyan-700": "#0e7490",
+          "cyan-800": "#155e75",
+          "cyan-900": "#164e63",
+          "cyan-950": "#083344",
+          "orange-50": "#fff7ed",
+          "orange-100": "#ffedd5",
+          "orange-200": "#fed7aa",
+          "orange-300": "#fdba74",
+          "orange-400": "#fb923c",
+          "orange-500": "#f97316",
+          "orange-600": "#ea580c",
+          "orange-700": "#c2410c",
+          "orange-800": "#9a3412",
+          "orange-900": "#7c2d12",
+          "orange-950": "#431407",
+          "teal-50": "#f0fdfa",
+          "teal-100": "#ccfbf1",
+          "teal-200": "#99f6e4",
+          "teal-300": "#5eead4",
+          "teal-400": "#2dd4bf",
+          "teal-500": "#14b8a6",
+          "teal-600": "#0d9488",
+          "teal-700": "#0f766e",
+          "teal-800": "#115e59",
+          "teal-900": "#134e4a",
+          "teal-950": "#042f2e",
+          "alpha-brand-700-90": "#0161d2e5",
+          "alpha-brand-500-90": "#468ef6e5",
+          "alpha-brand-700-20": "#0161d233",
+          "alpha-brand-500-20": "#468ef633",
+          "alpha-slate-100-80": "#f1f5f9cc",
+          "alpha-slate-800-80": "#1e293bcc",
+          "alpha-red-600-90": "#dc2626e5",
+          "alpha-red-600-10": "#dc26261a",
+          "alpha-red-600-20": "#dc262633",
+          "alpha-slate-100-50": "#f1f5f980",
+          "alpha-slate-800-50": "#1e293b80",
+          "alpha-slate-200-50": "#e2e8f080",
+          "alpha-slate-700-70": "#334155b2",
+          "alpha-slate-50-70": "#f8fafcb2",
+          "alpha-black-50": "#00000080",
+          "alpha-brand-600-50": "#1a73e980",
+          "alpha-brand-400-50": "#71a8f980",
+          "alpha-transparent": "#00000000",
+          "alpha-slate-800-30": "#1e293b4d",
+          "alpha-red-600-60": "#dc262699",
+          "alpha-red-600-40": "#dc262666",
+          "alpha-brand-700-30": "#0161d24d",
+          "alpha-brand-500-30": "#468ef64d",
+          "alpha-brand-600-90": "#1a73e9e5",
+          "alpha-brand-600-20": "#1a73e933",
+          "alpha-brand-600-30": "#1a73e94d",
+          "cobalt-150": "#e9f0fd",
+          "cobalt-250": "#d2e2fb",
+          "cobalt-300": "#bdd4f8",
+          "cobalt-400": "#80acf4",
+          "cobalt-450": "#6098f2",
+          "cobalt-500": "#4082ef",
+          "cobalt-550": "#0058e9",
+          "cobalt-600": "#0052d6",
+          "cobalt-650": "#0044c2",
+          "cobalt-700": "#0042af",
+          "cobalt-750": "#003892",
+          "cobalt-800": "#002c75",
+          "cobalt-850": "#002259",
+          "azure-100": "#ebf8fe",
+          "azure-150": "#d8f1fd",
+          "azure-200": "#c5eafc",
+          "azure-300": "#a3dffb",
+          "azure-350": "#61c9f9",
+          "azure-400": "#03a9f4",
+          "azure-500": "#0277bd",
+          "azure-550": "#026999",
+          "azure-600": "#01579b",
+          "azure-650": "#02557a",
+          "azure-700": "#014478",
+          "azure-750": "#023f5c",
+          "mono-50": "#fafafa",
+          "mono-100": "#f5f5f5",
+          "mono-150": "#ebebeb",
+          "mono-250": "#e0e0e0",
+          "mono-300": "#d6d6d6",
+          "mono-350": "#c2c2c2",
+          "mono-400": "#9c9c9c",
+          "mono-450": "#999999",
+          "mono-500": "#757575",
+          "mono-550": "#666666",
+          "mono-600": "#575757",
+          "mono-650": "#525252",
+          "mono-700": "#3d3d3d",
+          "mono-800": "#292929",
+          "mono-850": "#1f1f1f",
+          "mono-900": "#141414",
+          "alpha-slate-400-16": "#94a3b829",
+          "alpha-slate-500-16": "#64748b29",
+          "alpha-slate-400-12": "#94a3b81f",
+          "alpha-slate-500-12": "#64748b1f",
+          "alpha-slate-400-8": "#94a3b814",
+          "alpha-slate-500-8": "#64748b14",
+          "alpha-cobalt-550-16": "#0058e929",
+          "alpha-cobalt-550-12": "#0058e91f",
+          "alpha-cobalt-550-8": "#0058e914",
+          "alpha-mono-900-16": "#14141429",
+          "alpha-mono-150-16": "#ebebeb29",
+          "alpha-mono-900-12": "#1414141f",
+          "alpha-mono-150-12": "#ebebeb1f",
+          "alpha-mono-900-8": "#14141414",
+          "alpha-mono-150-8": "#ebebeb14",
+          "alpha-mono-250-16": "#e0e0e029",
+          "alpha-mono-250-12": "#e0e0e01f",
+          "alpha-slate-900-16": "#0f172a29",
+          "alpha-slate-50-16": "#f8fafc29",
+          "alpha-slate-900-12": "#0f172a1f",
+          "alpha-slate-50-12": "#f8fafc1f",
+          "alpha-slate-900-8": "#0f172a14",
+          "alpha-slate-50-8": "#f8fafc14",
+          "alpha-green-700-16": "#15803d29",
+          "alpha-green-700-12": "#15803d1f",
+          "alpha-green-700-8": "#15803d14",
+          "alpha-azure-500-16": "#0277bd29",
+          "alpha-azure-500-12": "#0277bd1f",
+          "alpha-azure-500-8": "#0277bd14",
+          "alpha-amber-500-16": "#f59e0b29",
+          "alpha-amber-400-16": "#fbbf2429",
+          "alpha-amber-500-12": "#f59e0b1f",
+          "alpha-amber-400-12": "#fbbf241f",
+          "alpha-amber-500-8": "#f59e0b14",
+          "alpha-amber-400-8": "#fbbf2414",
+          "alpha-slate-900-11": "#0f172a1c",
+          "alpha-slate-50-11": "#f8fafc1c",
+          "alpha-slate-900-3": "#0f172a08",
+          "alpha-slate-50-3": "#f8fafc08",
+          "alpha-slate-900-20": "#0f172a33",
+          "alpha-slate-50-20": "#f8fafc33",
+          "alpha-brand-700-8": "#0161d214",
+          "alpha-brand-600-8": "#1a73e914",
+          "alpha-brand-700-16": "#0161d229",
+          "alpha-brand-600-16": "#1a73e929",
+          "alpha-brand-700-25": "#0161d240",
+          "alpha-brand-600-25": "#1a73e940",
+          "alpha-red-600-8": "#dc262614",
+          "alpha-red-600-16": "#dc262629",
+          "alpha-red-600-12": "#dc26261f",
+          "alpha-slate-900-5": "#0f172a0d",
+          "alpha-slate-50-5": "#f8fafc0d",
+          "alpha-mono-250-8": "#e0e0e014",
+          "alpha-white-0": "#ffffff00",
+          "alpha-slate-900-50": "#0f172a80",
+          "alpha-slate-50-50": "#f8fafc80",
+          "alpha-slate-900-80": "#0f172acc",
+          "alpha-slate-50-80": "#f8fafccc",
+          "metric-electricity": "#ff7225",
+          "metric-gas": "#1274ac",
+          "metric-operation": "#ac58ff",
+          "metric-production": "#46c074",
+          "metric-quality": "#37b400",
+          "neutral-50": "#fafafa",
+          "neutral-100": "#f5f5f5",
+          "neutral-200": "#e5e5e5",
+          "neutral-300": "#d4d4d4",
+          "neutral-400": "#a1a1a1",
+          "neutral-500": "#737373",
+          "neutral-600": "#525252",
+          "neutral-700": "#404040",
+          "neutral-800": "#262626",
+          "neutral-900": "#171717",
+          "neutral-925": "#121212",
+          "neutral-950": "#0a0a0a",
+          "compass-blue-dark": "#3390ff",
+          "compass-blue-dark-hover": "#2979d7",
+          "compass-blue-dark-active": "#2062b1",
+          "compass-red-dark": "#ff6467",
+          "compass-indigo-dark": "#1447e6",
+          "compass-chart-dark-1": "#d7e9ff",
+          "compass-chart-dark-2": "#8dbfff",
+          "compass-chart-dark-3": "#66a5f2",
+          "compass-chart-dark-4": "#4d88d4",
+          "compass-chart-dark-5": "#3976c5",
+          "alpha-white-10": "#ffffff1a",
+          "alpha-white-20": "#ffffff33",
+          "alpha-compass-blue-dark-90": "#3390ffe5",
+          "alpha-compass-blue-dark-20": "#3390ff33",
+          "alpha-neutral-800-80": "#262626cc",
+          "alpha-neutral-800-50": "#26262680",
+          "alpha-neutral-50-70": "#fafafab2",
+          "alpha-neutral-500-50": "#73737380",
+          "alpha-neutral-800-30": "#2626264d",
+          "alpha-compass-blue-dark-30": "#3390ff4d",
+          "alpha-neutral-500-16": "#73737329",
+          "alpha-neutral-500-12": "#7373731f",
+          "alpha-neutral-500-8": "#73737314",
+          "alpha-neutral-50-16": "#fafafa29",
+          "alpha-neutral-50-12": "#fafafa1f",
+          "alpha-neutral-50-8": "#fafafa14",
+          "alpha-neutral-50-11": "#fafafa1c",
+          "alpha-neutral-50-3": "#fafafa08",
+          "alpha-neutral-50-20": "#fafafa33",
+          "alpha-compass-blue-dark-8": "#3390ff14",
+          "alpha-compass-blue-dark-16": "#3390ff29",
+          "alpha-compass-blue-dark-25": "#3390ff40",
+          "alpha-neutral-50-5": "#fafafa0d",
+          "alpha-neutral-50-50": "#fafafa80",
+          "alpha-neutral-50-80": "#fafafacc",
+          "slate-150": "#f0f3f7",
+          "tnv-page": "#dadfe8",
+          "tnv-gray-900": "#252525",
+          "tnv-gray-700": "#5a5d6c",
+          "tnv-gray-500": "#787878",
+          "tnv-gray-300": "#c7c7c7",
+          "tnv-gray-200": "#e0e0e0",
+          "tnv-gray-100": "#f0f0f0",
+          "tnv-gray-50": "#f7f7f7",
+          "tnv-blue-500": "#2c78f9",
+          "tnv-blue-600": "#1167f8",
+          "tnv-blue-700": "#2663e8",
+          "tnv-glow": "#4e9fff",
+          "metric-performance": "#108fff",
+          "alpha-white-50": "#ffffff80",
+          "alpha-metric-operation-20": "#00bad633",
+          "alpha-metric-production-20": "#1cb17133",
+          "alpha-tnv-glow-20": "#4e9fff33",
+          "tnv-dark-page": "#02021d",
+          "tnv-dark-surface": "#212531",
+          "tnv-dark-card": "#191c25",
+          "tnv-dark-card-2": "#272c3a",
+          "tnv-dark-muted": "#1b1e27",
+          "tnv-dark-secondary": "#444957",
+          "tnv-dark-border": "#575f75",
+          "tnv-dark-input": "#70788f",
+          "tnv-dark-fg": "#f2f2f2",
+          "tnv-dark-fg-muted": "#cdcecf",
+          "tnv-dark-fg-subtle": "#747c90",
+          "tnv-dark-ink": "#191b25",
+          "tnv-dark-blue-hover": "#1165f4",
+          "tnv-dark-blue-text": "#1367f5",
+          "tnv-dark-operation": "#55e8ff",
+          "tnv-dark-production": "#56fc6f",
+          "tnv-dark-electricity": "#ffee00",
+          "alpha-tnv-dark-surface-50": "#21253180",
+          "alpha-tnv-dark-operation-20": "#55e8ff33",
+          "alpha-tnv-dark-production-20": "#56fc6f33",
+          "tnv-dark-zone-preheat": "#f9ff46",
+          "tnv-dark-zone-heating": "#ffc721",
+          "tnv-dark-zone-soak": "#ff8121",
+          "tnv-dark-table-header": "#2e3342",
+          "tnv-dark-fg-subtle-2": "#8b93a7",
+          "radius": "10px",
+          "background": "#ffffff",
+          "foreground": "#252525",
+          "card": "#ffffff",
+          "card-foreground": "#252525",
+          "popover": "#ffffff",
+          "popover-foreground": "#252525",
+          "primary": "#2c78f9",
+          "primary-foreground": "#ffffff",
+          "secondary": "#f0f0f0",
+          "secondary-foreground": "#252525",
+          "muted": "#e0e0e0",
+          "muted-foreground": "#5a5d6c",
+          "accent": "#f1f6fd",
+          "accent-foreground": "#2663e8",
+          "destructive": "#dc2626",
+          "border": "#c7c7c7",
+          "input": "#c7c7c7",
+          "ring": "#2c78f9",
+          "sidebar": "#ffffff",
+          "sidebar-foreground": "#334155",
+          "sidebar-primary": "#2c78f9",
+          "sidebar-primary-foreground": "#ffffff",
+          "sidebar-accent": "#dfebfb",
+          "sidebar-accent-foreground": "#2663e8",
+          "sidebar-border": "#c7c7c7",
+          "sidebar-ring": "#2c78f9",
+          "success": "#15803d",
+          "success-subtle": "#dcfce7",
+          "success-subtle-foreground": "#166534",
+          "warning": "#f59e0b",
+          "warning-subtle": "#fef3c7",
+          "warning-subtle-foreground": "#92400e",
+          "destructive-emphasis": "#f87171",
+          "destructive-subtle": "#fee2e2",
+          "destructive-subtle-foreground": "#991b1b",
+          "dark": "#64748b",
+          "dark-subtle": "#f1f5f9",
+          "dark-subtle-foreground": "#334155",
+          "chart-4": "#0891b2",
+          "chart-4-subtle": "#cffafe",
+          "chart-4-bolder": "#155e75",
+          "chart-5": "#ea580c",
+          "chart-5-subtle": "#ffedd5",
+          "chart-5-bolder": "#9a3412",
+          "chart-6": "#0d9488",
+          "chart-6-subtle": "#ccfbf1",
+          "chart-6-bolder": "#115e59",
+          "success-emphasis": "#4ade80",
+          "success-subtle-hover": "#bbf7d0",
+          "success-text": "#15803d",
+          "warning-emphasis": "#fcd34d",
+          "warning-subtle-hover": "#fde68a",
+          "warning-text": "#b45309",
+          "destructive-active": "#991b1b",
+          "destructive-subtle-hover": "#fecaca",
+          "destructive-text": "#dc2626",
+          "chart-1": "#468ef6",
+          "chart-2": "#a3c7fc",
+          "chart-3": "#7c3aed",
+          "chart-1-bold": "#468ef6",
+          "chart-1-subtler": "#c8dcfa",
+          "alpha-primary-90": "#0161d2e5",
+          "alpha-primary-20": "#0161d233",
+          "alpha-secondary-80": "#f1f5f9cc",
+          "alpha-destructive-90": "#dc2626e5",
+          "alpha-destructive-10": "#dc26261a",
+          "alpha-muted-50": "#f1f5f980",
+          "alpha-border-50": "#e2e8f080",
+          "alpha-sidebar-foreground-70": "#334155b2",
+          "alpha-overlay": "#00000080",
+          "alpha-ring-50": "#1a73e980",
+          "alpha-field": "#00000000",
+          "alpha-outline": "#ffffff",
+          "alpha-outline-hover": "#f1f6fd",
+          "alpha-destructive-solid": "#dc2626",
+          "alpha-switch-off": "#e2e8f0",
+          "alpha-tab-active": "#ffffff",
+          "alpha-destructive-20": "#dc262633",
+          "alpha-primary-30": "#0161d24d",
+          "muted-active": "#cbd5e1",
+          "muted-emphasis": "#787878",
+          "muted-hover": "#e2e8f0",
+          "secondary-active": "#cbd5e1",
+          "secondary-hover": "#e2e8f0",
+          "dark-active": "#334155",
+          "dark-emphasis": "#cbd5e1",
+          "dark-hover": "#475569",
+          "dark-foreground": "#ffffff",
+          "dark-text": "#64748b",
+          "alpha-dark-active": "#94a3b829",
+          "alpha-dark-focus": "#94a3b81f",
+          "alpha-dark-hover": "#94a3b814",
+          "dark-subtle-active": "#cbd5e1",
+          "dark-subtle-hover": "#e2e8f0",
+          "destructive-foreground": "#ffffff",
+          "destructive-subtle-active": "#fca5a5",
+          "info-active": "#0044c2",
+          "info-emphasis": "#6098f2",
+          "info-hover": "#0052d6",
+          "info-foreground": "#ffffff",
+          "info-text": "#0044c2",
+          "alpha-info-active": "#0058e929",
+          "alpha-info-focus": "#0058e91f",
+          "alpha-info-hover": "#0058e914",
+          "info-subtle-active": "#80acf4",
+          "info-subtle-hover": "#bdd4f8",
+          "inverse-active": "#1f1f1f",
+          "inverse-emphasis": "#999999",
+          "inverse-hover": "#292929",
+          "inverse": "#3d3d3d",
+          "inverse-foreground": "#ffffff",
+          "inverse-subtle-foreground": "#ffffff",
+          "inverse-text": "#141414",
+          "alpha-inverse-active": "#14141429",
+          "alpha-inverse-focus": "#1414141f",
+          "alpha-inverse-hover": "#14141414",
+          "inverse-subtle": "#666666",
+          "inverse-subtle-active": "#3d3d3d",
+          "inverse-subtle-hover": "#525252",
+          "light-hover": "#e0e0e0",
+          "alpha-light-active": "#e0e0e029",
+          "alpha-light-focus": "#e0e0e01f",
+          "light-subtle-hover": "#f5f5f5",
+          "primary-active": "#2663e8",
+          "primary-hover": "#1167f8",
+          "primary-text": "#2663e8",
+          "accent-active": "#c8dcfa",
+          "accent-hover": "#dfebfb",
+          "neutral-active": "#cbd5e1",
+          "neutral-emphasis": "#94a3b8",
+          "neutral-hover": "#e2e8f0",
+          "neutral-foreground": "#252525",
+          "neutral-subtle-foreground": "#0f172a",
+          "neutral-text": "#475569",
+          "alpha-neutral-active": "#0f172a29",
+          "alpha-neutral-focus": "#0f172a1f",
+          "alpha-neutral-hover": "#0f172a14",
+          "neutral": "#f1f5f9",
+          "neutral-subtle": "#f8fafc",
+          "neutral-subtle-active": "#e2e8f0",
+          "neutral-subtle-hover": "#f1f5f9",
+          "chart-1-bolder": "#0a51ac",
+          "chart-1-subtle": "#71a8f9",
+          "chart-2-bold": "#468ef6",
+          "chart-2-bolder": "#0161d2",
+          "chart-2-subtle": "#c8dcfa",
+          "chart-2-subtler": "#dfebfb",
+          "chart-3-bold": "#6d28d9",
+          "chart-3-bolder": "#5b21b6",
+          "chart-3-subtle": "#a78bfa",
+          "chart-3-subtler": "#ddd6fe",
+          "chart-4-bold": "#0e7490",
+          "chart-4-subtler": "#a5f3fc",
+          "chart-5-bold": "#c2410c",
+          "chart-5-subtler": "#fed7aa",
+          "chart-6-bold": "#0f766e",
+          "chart-6-subtler": "#99f6e4",
+          "success-active": "#14532d",
+          "success-hover": "#166534",
+          "success-foreground": "#ffffff",
+          "alpha-success-active": "#15803d29",
+          "alpha-success-focus": "#15803d1f",
+          "alpha-success-hover": "#15803d14",
+          "success-subtle-active": "#86efac",
+          "tertiary-active": "#014478",
+          "tertiary-emphasis": "#61c9f9",
+          "tertiary-hover": "#01579b",
+          "tertiary-subtle-foreground": "#023f5c",
+          "tertiary-text": "#0277bd",
+          "tertiary-foreground": "#ffffff",
+          "alpha-tertiary-active": "#0277bd29",
+          "alpha-tertiary-focus": "#0277bd1f",
+          "alpha-tertiary-hover": "#0277bd14",
+          "tertiary-subtle": "#d8f1fd",
+          "tertiary-subtle-active": "#a3dffb",
+          "tertiary-subtle-hover": "#c5eafc",
+          "tertiary": "#0277bd",
+          "warning-active": "#fcd34d",
+          "warning-hover": "#fbbf24",
+          "warning-foreground": "#0f172a",
+          "alpha-warning-active": "#f59e0b29",
+          "alpha-warning-focus": "#f59e0b1f",
+          "alpha-warning-hover": "#f59e0b14",
+          "warning-subtle-active": "#fcd34d",
+          "alpha-row-hover": "#0f172a1c",
+          "alpha-row-sorted": "#0f172a08",
+          "alpha-link-hover": "#0f172a33",
+          "info": "#0058e9",
+          "info-subtle": "#d2e2fb",
+          "info-subtle-foreground": "#002259",
+          "light": "#ebebeb",
+          "light-foreground": "#000000",
+          "light-subtle": "#fafafa",
+          "light-subtle-foreground": "#141414",
+          "light-emphasis": "#d6d6d6",
+          "light-text": "#e0e0e0",
+          "light-subtle-active": "#ebebeb",
+          "light-active": "#d6d6d6",
+          "primary-emphasis": "#71a8f9",
+          "muted-fill-foreground": "#252525",
+          "alpha-primary-hover": "#0161d214",
+          "alpha-primary-active": "#0161d229",
+          "alpha-primary-selected": "#0161d240",
+          "alpha-destructive-hover": "#dc262614",
+          "alpha-destructive-active": "#dc262629",
+          "alpha-destructive-focus": "#dc26261f",
+          "destructive-hover": "#b91c1c",
+          "alpha-muted-hover": "#0f172a14",
+          "alpha-muted-active": "#0f172a29",
+          "alpha-muted-focus": "#0f172a1f",
+          "alpha-row-alt": "#0f172a0d",
+          "alpha-light-hover": "#e0e0e014",
+          "alpha-transparent-white": "#ffffff00",
+          "alpha-outline-border": "#0f172a80",
+          "alpha-outline-border-hover": "#0f172acc",
+          "alpha-list-hover": "#0f172a14",
+          "page-background": "#dadfe8",
+          "ees-maintenance": "#7c3aed",
+          "ees-maintenance-text": "#7c3aed",
+          "ees-maintenance-subtle": "#ede9fe",
+          "ees-maintenance-subtle-foreground": "#5b21b6",
+          "chart-electricity": "#ff7225",
+          "chart-gas": "#1274ac",
+          "chart-operation": "#ac58ff",
+          "chart-performance": "#108fff",
+          "chart-production": "#46c074",
+          "chart-quality": "#37b400",
+          "card-emphasis": "#f7f7f7",
+          "card-emphasis-active": "#cbd5e1",
+          "card-emphasis-foreground": "#252525",
+          "table-header": "#f0f3f7",
+          "alpha-panel": "#ffffff80",
+          "alpha-operation-20": "#00bad633",
+          "alpha-production-20": "#1cb17133",
+          "alpha-primary-glow": "#4e9fff33",
+          "progress-label": "#252525",
+          "chart-zone-preheat": "#fcd34d",
+          "chart-zone-heating": "#f59e0b",
+          "chart-zone-soak": "#ea580c",
+          "alpha-switch-thumb": "#ffffff"
+        },
+        "dark": {
+          "background": "#212531",
+          "foreground": "#f2f2f2",
+          "card": "#191c25",
+          "card-foreground": "#f2f2f2",
+          "popover": "#212531",
+          "popover-foreground": "#f2f2f2",
+          "primary": "#1167f8",
+          "primary-foreground": "#ffffff",
+          "secondary": "#444957",
+          "secondary-foreground": "#f2f2f2",
+          "muted": "#1b1e27",
+          "muted-foreground": "#cdcecf",
+          "accent": "#262626",
+          "accent-foreground": "#fafafa",
+          "destructive": "#ff6467",
+          "border": "#575f75",
+          "input": "#70788f",
+          "ring": "#737373",
+          "sidebar": "#171717",
+          "sidebar-foreground": "#fafafa",
+          "sidebar-primary": "#1447e6",
+          "sidebar-primary-foreground": "#ffffff",
+          "sidebar-accent": "#262626",
+          "sidebar-accent-foreground": "#fafafa",
+          "sidebar-border": "#575f75",
+          "sidebar-ring": "#737373",
+          "success": "#15803d",
+          "success-subtle": "#052e16",
+          "success-subtle-foreground": "#86efac",
+          "warning": "#fbbf24",
+          "warning-subtle": "#451a03",
+          "warning-subtle-foreground": "#fcd34d",
+          "destructive-emphasis": "#f87171",
+          "destructive-subtle": "#450a0a",
+          "destructive-subtle-foreground": "#fca5a5",
+          "dark": "#737373",
+          "dark-subtle": "#262626",
+          "dark-subtle-foreground": "#d4d4d4",
+          "chart-4": "#4d88d4",
+          "chart-4-subtle": "#083344",
+          "chart-4-bolder": "#67e8f9",
+          "chart-5": "#3976c5",
+          "chart-5-subtle": "#431407",
+          "chart-5-bolder": "#fdba74",
+          "chart-6": "#14b8a6",
+          "chart-6-subtle": "#042f2e",
+          "chart-6-bolder": "#5eead4",
+          "success-emphasis": "#4ade80",
+          "success-subtle-hover": "#14532d",
+          "success-text": "#22c55e",
+          "warning-emphasis": "#fcd34d",
+          "warning-subtle-hover": "#78350f",
+          "warning-text": "#fbbf24",
+          "destructive-active": "#991b1b",
+          "destructive-subtle-hover": "#7f1d1d",
+          "destructive-text": "#f87171",
+          "chart-1": "#d7e9ff",
+          "chart-2": "#8dbfff",
+          "chart-3": "#66a5f2",
+          "chart-1-bold": "#71a8f9",
+          "chart-1-subtler": "#0a51ac",
+          "alpha-primary-90": "#3390ffe5",
+          "alpha-primary-20": "#3390ff33",
+          "alpha-secondary-80": "#262626cc",
+          "alpha-destructive-90": "#dc2626e5",
+          "alpha-destructive-10": "#dc262633",
+          "alpha-muted-50": "#26262680",
+          "alpha-border-50": "#575f75",
+          "alpha-sidebar-foreground-70": "#fafafab2",
+          "alpha-overlay": "#00000080",
+          "alpha-ring-50": "#73737380",
+          "alpha-field": "#2626264d",
+          "alpha-outline": "#191c25",
+          "alpha-outline-hover": "#26262680",
+          "alpha-destructive-solid": "#dc262699",
+          "alpha-switch-off": "#70788f",
+          "alpha-tab-active": "#2626264d",
+          "alpha-destructive-20": "#dc262666",
+          "alpha-primary-30": "#3390ff4d",
+          "muted-active": "#525252",
+          "muted-emphasis": "#8b93a7",
+          "muted-hover": "#404040",
+          "secondary-active": "#525252",
+          "secondary-hover": "#404040",
+          "dark-active": "#404040",
+          "dark-emphasis": "#d4d4d4",
+          "dark-hover": "#525252",
+          "dark-foreground": "#ffffff",
+          "dark-text": "#a1a1a1",
+          "alpha-dark-active": "#73737329",
+          "alpha-dark-focus": "#7373731f",
+          "alpha-dark-hover": "#73737314",
+          "dark-subtle-active": "#525252",
+          "dark-subtle-hover": "#404040",
+          "destructive-foreground": "#ffffff",
+          "destructive-subtle-active": "#991b1b",
+          "info-active": "#0044c2",
+          "info-emphasis": "#6098f2",
+          "info-hover": "#0052d6",
+          "info-foreground": "#ffffff",
+          "info-text": "#4082ef",
+          "alpha-info-active": "#0058e929",
+          "alpha-info-focus": "#0058e91f",
+          "alpha-info-hover": "#0058e914",
+          "info-subtle-active": "#0042af",
+          "info-subtle-hover": "#003892",
+          "inverse-active": "#c2c2c2",
+          "inverse-emphasis": "#575757",
+          "inverse-hover": "#d6d6d6",
+          "inverse": "#ebebeb",
+          "inverse-foreground": "#000000",
+          "inverse-subtle-foreground": "#141414",
+          "inverse-text": "#ebebeb",
+          "alpha-inverse-active": "#ebebeb29",
+          "alpha-inverse-focus": "#ebebeb1f",
+          "alpha-inverse-hover": "#ebebeb14",
+          "inverse-subtle": "#c2c2c2",
+          "inverse-subtle-active": "#757575",
+          "inverse-subtle-hover": "#9c9c9c",
+          "light-hover": "#e0e0e0",
+          "alpha-light-active": "#e0e0e029",
+          "alpha-light-focus": "#e0e0e01f",
+          "light-subtle-hover": "#f5f5f5",
+          "primary-active": "#2663e8",
+          "primary-hover": "#1165f4",
+          "primary-text": "#4e9fff",
+          "accent-active": "#525252",
+          "accent-hover": "#404040",
+          "neutral-active": "#525252",
+          "neutral-emphasis": "#a1a1a1",
+          "neutral-hover": "#404040",
+          "neutral-foreground": "#f2f2f2",
+          "neutral-subtle-foreground": "#fafafa",
+          "neutral-text": "#a1a1a1",
+          "alpha-neutral-active": "#fafafa29",
+          "alpha-neutral-focus": "#fafafa1f",
+          "alpha-neutral-hover": "#fafafa14",
+          "neutral": "#262626",
+          "neutral-subtle": "#171717",
+          "neutral-subtle-active": "#404040",
+          "neutral-subtle-hover": "#262626",
+          "chart-1-bolder": "#a3c7fc",
+          "chart-1-subtle": "#0161d2",
+          "chart-2-bold": "#71a8f9",
+          "chart-2-bolder": "#c8dcfa",
+          "chart-2-subtle": "#1a73e9",
+          "chart-2-subtler": "#0161d2",
+          "chart-3-bold": "#c4b5fd",
+          "chart-3-bolder": "#ddd6fe",
+          "chart-3-subtle": "#7c3aed",
+          "chart-3-subtler": "#5b21b6",
+          "chart-4-bold": "#22d3ee",
+          "chart-4-subtler": "#155e75",
+          "chart-5-bold": "#fb923c",
+          "chart-5-subtler": "#9a3412",
+          "chart-6-bold": "#2dd4bf",
+          "chart-6-subtler": "#115e59",
+          "success-active": "#14532d",
+          "success-hover": "#166534",
+          "success-foreground": "#ffffff",
+          "alpha-success-active": "#15803d29",
+          "alpha-success-focus": "#15803d1f",
+          "alpha-success-hover": "#15803d14",
+          "success-subtle-active": "#166534",
+          "tertiary-active": "#014478",
+          "tertiary-emphasis": "#61c9f9",
+          "tertiary-hover": "#01579b",
+          "tertiary-subtle-foreground": "#ebf8fe",
+          "tertiary-text": "#03a9f4",
+          "tertiary-foreground": "#ffffff",
+          "alpha-tertiary-active": "#0277bd29",
+          "alpha-tertiary-focus": "#0277bd1f",
+          "alpha-tertiary-hover": "#0277bd14",
+          "tertiary-subtle": "#023f5c",
+          "tertiary-subtle-active": "#026999",
+          "tertiary-subtle-hover": "#02557a",
+          "tertiary": "#0277bd",
+          "warning-active": "#fde68a",
+          "warning-hover": "#fcd34d",
+          "warning-foreground": "#171717",
+          "alpha-warning-active": "#fbbf2429",
+          "alpha-warning-focus": "#fbbf241f",
+          "alpha-warning-hover": "#fbbf2414",
+          "warning-subtle-active": "#92400e",
+          "alpha-row-hover": "#fafafa1c",
+          "alpha-row-sorted": "#fafafa08",
+          "alpha-link-hover": "#fafafa33",
+          "info": "#0058e9",
+          "info-subtle": "#002c75",
+          "info-subtle-foreground": "#e9f0fd",
+          "light": "#ebebeb",
+          "light-foreground": "#000000",
+          "light-subtle": "#fafafa",
+          "light-subtle-foreground": "#141414",
+          "light-emphasis": "#d6d6d6",
+          "light-text": "#e0e0e0",
+          "light-subtle-active": "#ebebeb",
+          "light-active": "#d6d6d6",
+          "primary-emphasis": "#3390ff",
+          "muted-fill-foreground": "#f2f2f2",
+          "alpha-primary-hover": "#3390ff14",
+          "alpha-primary-active": "#3390ff29",
+          "alpha-primary-selected": "#3390ff40",
+          "alpha-destructive-hover": "#dc262614",
+          "alpha-destructive-active": "#dc262629",
+          "alpha-destructive-focus": "#dc26261f",
+          "destructive-hover": "#b91c1c",
+          "alpha-muted-hover": "#fafafa14",
+          "alpha-muted-active": "#fafafa29",
+          "alpha-muted-focus": "#fafafa1f",
+          "alpha-row-alt": "#fafafa0d",
+          "alpha-light-hover": "#e0e0e014",
+          "alpha-transparent-white": "#ffffff00",
+          "alpha-outline-border": "#fafafa80",
+          "alpha-outline-border-hover": "#fafafacc",
+          "alpha-list-hover": "#fafafa14",
+          "page-background": "#02021d",
+          "ees-maintenance": "#7c3aed",
+          "ees-maintenance-text": "#a78bfa",
+          "ees-maintenance-subtle": "#2e1065",
+          "ees-maintenance-subtle-foreground": "#c4b5fd",
+          "chart-electricity": "#ffee00",
+          "chart-gas": "#1274ac",
+          "chart-operation": "#55e8ff",
+          "chart-performance": "#108fff",
+          "chart-production": "#56fc6f",
+          "chart-quality": "#37b400",
+          "card-emphasis": "#272c3a",
+          "card-emphasis-active": "#404040",
+          "card-emphasis-foreground": "#f2f2f2",
+          "table-header": "#2e3342",
+          "alpha-panel": "#21253180",
+          "alpha-operation-20": "#55e8ff33",
+          "alpha-production-20": "#56fc6f33",
+          "alpha-primary-glow": "#4e9fff33",
+          "progress-label": "#191b25",
+          "chart-zone-preheat": "#f9ff46",
+          "chart-zone-heating": "#ffc721",
+          "chart-zone-soak": "#ff8121",
+          "alpha-switch-thumb": "#ffffff"
+        }
+      },
+      "css": {
+        "@import \"tw-animate-css\"": {},
+        "@import \"shadcn/tailwind.css\"": {},
+        "@import \"pretendard/dist/web/variable/pretendardvariable.css\"": {},
+        "@custom-variant dark (&:is(.dark *))": {},
+        "@layer base": {
+          "*": {
+            "@apply border-border outline-ring/50": {}
+          },
+          "body": {
+            "@apply bg-background text-foreground": {}
+          },
+          "html": {
+            "@apply font-sans": {}
+          }
+        }
+      },
+      "files": [
+        {
+          "path": "docs/tnv.md",
+          "type": "registry:file",
+          "target": "~/docs/tnv.md"
+        }
+      ]
+    },
+    {
+      "name": "tnv",
+      "type": "registry:block",
+      "title": "TNV Design System",
+      "description": "TNV Design System v0.1.0 전체 — 토큰 + 부품 64개 + AI 규칙 문서(docs/tnv.md)",
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/accordion.json",
+        "http://localhost:3400/r/0.1.0/alert-dialog.json",
+        "http://localhost:3400/r/0.1.0/alert.json",
+        "http://localhost:3400/r/0.1.0/autocomplete.json",
+        "http://localhost:3400/r/0.1.0/avatar.json",
+        "http://localhost:3400/r/0.1.0/badge.json",
+        "http://localhost:3400/r/0.1.0/breadcrumb.json",
+        "http://localhost:3400/r/0.1.0/button-group.json",
+        "http://localhost:3400/r/0.1.0/button.json",
+        "http://localhost:3400/r/0.1.0/calendar.json",
+        "http://localhost:3400/r/0.1.0/card.json",
+        "http://localhost:3400/r/0.1.0/chart-presets.json",
+        "http://localhost:3400/r/0.1.0/chart.json",
+        "http://localhost:3400/r/0.1.0/checkbox.json",
+        "http://localhost:3400/r/0.1.0/combobox.json",
+        "http://localhost:3400/r/0.1.0/command.json",
+        "http://localhost:3400/r/0.1.0/data-table.json",
+        "http://localhost:3400/r/0.1.0/date-picker.json",
+        "http://localhost:3400/r/0.1.0/dialog-body.json",
+        "http://localhost:3400/r/0.1.0/dialog.json",
+        "http://localhost:3400/r/0.1.0/dropdown-menu.json",
+        "http://localhost:3400/r/0.1.0/field.json",
+        "http://localhost:3400/r/0.1.0/filter-chip.json",
+        "http://localhost:3400/r/0.1.0/form-table.json",
+        "http://localhost:3400/r/0.1.0/input-group.json",
+        "http://localhost:3400/r/0.1.0/input.json",
+        "http://localhost:3400/r/0.1.0/kbd.json",
+        "http://localhost:3400/r/0.1.0/label.json",
+        "http://localhost:3400/r/0.1.0/menu-tile.json",
+        "http://localhost:3400/r/0.1.0/metric-row.json",
+        "http://localhost:3400/r/0.1.0/multi-select.json",
+        "http://localhost:3400/r/0.1.0/nav-user.json",
+        "http://localhost:3400/r/0.1.0/number-input.json",
+        "http://localhost:3400/r/0.1.0/number-stepper.json",
+        "http://localhost:3400/r/0.1.0/page-tabs.json",
+        "http://localhost:3400/r/0.1.0/pagination.json",
+        "http://localhost:3400/r/0.1.0/popover.json",
+        "http://localhost:3400/r/0.1.0/progress.json",
+        "http://localhost:3400/r/0.1.0/radio-group.json",
+        "http://localhost:3400/r/0.1.0/select.json",
+        "http://localhost:3400/r/0.1.0/separator.json",
+        "http://localhost:3400/r/0.1.0/sheet.json",
+        "http://localhost:3400/r/0.1.0/sidebar-brand.json",
+        "http://localhost:3400/r/0.1.0/sidebar.json",
+        "http://localhost:3400/r/0.1.0/skeleton.json",
+        "http://localhost:3400/r/0.1.0/sonner.json",
+        "http://localhost:3400/r/0.1.0/spinner.json",
+        "http://localhost:3400/r/0.1.0/stat-card.json",
+        "http://localhost:3400/r/0.1.0/stepper.json",
+        "http://localhost:3400/r/0.1.0/switch.json",
+        "http://localhost:3400/r/0.1.0/table.json",
+        "http://localhost:3400/r/0.1.0/tabs.json",
+        "http://localhost:3400/r/0.1.0/textarea.json",
+        "http://localhost:3400/r/0.1.0/toggle-group.json",
+        "http://localhost:3400/r/0.1.0/toggle.json",
+        "http://localhost:3400/r/0.1.0/toolbar.json",
+        "http://localhost:3400/r/0.1.0/tooltip.json",
+        "http://localhost:3400/r/0.1.0/tree.json",
+        "http://localhost:3400/r/0.1.0/filter-bar.json",
+        "http://localhost:3400/r/0.1.0/form-action-bar.json",
+        "http://localhost:3400/r/0.1.0/page-heading.json",
+        "http://localhost:3400/r/0.1.0/site-header.json",
+        "http://localhost:3400/r/0.1.0/theme-provider.json",
+        "http://localhost:3400/r/0.1.0/use-mobile.json"
+      ],
+      "files": [
+        {
+          "path": "docs/tnv.md",
+          "type": "registry:file",
+          "target": "~/docs/tnv.md"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "title": "accordion",
+      "description": "TNV v0.1 · Figma \"- Layout › Accordion\" (2044:264) — state: expanded·collapsed, 테두리 있는 패널형",
+      "dependencies": [
+        "cn@0.5.0",
+        "radix-ui@1.8.1",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "title": "alert-dialog",
+      "description": "TNV v0.1 · Figma \"- Dialogs › AlertDialogContent\" (26:36)",
+      "dependencies": [
+        "cn@0.5.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/button.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "title": "alert",
+      "description": "TNV v0.1 · Figma \"- Alerts › Alert\" (28:20) — variant: default·destructive",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "autocomplete",
+      "type": "registry:ui",
+      "title": "autocomplete",
+      "description": "TNV v0.1 · Figma \"- Dropdowns › Autocomplete\" (2022:3)",
+      "dependencies": [
+        "cmdk@1.1.1",
+        "radix-ui@1.8.1",
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/autocomplete.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "title": "avatar",
+      "description": "TNV v0.1 · Figma \"- Avatars › Avatar\" (81:373) — type: fallback·image, 32px",
+      "dependencies": [
+        "cn@0.5.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "title": "badge",
+      "description": "TNV v0.1 · Figma \"- Badges › Badge\" (12:151) — variant: default·secondary·destructive·outline (ghost·link는 shadcn 호환용)",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.5.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "title": "breadcrumb",
+      "description": "TNV v0.1 · Figma \"- Breadcrumbs\" (27:7 Link · 27:8 Page · 27:10 Separator · 27:13 Ellipsis)",
+      "dependencies": [
+        "cn@0.5.0",
+        "radix-ui@1.8.1",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "title": "button-group",
+      "description": "TNV v0.1 · Figma \"- Buttons › ButtonGroup\" (51:92)",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.5.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/separator.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "title": "button",
+      "description": "TNV v0.1 · Figma \"- Buttons › Button\" (9:458)",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.5.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "title": "calendar",
+      "description": "TNV v0.1 · Figma \"- Date Pickers › Calendar\" (29:18) · CalendarDay (29:17) — 32px 칸, 오늘=accent, 선택=primary",
+      "dependencies": [
+        "cn@0.5.0",
+        "react-day-picker@10.0.2",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/button.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "title": "card",
+      "description": "TNV v0.1 · Figma \"- Cards › Card\" (6003:7020) — variant: default·panel / size: default·sm",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart-presets",
+      "type": "registry:ui",
+      "title": "chart-presets",
+      "description": "TNV v0.1 · Figma \"- Charts\" 예시 차트 (35:27 Bar · 35:68 Line · 43:1319 Pie · 43:1334 BarGradient",
+      "dependencies": [
+        "cn@0.5.0",
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/chart.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/chart-presets.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "title": "chart",
+      "description": "TNV v0.1 · Figma \"- Charts\" (35:3 ChartTooltipContent · 35:17 ChartLegendContent) — 계열 색은 chart-1~6 토큰",
+      "dependencies": [
+        "cn@0.5.0",
+        "recharts@3.8.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "title": "checkbox",
+      "description": "TNV v0.1 · Figma \"- Checkboxes › Checkbox\" (11:86)",
+      "dependencies": [
+        "cn@0.5.0",
+        "radix-ui@1.8.1",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "title": "combobox",
+      "description": "TNV v0.1 · Figma \"- Command › Combobox\" (30:106) — Value: text · Open: bool",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/command.json",
+        "http://localhost:3400/r/0.1.0/popover.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "title": "command",
+      "description": "TNV v0.1 · Figma \"- Command\" (30:27 Item · 30:28 Input · 30:33 GroupHeading · 30:35 Command)",
+      "dependencies": [
+        "cmdk@1.1.1",
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/dialog.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-table",
+      "type": "registry:ui",
+      "title": "data-table",
+      "description": "TNV v0.1 · Figma \"- Tables › DataTable\" (2099:7867) — state: default·empty",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/button.json",
+        "http://localhost:3400/r/0.1.0/checkbox.json",
+        "http://localhost:3400/r/0.1.0/input.json",
+        "http://localhost:3400/r/0.1.0/table.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/data-table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "date-picker",
+      "type": "registry:ui",
+      "title": "date-picker",
+      "description": "TNV v0.1 · Figma \"- Date Pickers › DatePicker\" (29:118) — Value: text · Open: bool",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/calendar.json",
+        "http://localhost:3400/r/0.1.0/popover.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/date-picker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog-body",
+      "type": "registry:ui",
+      "title": "dialog-body",
+      "description": "TNV v0.1 · Figma \"- Dialogs › DialogBody\" (4047:18) — DialogContent 안에 넣는 내용 부품 6종.",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/button.json",
+        "http://localhost:3400/r/0.1.0/input.json",
+        "http://localhost:3400/r/0.1.0/label.json",
+        "http://localhost:3400/r/0.1.0/radio-group.json",
+        "http://localhost:3400/r/0.1.0/table.json",
+        "http://localhost:3400/r/0.1.0/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dialog-body.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "title": "dialog",
+      "description": "TNV v0.1 · Figma \"- Dialogs › DialogContent\" (26:11) · DialogOverlay (26:51)",
+      "dependencies": [
+        "cn@0.5.0",
+        "radix-ui@1.8.1",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/button.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "title": "dropdown-menu",
+      "description": "TNV v0.1 · Figma \"- Dropdowns › DropdownMenu*\" (25:55 · 25:72 · 25:81 · 25:82 · 25:84 · 25:178)",
+      "dependencies": [
+        "cn@0.5.0",
+        "radix-ui@1.8.1",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "title": "field",
+      "description": "TNV v0.1 · Figma \"- Forms › FormItem\" (34:92) · Form (34:93) — control: input·textarea·select·checkbox / state: default·error",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/label.json",
+        "http://localhost:3400/r/0.1.0/separator.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "filter-chip",
+      "type": "registry:ui",
+      "title": "filter-chip",
+      "description": "TNV v0.1 · Figma \"- Chips › FilterChip\" (62:237) — Show Remove: bool",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/filter-chip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "form-table",
+      "type": "registry:ui",
+      "title": "form-table",
+      "description": "TNV v0.1 · Figma \"03_Patterns › FormTable\" (4046:181 · Row 4046:166 · Field 4046:165)",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/form-table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "title": "input-group",
+      "description": "TNV v0.1 · Figma \"- Inputs › InputGroup\" (48:77)",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/button.json",
+        "http://localhost:3400/r/0.1.0/input.json",
+        "http://localhost:3400/r/0.1.0/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "title": "input",
+      "description": "TNV v0.1 · Figma \"- Inputs › Input\" (10:66) — state: default·focus·disabled·invalid(aria-invalid)",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "title": "kbd",
+      "description": "TNV v0.1 · Figma \"- Kbd\" (48:10 Kbd · 48:12 KbdGroup)",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "title": "label",
+      "description": "TNV v0.1 · Figma \"- Labels › Label\" (11:54) — Required: bool",
+      "dependencies": [
+        "cn@0.5.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "menu-tile",
+      "type": "registry:ui",
+      "title": "menu-tile",
+      "description": "TNV v0.1 · Figma \"- Buttons › MenuTile\" (4045:6191) — state: default·pressed(:active) / Show Icon",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/menu-tile.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "metric-row",
+      "type": "registry:ui",
+      "title": "metric-row",
+      "description": "TNV v0.1 · Figma \"- Progress › MetricRow\" (6003:7046) — 지표 한 줄. size: sm·md / tone: primary·operation·production",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/progress.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/metric-row.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "multi-select",
+      "type": "registry:ui",
+      "title": "multi-select",
+      "description": "TNV v0.1 · Figma \"- Dropdowns › MultiSelect\" (2022:32)",
+      "dependencies": [
+        "cmdk@1.1.1",
+        "radix-ui@1.8.1",
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/filter-chip.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/multi-select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "nav-user",
+      "type": "registry:ui",
+      "title": "nav-user",
+      "description": "TNV v0.1 · Figma \"- Sidebar › NavUser\" (43:485) — Name · Email · Show Chevron · layout: full·avatar",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/avatar.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/nav-user.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "number-input",
+      "type": "registry:ui",
+      "title": "number-input",
+      "description": "TNV v0.1 · Figma \"- Inputs › NumberInput\" (2024:3)",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/number-input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "number-stepper",
+      "type": "registry:ui",
+      "title": "number-stepper",
+      "description": "TNV v0.1 · Figma \"- Inputs › NumberInput / Stepper\" (4045:6163)",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/button.json",
+        "http://localhost:3400/r/0.1.0/input.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/number-stepper.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "page-tabs",
+      "type": "registry:ui",
+      "title": "page-tabs",
+      "description": "TNV v0.1 · Figma \"- Page Tabs\" (62:500 PageTab state: default·hover·active · 62:501 PageTabBar)",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/page-tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "title": "pagination",
+      "description": "TNV v0.1 · Figma \"- Pagination\" (27:56 Link isActive · 27:65 Previous · 27:74 Next · 27:75 Ellipsis)",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/button.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "title": "popover",
+      "description": "TNV v0.1 · Figma \"- Popovers › PopoverContent\" (26:3) — 288px, 안쪽 여백 16",
+      "dependencies": [
+        "cn@0.5.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "title": "progress",
+      "description": "TNV v0.1 · Figma \"- Progress › Progress\" (48:41) — size: sm(8)·md(14) / tone: primary·operation(가동률)·production(생산량) / Show Label(md 전용)",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.5.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "title": "radio-group",
+      "description": "TNV v0.1 · Figma \"- Radios › RadioGroupItem\" (11:109)",
+      "dependencies": [
+        "cn@0.5.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "title": "select",
+      "description": "TNV v0.1 · Figma \"- Dropdowns › Select\" (12:118) size: default·sm / SelectItem (25:110) / SelectContent (25:216)",
+      "dependencies": [
+        "cn@0.5.0",
+        "radix-ui@1.8.1",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "title": "separator",
+      "description": "TNV v0.1 · Figma \"- Separators › Separator\" (11:63) — orientation: horizontal·vertical",
+      "dependencies": [
+        "cn@0.5.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "title": "sheet",
+      "description": "TNV v0.1 · Figma \"- Sheets › SheetContent\" (26:147) — side: right·left·top·bottom",
+      "dependencies": [
+        "cn@0.5.0",
+        "radix-ui@1.8.1",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/button.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar-brand",
+      "type": "registry:ui",
+      "title": "sidebar-brand",
+      "description": "TNV v0.1 · Figma \"- Sidebar › SidebarBrand\" (43:109) — Name · Subtitle · Show Badge · Show Subtitle · collapsed",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/badge.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sidebar-brand.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "title": "sidebar",
+      "description": "TNV v0.1 · Figma \"- Sidebar\" (32:48 MenuButton collapsed·state · 32:55 SubButton · 32:56 GroupLabel · 32:58 Trigger · 32:591 Sidebar)",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.5.0",
+        "radix-ui@1.8.1",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/use-mobile.json",
+        "http://localhost:3400/r/0.1.0/button.json",
+        "http://localhost:3400/r/0.1.0/input.json",
+        "http://localhost:3400/r/0.1.0/separator.json",
+        "http://localhost:3400/r/0.1.0/sheet.json",
+        "http://localhost:3400/r/0.1.0/skeleton.json",
+        "http://localhost:3400/r/0.1.0/tooltip.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "title": "skeleton",
+      "description": "TNV v0.1 · Figma \"- Skeletons › Skeleton\" (12:166)",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "title": "sonner",
+      "description": "TNV v0.1 · Figma \"- Toasts › Sonner\" (28:70) — type: default·success·info·warning·error",
+      "dependencies": [
+        "next-themes@0.4.6",
+        "sonner@2.0.8",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "title": "spinner",
+      "description": "TNV v0.1 · Figma \"- Spinners › Spinner\" (48:23) — 16px loader-circle",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:ui",
+      "title": "stat-card",
+      "description": "TNV v0.1 · Figma \"- Cards › StatCard\" (38:344) — trend: up·down / tone: default·emphasis / Show Badge · Show Footer",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/badge.json",
+        "http://localhost:3400/r/0.1.0/card.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/stat-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "stepper",
+      "type": "registry:ui",
+      "title": "stepper",
+      "description": "TNV v0.1 · Figma \"- Steppers\" (2043:178 Stepper · 2043:86 StepperItem · 2043:95 StepperSeparator)",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/stepper.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "title": "switch",
+      "description": "TNV v0.1 · Figma \"- Switches › Switch\" (11:132)",
+      "dependencies": [
+        "cn@0.5.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "title": "table",
+      "description": "TNV v0.1 · Figma \"- Tables\" (33:42 Header · 33:16 Head · 33:103 Row default·hover·selected · 33:41 Cell)",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "title": "tabs",
+      "description": "TNV v0.1 · Figma \"- Tabs › TabsList\" (51:139) · TabsTrigger (24:15) — variant: default·line·solid",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.5.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "title": "textarea",
+      "description": "TNV v0.1 · Figma \"- Inputs › Textarea\" (10:93)",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "title": "toggle-group",
+      "description": "TNV v0.1 · Figma \"- Toggles › ToggleGroup\" (50:229) · ToggleGroupItem (50:184) — variant: default·outline, position은 자동(first·middle·last)",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.5.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/toggle.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "title": "toggle",
+      "description": "TNV v0.1 · Figma \"- Toggles › Toggle\" (50:123) — variant: default·outline·solid·pill / size: default·sm / pressed",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.5.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toolbar",
+      "type": "registry:ui",
+      "title": "toolbar",
+      "description": "TNV v0.1 · Figma \"- Layout › Toolbar\" (2044:210)",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/toolbar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "title": "tooltip",
+      "description": "TNV v0.1 · Figma \"- Tooltips › Tooltip\" (12:191) — side: top·right·bottom·left",
+      "dependencies": [
+        "cn@0.5.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tree",
+      "type": "registry:ui",
+      "title": "tree",
+      "description": "TNV v0.1 · Figma \"- Tree\" (62:177 TreeItem · 62:178 Tree)",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/tree.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "filter-bar",
+      "type": "registry:block",
+      "title": "filter-bar",
+      "description": "TNV v0.1 · Figma \"03_Patterns › FilterBar\" (38:34) — Show Search · Show Filter 1·2 · Show Date · Show Reset",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/button.json"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/filter-bar.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/filter-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "form-action-bar",
+      "type": "registry:block",
+      "title": "form-action-bar",
+      "description": "TNV v0.1 · Figma \"03_Patterns › FormActionBar\" (80:153)",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/form-action-bar.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/form-action-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-heading",
+      "type": "registry:block",
+      "title": "page-heading",
+      "description": "TNV v0.1 · Figma \"03_Patterns › PageHeading\" (37:74) — Title · Description · Show Description · Show Secondary · Show Primary",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/page-heading.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/page-heading.tsx"
+        }
+      ]
+    },
+    {
+      "name": "site-header",
+      "type": "registry:block",
+      "title": "site-header",
+      "description": "TNV v0.1 · Figma \"03_Patterns › SiteHeader\" (37:53)",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/breadcrumb.json",
+        "http://localhost:3400/r/0.1.0/input-group.json",
+        "http://localhost:3400/r/0.1.0/kbd.json",
+        "http://localhost:3400/r/0.1.0/nav-user.json",
+        "http://localhost:3400/r/0.1.0/separator.json",
+        "http://localhost:3400/r/0.1.0/sidebar.json"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/site-header.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/site-header.tsx"
+        }
+      ]
+    },
+    {
+      "name": "theme-provider",
+      "type": "registry:component",
+      "title": "theme-provider",
+      "description": "TNV Design System 0.1.0",
+      "dependencies": [
+        "next-themes@0.4.6"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/theme-provider.tsx",
+          "type": "registry:component"
+        }
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "title": "use-mobile",
+      "description": "TNV Design System 0.1.0",
+      "dependencies": [],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ]
+    }
+  ]
+}

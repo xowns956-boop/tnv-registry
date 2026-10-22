@@ -1,0 +1,24 @@
+[
+  {
+    "version": "0.1.0",
+    "date": "2026-10-22",
+    "summary": "Figma TNV Design System(트윈뷰 대시보드)을 shadcn 레지스트리로 처음 공개했어요.",
+    "groups": [
+      {
+        "title": "추가",
+        "items": [
+          "토큰(tnv-foundations): 트윈뷰 색(라이트·다크), 간격, 글자(Pretendard), 둥글기, 그림자(panel·header·primary-glow 포함)",
+          "부품·화면 패턴 전체와 전체 묶음(tnv), AI 규칙 문서 docs/tnv.md",
+          "대시보드 부품: Card variant=panel(반투명 큰 패널), TabsList variant=solid, Progress size(sm·md)·tone(primary·operation·production)·% 라벨, MetricRow(지표 한 줄)"
+        ]
+      },
+      {
+        "title": "알아 둘 점",
+        "items": [
+          "다크가 기본이에요. 라이트 색도 들어 있지만 화면에 테마 전환 버튼은 아직 두지 않아요(나중에 기능으로 추가 예정).",
+          "가운데 3D 영역은 개발에서 따로 얹어요. TNV는 그 자리를 빈 칸으로 둬요."
+        ]
+      }
+    ]
+  }
+]
