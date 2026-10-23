@@ -30,6 +30,7 @@ const chartTone = {
   production: "var(--chart-production)",
   electricity: "var(--chart-electricity)",
   gas: "var(--chart-gas)",
+  fuel: "var(--chart-fuel)",
 } as const
 type ChartTone = keyof typeof chartTone
 

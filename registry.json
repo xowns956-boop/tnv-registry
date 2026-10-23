@@ -290,7 +290,8 @@
           "color-chart-zone-preheat": "var(--chart-zone-preheat)",
           "color-chart-zone-heating": "var(--chart-zone-heating)",
           "color-chart-zone-soak": "var(--chart-zone-soak)",
-          "color-alpha-switch-thumb": "var(--alpha-switch-thumb)"
+          "color-alpha-switch-thumb": "var(--alpha-switch-thumb)",
+          "color-chart-fuel": "var(--chart-fuel)"
         },
         "light": {
           "white": "#ffffff",
@@ -628,6 +629,7 @@
           "alpha-tnv-dark-card-2-50": "#272c3a80",
           "alpha-tnv-dark-card-2-30": "#272c3a4d",
           "alpha-tnv-dark-fg-70": "#f2f2f2b2",
+          "metric-fuel": "#46b2ff",
           "radius": "10px",
           "background": "#ffffff",
           "foreground": "#252525",
@@ -868,7 +870,8 @@
           "chart-zone-preheat": "#fcd34d",
           "chart-zone-heating": "#f59e0b",
           "chart-zone-soak": "#ea580c",
-          "alpha-switch-thumb": "#ffffff"
+          "alpha-switch-thumb": "#ffffff",
+          "chart-fuel": "#46b2ff"
         },
         "dark": {
           "background": "#212531",
@@ -1110,7 +1113,8 @@
           "chart-zone-preheat": "#f9ff46",
           "chart-zone-heating": "#ffc721",
           "chart-zone-soak": "#ff8121",
-          "alpha-switch-thumb": "#ffffff"
+          "alpha-switch-thumb": "#ffffff",
+          "chart-fuel": "#46b2ff"
         }
       },
       "css": {

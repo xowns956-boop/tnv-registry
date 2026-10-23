@@ -283,6 +283,7 @@
   --color-chart-zone-heating: var(--chart-zone-heating);
   --color-chart-zone-soak: var(--chart-zone-soak);
   --color-alpha-switch-thumb: var(--alpha-switch-thumb);
+  --color-chart-fuel: var(--chart-fuel);
 }
 
 :root {
@@ -621,6 +622,7 @@
   --alpha-tnv-dark-card-2-50: #272c3a80;
   --alpha-tnv-dark-card-2-30: #272c3a4d;
   --alpha-tnv-dark-fg-70: #f2f2f2b2;
+  --metric-fuel: #46b2ff;
   --radius: 10px;
   --background: #ffffff;
   --foreground: #252525;
@@ -862,6 +864,7 @@
   --chart-zone-heating: #f59e0b;
   --chart-zone-soak: #ea580c;
   --alpha-switch-thumb: #ffffff;
+  --chart-fuel: #46b2ff;
 }
 
 .dark {
@@ -1105,6 +1108,7 @@
   --chart-zone-heating: #ffc721;
   --chart-zone-soak: #ff8121;
   --alpha-switch-thumb: #ffffff;
+  --chart-fuel: #46b2ff;
 }
 
 @layer base {

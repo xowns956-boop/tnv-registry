@@ -239,3 +239,4 @@ chart/zone-preheat={amber/300}|{tnv-dark/zone-preheat}
 chart/zone-heating={amber/500}|{tnv-dark/zone-heating}
 chart/zone-soak={orange/600}|{tnv-dark/zone-soak}
 alpha/switch-thumb={white}|{white}
+chart/fuel={metric/fuel}|{metric/fuel}

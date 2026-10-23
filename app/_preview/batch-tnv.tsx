@@ -18,7 +18,7 @@ const billets = Array.from({ length: 68 }, (_, i) => ({
   ai: 115 + Math.round(i * 1.85),
   zone: i < 10 ? "preheat" : i < 57 ? "heating" : "soak",
 }))
-const tones = ["default", "operation", "performance", "quality", "production", "electricity", "gas"] as const
+const tones = ["default", "operation", "performance", "quality", "production", "electricity", "gas", "fuel"] as const
 
 // 트윈뷰 대시보드용으로 TNV에서 더한 부품
 export function BatchTnv() {
@@ -33,7 +33,7 @@ export function BatchTnv() {
           <ChartLegendList orientation="vertical" items={[{ label: "가동 : 76%", color: "var(--chart-operation)" }, { label: "성능 : 90%", color: "var(--chart-performance)" }, { label: "품질 : 65%", color: "var(--chart-quality)" }]} />
         </Row>
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-          {tones.slice(0, 7).map((t) => (
+          {tones.map((t) => (
             <ChartColumn key={t} data={cols} xKey="m" tone={t} series={[{ key: "ys", label: "생산량" }]} />
           ))}
           <ChartColumn data={cols} xKey="m" series={[{ key: "ys", label: "YS" }, { key: "ts", label: "TS" }]} />

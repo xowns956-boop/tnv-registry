@@ -334,3 +334,4 @@ alpha/tnv-dark-secondary-80=#444957cc
 alpha/tnv-dark-card-2-50=#272c3a80
 alpha/tnv-dark-card-2-30=#272c3a4d
 alpha/tnv-dark-fg-70=#f2f2f2b2
+metric/fuel=#46b2ff
