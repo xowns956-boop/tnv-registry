@@ -44,6 +44,8 @@ Figma 변수 이름에서 `/`를 `-`로 바꾼 이름이다. 의미 색은 그�
 
 상태 표현 규칙: 진한 바탕 = 기본 토큰 + `-foreground` 글자, 연한 바탕 = `-subtle` + `-subtle-foreground` 글자, 글자만 = `-text`.
 
+다크 색 규칙: 다크 값은 **라이트와 같은 색 계열**로 둔다. 어두운 바탕에서 잘 보이게 명도만 조정한다(예: chart-1 라이트 brand/500 → 다크 brand/400, chart-3 violet/600 → violet/500). 다크에서 다른 색 계열로 바꾸거나 채도가 빠진 파스텔로 바꾸지 않는다. 전력(`electricity`)은 노랑 계열(라이트 #B08C00 · 다크 #FFEE00), 선택 글자(`accent-foreground`·`sidebar-accent-foreground`)는 두 모드 모두 파랑.
+
 ### 간격·글자·둥글기·그림자
 
 - 간격: 4px 단위 (`p-1`=4, `p-2`=8, `p-3`=12, `p-4`=16, `p-6`=24 …). Figma `spacing/N` = Tailwind `N`.

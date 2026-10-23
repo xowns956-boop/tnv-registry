@@ -513,7 +513,7 @@
   --alpha-slate-50-50: #f8fafc80;
   --alpha-slate-900-80: #0f172acc;
   --alpha-slate-50-80: #f8fafccc;
-  --metric-electricity: #ff8c00;
+  --metric-electricity: #b08c00;
   --metric-gas: #fd5821;
   --metric-operation: #00bad6;
   --metric-production: #1cb171;
@@ -845,7 +845,7 @@
   --ees-maintenance-text: #7c3aed;
   --ees-maintenance-subtle: #ede9fe;
   --ees-maintenance-subtle-foreground: #5b21b6;
-  --chart-electricity: #ff8c00;
+  --chart-electricity: #b08c00;
   --chart-gas: #fd5821;
   --chart-operation: #00bad6;
   --chart-performance: #108fff;
@@ -881,7 +881,7 @@
   --muted: #1b1e27;
   --muted-foreground: #cdcecf;
   --accent: #272c3a;
-  --accent-foreground: #f2f2f2;
+  --accent-foreground: #4e9fff;
   --destructive: #ff6467;
   --border: #575f75;
   --input: #70788f;
@@ -891,7 +891,7 @@
   --sidebar-primary: #1167f8;
   --sidebar-primary-foreground: #ffffff;
   --sidebar-accent: #272c3a;
-  --sidebar-accent-foreground: #f2f2f2;
+  --sidebar-accent-foreground: #4e9fff;
   --sidebar-border: #575f75;
   --sidebar-ring: #4e9fff;
   --success: #15803d;
@@ -906,10 +906,10 @@
   --dark: #747c90;
   --dark-subtle: #272c3a;
   --dark-subtle-foreground: #cdcecf;
-  --chart-4: #4d88d4;
+  --chart-4: #06b6d4;
   --chart-4-subtle: #083344;
   --chart-4-bolder: #67e8f9;
-  --chart-5: #3976c5;
+  --chart-5: #f97316;
   --chart-5-subtle: #431407;
   --chart-5-bolder: #fdba74;
   --chart-6: #14b8a6;
@@ -924,9 +924,9 @@
   --destructive-active: #991b1b;
   --destructive-subtle-hover: #7f1d1d;
   --destructive-text: #f87171;
-  --chart-1: #d7e9ff;
-  --chart-2: #8dbfff;
-  --chart-3: #66a5f2;
+  --chart-1: #71a8f9;
+  --chart-2: #a3c7fc;
+  --chart-3: #8b5cf6;
   --chart-1-bold: #71a8f9;
   --chart-1-subtler: #0a51ac;
   --alpha-primary-90: #1167f8e5;
