@@ -106,18 +106,39 @@ SidebarProvider
 ### 대시보드 (트윈뷰 L1·L2 화면)
 
 ```
-div (bg-page-background, 1920 기준)
-├─ 상단 바 (shadow-header) — TabsList variant="solid" 로 화면 전환
-└─ 본문 3단
-   ├─ 왼쪽 Card variant="panel" (공장·설비 카드: Card + MetricRow size="sm")
-   ├─ 가운데 = 3D 영역(개발에서 따로 얹음 — 빈 칸으로 둔다)
-   └─ 오른쪽 Card variant="panel" (차트 Card, MetricRow size="md")
+div (h-dvh, bg-page-background) — 1440보다 좁으면 이 틀 안에서만 가로 스크롤(페이지는 안 밀림)
+└─ div (min-w-360, 1920×1080 기준)
+   ├─ 상단 바 (h-20, shadow-header) — 로고 칸(w-93) · 화면 제목 + 경로 버튼 · 사용자 + 날짜
+   └─ main 본문 3단
+      ├─ 왼쪽 aside (w-93, p-4) > Card variant="panel" — 지표 카드(Card) 묶음
+      ├─ 가운데 section (flex-1, p-4) — 위: 3D 자리(빈 칸) · 아래: 상태 범례 + 표 카드
+      └─ 오른쪽 aside (w-93, p-4) > Card variant="panel" — 설비 목록(Accordion, 하나만 펼침)
 ```
 
+#### 화면 크기
+- 1920×1080 기준. 1440까지는 **가운데(3D 자리)만 줄어들고** 좌우 패널 폭(w-93)은 고정한다.
+- 1440보다 좁으면 바깥 틀(`overflow-x-auto`) 안에서 가로 스크롤한다. 페이지 전체가 가로로 밀리지 않게 한다.
+
+#### 가운데 3D 자리
+- 3D는 개발에서 따로 얹는다. 가운데 위쪽은 **빈 칸**(`data-slot="viewer-3d"`, `flex-1`)으로 둔다. Figma의 3D 이미지·위 라벨(#01, Furnace 등)은 코드에 넣지 않는다.
+- 아래에 상태 범례(오른쪽 정렬)와 표 카드(접기 가능)를 둔다.
+
+#### 패널
+- 패널 안 카드는 `Card`(default) 그대로. 패널 안에서 여백·간격을 덮어쓰지 않는다.
+- **접기**: 왼쪽 패널 제목줄 오른쪽에 접기 버튼(`Button variant="outline" size="icon"`, 아이콘 열림 `ChevronsLeft` · 닫힘 `ChevronsRight`, `aria-label` "패널 접기"/"패널 펼치기"). 이 버튼 하나로 **왼쪽 패널 · 오른쪽 패널 · 가운데 아래 표 카드를 함께 숨긴다**(3D 영역을 넓게 볼 때). 접히면 왼쪽에 펼치기 버튼만 남고, 상태 범례는 남긴다. 열림 상태는 화면(page)에 하나만 둔다.
+- **높이 채우기**: 왼쪽 패널은 Figma Fill처럼 카드가 남는 높이를 나눠 채우고, 늘어난 만큼 차트가 커진다(차트 최소 높이는 TNV 기본값 유지). 화면이 낮으면 카드를 내용보다 줄이지 않고(`shrink-0`) 패널 안에서 스크롤한다. 오른쪽 패널에서 펼친 항목은 내용 높이만큼만 차지하고 남는 공간은 비워 둔다.
+- **스크롤바**: 좌우 패널 안 스크롤은 화살표·바탕 없이 가는 둥근 막대(폭 6, 좌우 여백 2)만 보이고, **스크롤하는 동안에만** 나타났다가 멈추고 0.8초 뒤 사라진다. 막대 색 = `muted-foreground` 50%. TNV 부품에는 아직 없으므로 화면에서 만든다(예: `.panel-scroll` + 스크롤 중 `data-scrolling` 표시).
+
+#### 상태 표시 (Run · Idle · Error · Maintenance · Offline)
+- 색: Run = `success` · Idle = `warning` · Error = `destructive` · Maintenance = `ees-maintenance` · Offline = `neutral`.
+- 배지·범례 = `Badge` + `-subtle` 바탕 · `-subtle-foreground` 글자. 카드 제목 앞 색 막대 = `-text` 색, 막대에 `aria-label`("상태: Run").
+- TNV에 StatusLegend 부품이 아직 없으므로 화면에서 위 색으로 조합한다.
+
+#### 지표 색
 - 가동률 = `tone="operation"`, 생산량 = `tone="production"`, 그 밖 진행률 = `primary`. 차트 계열 색도 `chart-operation`·`chart-production`·`chart-electricity` 등 지표 색을 쓴다.
 - 지표 색은 묶음별로 쓴다. 에너지 묶음 = 연료 `fuel`·전력 `electricity`·탄소 `gas`, 설비 효율 묶음 = 가동 `operation`·성능 `performance`·품질 `quality`.
 - **연료(`fuel`, #46B2FF)와 성능(`performance`, #108FFF)은 같은 파랑 계열이라 한 차트·한 범례에 같이 쓰지 않는다.** 꼭 같이 보여야 하면 디자이너에게 먼저 묻는다(Figma `05_Guide › 07 · 차트 색 — 연료와 성능`).
-- 패널 안 카드는 `Card`(default) 그대로. 패널 안에서 여백·간격을 덮어쓰지 않는다.
+- 연료가 아닌 지표(예: 로압)에 연료색을 쓰지 않는다. 지표 색이 정해지지 않은 차트는 `tone="default"`.
 
 ## 5. 접근성
 
