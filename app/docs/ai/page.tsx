@@ -214,7 +214,7 @@ export default function InstallWithAI() {
             개발자용: 직접 설치
           </h2>
           <p className="text-sm text-muted-foreground">
-            React + Tailwind CSS v4 프로젝트에서 shadcn을 <strong className="font-semibold text-foreground">radix 방식</strong>으로 초기화한 뒤
+            React + Tailwind CSS v4 프로젝트에서 <strong className="font-semibold text-foreground">radix 방식</strong>으로 초기화한 뒤
             실행해요(<code className="font-mono text-foreground">{initCommand}</code>). 기존 부품·전역 스타일이 바뀌니 적용 전에 변경 내용을 확인해요.
           </p>
         </div>
