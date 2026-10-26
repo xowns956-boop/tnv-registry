@@ -19,7 +19,7 @@ export const rulesBlock = `## Design system: TNV v${VERSION}
 
 사용자가 "디자인 시스템 써", "TNV 써", "TNV 디자인 시스템 써", "use the design system"이라고 하면 docs/tnv.md를 먼저 읽고 그 규칙대로 만든다.
 
-- 설치된 부품(\`components/ui\`, \`components/blocks\`)만 조립한다. TNV에 없는 부품은 새로 만들지 말고 없다고 알린다.
+- 설치된 TNV 부품(\`components/ui\`, \`components/blocks\`)만 조립한다. TNV에 없는 부품·차트·패턴은 만들지도, 기존 부품을 조합해 흉내 내지도, "만들까요?"라고 묻지도 않는다. 무조건 "TNV에 없음"으로 알리고 화면에는 빈 자리로 둔 뒤 디자이너에게 넘긴다(docs/tnv.md "TNV에 없는 것이 필요할 때").
 - 색·간격·둥글기는 토큰 클래스만 쓴다. hex·px 값을 직접 쓰지 않는다.
 - 다크가 기본이다. 새 화면에 라이트/다크 테마 전환 버튼은 두지 않는다(나중에 기능으로 추가 예정). 색은 시맨틱 토큰만 쓴다.
 - 부품 파일(\`components/\`)은 고치지 않는다. 고쳐야 하면 먼저 알린다.
