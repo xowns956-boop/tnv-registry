@@ -7,7 +7,7 @@
 - 설치: `npx shadcn@latest add https://xowns956-boop.github.io/tnv-registry/r/0.1.0/tnv-foundations.json https://xowns956-boop.github.io/tnv-registry/r/0.1.0/tnv.json` (pnpm이면 `pnpm dlx`, tnv-foundations는 꼭 함께)
 - 부품 하나만: `npx shadcn@latest add https://xowns956-boop.github.io/tnv-registry/r/0.1.0/<이름>.json`
 - 설치 기록: 프로젝트의 `docs/tnv-adoption.md` (설치 버전·주소·직접 고친 부품). TNV를 업데이트하면 이 파일도 고친다.
-- 변경 기록: https://xowns956-boop.github.io/tnv-registry/docs/changelog/ · AI용 요약: https://xowns956-boop.github.io/tnv-registry/llms.txt
+- 업데이트 기록: https://xowns956-boop.github.io/tnv-registry/docs/changelog/ · AI용 요약: https://xowns956-boop.github.io/tnv-registry/llms.txt
 
 ## 1. 적용 원칙
 

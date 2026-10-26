@@ -23,7 +23,7 @@ export const rulesBlock = `## Design system: TNV v${VERSION}
 - 색·간격·둥글기는 토큰 클래스만 쓴다. hex·px 값을 직접 쓰지 않는다.
 - 다크가 기본이다. 새 화면에 라이트/다크 테마 전환 버튼은 두지 않는다(나중에 기능으로 추가 예정). 색은 시맨틱 토큰만 쓴다.
 - 부품 파일(\`components/\`)은 고치지 않는다. 고쳐야 하면 먼저 알린다.
-- TNV 버전을 마음대로 올리지 않는다. 올릴 때는 변경 기록(${REGISTRY_BASE}/docs/changelog/)을 먼저 보고, 직접 고친 부품은 비교한 뒤 바꾼다. 바꾼 내용은 docs/tnv-adoption.md에 적는다.`
+- TNV 버전을 마음대로 올리지 않는다. 올릴 때는 업데이트 기록(${REGISTRY_BASE}/docs/changelog/)을 먼저 보고, 직접 고친 부품은 비교한 뒤 바꾼다. 바꾼 내용은 docs/tnv-adoption.md에 적는다.`
 
 export const setupPrompt = `TNV 디자인 시스템(v${VERSION})을 이 프로젝트에 설치해 줘.
 나는 개발을 잘 모르니까 필요한 건 알아서 진행하고, 끝나면 쉬운 말로 알려 줘.
@@ -141,7 +141,7 @@ export const manualCases = [
   { title: "부품 하나만 추가할 때", body: "Button 하나만 필요하면 명령 한 줄이 프롬프트 전체를 돌리는 것보다 빨라요." },
   { title: "자동화(CI·배포 스크립트)에 넣을 때", body: "사람 없이 돌아가는 과정에는 AI가 끼어들 수 없어서 명령이 필요해요." },
   { title: "AI 도구를 쓰지 않을 때", body: "터미널에서 명령을 직접 실행하는 방법밖에 없어요." },
-  { title: "버전을 올릴 때", body: "다음 버전으로 바꿀 땐 변경 기록을 먼저 보고, 직접 고친 부품과 바뀐 내용을 비교하면서 하는 게 안전해요." },
+  { title: "버전을 올릴 때", body: "다음 버전으로 바꿀 땐 업데이트 기록을 먼저 보고, 직접 고친 부품과 바뀐 내용을 비교하면서 하는 게 안전해요." },
 ]
 
 export const componentGroups = [

@@ -47,7 +47,7 @@ export default function Home() {
           actions={
             <>
               <Button variant="ghost" asChild>
-                <Link href="/docs/changelog">변경 기록</Link>
+                <Link href="/docs/changelog">업데이트 기록</Link>
               </Button>
               <Button asChild>
                 <Link href="/docs/ai">

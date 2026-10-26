@@ -1,6 +1,6 @@
 // AI용 안내 파일 생성: public/llms.txt(요약 목차) · public/llms-full.txt(전체 참고서)
 // 설치 전에도 AI가 이 주소를 읽고 TNV 규칙·부품·토큰을 알 수 있게 한다.
-// 재료: package.json(버전) · registry.json(부품·토큰) · docs/tnv.md(규칙) · app/docs/changelog/changelog.json(변경 기록)
+// 재료: package.json(버전) · registry.json(부품·토큰) · docs/tnv.md(규칙) · app/docs/changelog/changelog.json(업데이트 기록)
 // 사용: REGISTRY_BASE=https://<주소> node scripts/build-llms.mjs  (registry.json을 먼저 만든 뒤 실행)
 import { readFileSync, writeFileSync } from "node:fs"
 import { dirname, join } from "node:path"
@@ -34,7 +34,7 @@ ${summary}
 ## AI Reference
 
 - [AI로 설치하기](${BASE}/docs/ai/): 설치 프롬프트(프로젝트 확인 → 설치 → 앱 연결 → 규칙 저장 → 설치 기록 → 확인 화면)
-- [전체 참고서](${BASE}/llms-full.txt): 화면 규칙(docs/tnv.md 전문), 색 토큰 라이트·다크 값, 부품 목록과 설치 주소, 변경 기록
+- [전체 참고서](${BASE}/llms-full.txt): 화면 규칙(docs/tnv.md 전문), 색 토큰 라이트·다크 값, 부품 목록과 설치 주소, 업데이트 기록
 
 ## 설치
 
@@ -46,7 +46,7 @@ ${summary}
 ## Docs
 
 - [부품 미리보기](${BASE}/): 모든 부품을 라이트·다크로 보는 화면
-- [변경 기록](${BASE}/docs/changelog/): 버전별로 추가·바뀐 점, 업데이트할 때 주의할 점
+- [업데이트 기록](${BASE}/docs/changelog/): 버전별로 추가·바뀐 점, 업데이트할 때 주의할 점
 - [레지스트리 목록](${BASE}/r/${VERSION}/registry.json): 설치할 수 있는 항목 ${registry.items.length}개
 
 ## 부품
@@ -102,7 +102,7 @@ ${tokenRows}
 
 ${parts.map((i) => `- ${i.name} (${i.type.replace("registry:", "")}): ${describe(i)} — ${r(i.name)}`).join("\n")}
 
-## 변경 기록
+## 업데이트 기록
 
 ${changelogText}
 `

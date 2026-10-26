@@ -6,8 +6,8 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import changelog from "./changelog.json"
 
-// 변경 기록. 내용은 changelog.json 한 곳에서만 고친다 (llms-full.txt도 같은 파일을 읽는다).
-export const metadata = { title: "변경 기록 · TNV Design System" }
+// 업데이트 기록. 내용은 changelog.json 한 곳에서만 고친다 (llms-full.txt도 같은 파일을 읽는다).
+export const metadata = { title: "업데이트 기록 · TNV Design System" }
 
 export default function Changelog() {
   return (
@@ -25,7 +25,7 @@ export default function Changelog() {
       </nav>
 
       <header className="flex flex-col gap-2">
-        <h1 className="text-4xl font-bold text-foreground">변경 기록</h1>
+        <h1 className="text-4xl font-bold text-foreground">업데이트 기록</h1>
         <p className="text-base text-muted-foreground">
           설치 주소에 버전이 들어 있어서, TNV가 바뀌어도 이미 설치한 프로젝트는 자동으로 바뀌지 않아요. 버전을 올리기 전에 여기서 바뀐 점을 확인해요.
         </p>

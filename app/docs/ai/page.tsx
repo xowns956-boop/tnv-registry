@@ -89,7 +89,7 @@ export default function InstallWithAI() {
         </Button>
         <div className="flex items-center gap-2">
           <Button variant="ghost" size="sm" asChild>
-            <Link href="/docs/changelog">변경 기록</Link>
+            <Link href="/docs/changelog">업데이트 기록</Link>
           </Button>
           <Button
           variant="outline"
