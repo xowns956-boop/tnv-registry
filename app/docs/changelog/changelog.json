@@ -11,7 +11,8 @@
           "부품·화면 패턴 전체와 전체 묶음(tnv), AI 규칙 문서 docs/tnv.md",
           "대시보드 부품: Card variant=panel(반투명 큰 패널), TabsList variant=solid, Progress size(sm·md)·tone(primary·operation·production)·% 라벨, MetricRow(지표 한 줄)",
           "대시보드 차트: ChartRadial · ChartColumn · ChartTrend · ChartBrush · ChartGroupedBar · ChartLegendList, ChartBarItem 지표 색·목표선, 범례 세로 배치",
-          "차트 지표 색 fuel(연료, #46B2FF): chart-fuel 토큰, Column·BarItem tone=fuel. 연료와 성능은 같은 파랑 계열이라 한 차트에 같이 쓰지 않는 규칙을 docs/tnv.md에 추가"
+          "차트 지표 색 fuel(연료, #46B2FF): chart-fuel 토큰, Column·BarItem tone=fuel. 연료와 성능은 같은 파랑 계열이라 한 차트에 같이 쓰지 않는 규칙을 docs/tnv.md에 추가",
+          "대시보드 차트 ChartMultiLine(작은 여러 줄 꺾은선, 계열 2~4개) · ChartColumnTarget(작은 막대 + 예측 표시선)"
         ]
       },
       {

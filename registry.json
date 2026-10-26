@@ -1446,7 +1446,7 @@
       "name": "chart-dashboard",
       "type": "registry:ui",
       "title": "chart-dashboard",
-      "description": "TNV v0.1 · Figma \"- Charts\" 대시보드 차트 (6012:405 Radial · 6026:446 Column · 6028:260 ChartBrush · 6028:352 Trend · 6042:62 GroupedBar · 6012:447 Legend)",
+      "description": "TNV v0.1 · Figma \"- Charts\" 대시보드 차트 (6012:405 Radial · 6026:446 Column · ColumnTarget · 6028:260 ChartBrush · 6028:352 Trend · MultiLine · 6042:62 GroupedBar · 6012:447 Legend)",
       "dependencies": [
         "cn@0.5.0",
         "recharts@3.8.0"

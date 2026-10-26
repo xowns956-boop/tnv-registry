@@ -7,7 +7,7 @@ import { Bar, BarChart, CartesianGrid, Cell, Line, LineChart, XAxis, YAxis } fro
 import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart"
 import { chartTone, type ChartTone } from "@/components/ui/chart-presets"
 
-// TNV v0.1 · Figma "- Charts" 대시보드 차트 (6012:405 Radial · 6026:446 Column · 6028:260 ChartBrush · 6028:352 Trend · 6042:62 GroupedBar · 6012:447 Legend)
+// TNV v0.1 · Figma "- Charts" 대시보드 차트 (6012:405 Radial · 6026:446 Column · ColumnTarget · 6028:260 ChartBrush · 6028:352 Trend · MultiLine · 6042:62 GroupedBar · 6012:447 Legend)
 // 대시보드 카드 안에 들어가는 작은 차트. 눈금 글자 text-xs muted-foreground, 격자선 border.
 
 type Row = Record<string, string | number>
@@ -50,7 +50,8 @@ function MiniChartHeader({
   marker = "swatch",
 }: {
   title?: React.ReactNode
-  legend?: { label: React.ReactNode; color: string }[]
+  /** 항목별 marker를 주면 그 항목만 다른 모양(막대+선 섞인 범례) */
+  legend?: { label: React.ReactNode; color: string; marker?: "swatch" | "line" }[]
   marker?: "swatch" | "line"
 }) {
   if (!title && !legend?.length) return null
@@ -58,7 +59,7 @@ function MiniChartHeader({
     <div className="flex h-4 items-center gap-3">
       <span className="min-w-0 flex-1 truncate text-sm text-card-foreground">{title}</span>
       {legend?.map((l, i) =>
-        marker === "line" ? (
+        (l.marker ?? marker) === "line" ? (
           <span key={i} className="flex items-center gap-1 text-xs text-muted-foreground">
             <span aria-hidden className="h-0.5 w-2.5 bg-(--legend-color)" style={{ "--legend-color": l.color } as React.CSSProperties} />
             {l.label}
@@ -317,6 +318,100 @@ function ChartTrend({
   )
 }
 
+// ── MultiLine · Figma Chart/MultiLine ──
+// 대시보드 카드용 작은 여러 줄 꺾은선(300폭 · 높이 96). 계열 2~4개 = chart-1~4 차례, 선 1.5 · 점 없음.
+// 범례 = 머리 오른쪽(선 모양). ChartTrend와 달리 구간 선택(ChartBrush)이 없다
+const multiLineColors = ["var(--chart-1)", "var(--chart-2)", "var(--chart-3)", "var(--chart-4)"]
+
+function ChartMultiLine({
+  data,
+  xKey,
+  series,
+  title,
+  showLegend = true,
+  className,
+}: {
+  data: Row[]
+  xKey: string
+  /** 계열 2~4개 */
+  series: { key: string; label: string }[]
+  title?: React.ReactNode
+  showLegend?: boolean
+  className?: string
+}) {
+  const config = Object.fromEntries(series.map((s, i) => [s.key, { label: s.label, color: multiLineColors[i % multiLineColors.length] }])) satisfies ChartConfig
+  const legend = showLegend ? series.map((s, i) => ({ label: s.label, color: multiLineColors[i % multiLineColors.length] })) : undefined
+  return (
+    <div data-slot="chart-multi-line" className={cn("flex w-full flex-col gap-1", className)}>
+      <MiniChartHeader title={title} legend={legend} marker="line" />
+      <ChartContainer config={config} className={cn("aspect-auto w-full", title || legend ? "h-19" : "h-24")}>
+        <LineChart data={data} accessibilityLayer margin={{ top: 6, right: 0, bottom: 0, left: 0 }}>
+          <CartesianGrid vertical={false} stroke="var(--border)" />
+          <YAxis width={28} tickMargin={0} tickLine={false} axisLine={false} tick={axisTick} tickCount={4} />
+          <XAxis dataKey={xKey} tickLine={false} axisLine={false} tickMargin={4} height={18} tick={axisTick} />
+          <ChartTooltip content={<ChartTooltipContent indicator="line" />} />
+          {series.map((s) => (
+            <Line key={s.key} dataKey={s.key} type="monotone" stroke={`var(--color-${s.key})`} strokeWidth={1.5} dot={false} />
+          ))}
+        </LineChart>
+      </ChartContainer>
+    </div>
+  )
+}
+
+// ── ColumnTarget · Figma Chart/ColumnTarget ──
+// 대시보드 카드용 작은 막대 + 예측(목표) 표시선. 막대 = chart-1(폭 12 · 위 둥글기 4),
+// 예측 = warning 가로선(두께 2, 막대보다 양옆 2씩 넓게 — ChartBarItem 목표선과 같은 색). 범례 = 머리 오른쪽(막대 = 네모, 예측 = 선)
+function TargetTick({ x = 0, y = 0, width = 0, fill }: { x?: number; y?: number; width?: number; fill?: string }) {
+  return <rect x={x - 2} y={y - 1} width={width + 4} height={2} rx={1} fill={fill} />
+}
+
+function ChartColumnTarget({
+  data,
+  xKey,
+  valueKey,
+  targetKey,
+  valueLabel = "실시간",
+  targetLabel = "예측",
+  title,
+  className,
+}: {
+  data: Row[]
+  xKey: string
+  valueKey: string
+  targetKey: string
+  valueLabel?: string
+  targetLabel?: string
+  title?: React.ReactNode
+  className?: string
+}) {
+  const config = {
+    [valueKey]: { label: valueLabel, color: "var(--chart-1)" },
+    [targetKey]: { label: targetLabel, color: "var(--warning)" },
+  } satisfies ChartConfig
+  const legend = [
+    { label: valueLabel, color: "var(--chart-1)", marker: "swatch" as const },
+    { label: targetLabel, color: "var(--warning)", marker: "line" as const },
+  ]
+  return (
+    <div data-slot="chart-column-target" className={cn("flex w-full flex-col gap-1", className)}>
+      <MiniChartHeader title={title} legend={legend} />
+      <ChartContainer config={config} className="aspect-auto h-19 w-full">
+        <BarChart data={data} accessibilityLayer margin={{ top: 6, right: 0, bottom: 0, left: 0 }}>
+          <CartesianGrid vertical={false} stroke="var(--border)" />
+          <YAxis width={28} tickMargin={0} tickLine={false} axisLine={false} tick={axisTick} tickCount={4} />
+          <XAxis dataKey={xKey} tickLine={false} axisLine={false} tickMargin={4} height={18} tick={axisTick} />
+          {/* 예측선을 막대와 같은 자리에 겹치려고 숨긴 두 번째 x축을 쓴다 */}
+          <XAxis dataKey={xKey} xAxisId="target" hide />
+          <ChartTooltip content={<ChartTooltipContent />} />
+          <Bar dataKey={valueKey} fill={`var(--color-${valueKey})`} radius={[4, 4, 0, 0]} barSize={12} />
+          <Bar dataKey={targetKey} xAxisId="target" fill={`var(--color-${targetKey})`} barSize={12} shape={(p: unknown) => <TargetTick {...(p as React.ComponentProps<typeof TargetTick>)} />} />
+        </BarChart>
+      </ChartContainer>
+    </div>
+  )
+}
+
 // ── GroupedBar · Figma Chart/GroupedBar (6042:62) ──
 // 칸 많은 2계열 묶음 막대 — 빌렛 위치별 실제값 + 예측값. 막대 5px · 사이 2 · 위 둥글기 2, x 글자 10px.
 // 실제값 = 구간 색(zone: preheat 예열 · heating 가열 · soak 균열), 예측값 = production(AI 예측)
@@ -368,4 +463,4 @@ function ChartGroupedBar({
   )
 }
 
-export { ChartLegendList, ChartRadial, ChartColumn, ChartBrush, ChartTrend, ChartGroupedBar }
+export { ChartLegendList, ChartRadial, ChartColumn, ChartColumnTarget, ChartBrush, ChartTrend, ChartMultiLine, ChartGroupedBar }
