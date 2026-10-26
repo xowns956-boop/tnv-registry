@@ -56,7 +56,14 @@ app/layout.tsx를 이렇게 맞춰 줘.
 - 화면 전체를 ThemeProvider(@/components/theme-provider) → TooltipProvider(@/components/ui/tooltip) 순서로 감싸고, 그 안 맨 아래에 <Toaster />(@/components/ui/sonner)를 둬.
 
 ## 4. AI 규칙 저장
-프로젝트 맨 위 CLAUDE.md에 아래 블록을 추가해 줘(없으면 파일을 만들어). AGENTS.md가 있으면 거기에도 똑같이 추가해.
+어떤 AI 도구를 써도 같은 규칙을 읽도록, 아래 규칙 블록을 세 곳에 똑같이 넣어 줘(파일이 없으면 만들어).
+- 프로젝트 맨 위 CLAUDE.md (Claude Code가 읽음)
+- 프로젝트 맨 위 AGENTS.md (Codex·Cursor 등 여러 AI 도구가 같이 읽는 공용 규칙 파일)
+- .cursor/rules/tnv.mdc (Cursor가 읽음) — 이 파일만 맨 위에 아래 머리말을 먼저 붙여.
+---
+description: TNV 디자인 시스템 규칙
+alwaysApply: true
+---
 
 ${rulesBlock}
 
@@ -67,6 +74,7 @@ docs/tnv-adoption.md 파일을 만들어서 아래를 적어 줘.
 - 설치 날짜
 - 덮어쓰지 않고 남겨 둔 파일, 이미 손댄 흔적이 있던 파일
 - 3번에서 바꾼 파일
+- 4번에서 규칙을 넣은 파일 (CLAUDE.md · AGENTS.md · .cursor/rules/tnv.mdc)
 - 빌드·확인 화면 결과 (성공/실패)
 
 ## 6. 확인 화면
