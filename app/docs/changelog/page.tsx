@@ -33,7 +33,7 @@ export default function Changelog() {
 
       <ol className="flex flex-col gap-6">
         {changelog.map((release) => (
-          <li key={release.version}>
+          <li key={`${release.version}-${release.date}`}>
             <Card>
               <CardHeader>
                 <div className="flex flex-wrap items-center gap-2">

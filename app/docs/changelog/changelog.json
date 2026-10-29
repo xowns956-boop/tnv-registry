@@ -1,6 +1,25 @@
 [
   {
     "version": "0.1.0",
+    "date": "2026-10-29",
+    "summary": "설비 상태 부품과 라벨–값 한 줄 부품을 추가하고, 대시보드 차트 세로축을 고쳤어요.",
+    "groups": [
+      {
+        "title": "추가",
+        "items": [
+          "설비 상태 부품 StatusBadge(run·idle·error·maintenance·offline, size default·sm) · 상태 범례 StatusLegend · 라벨–값 한 줄 DataRow(plain·boxed, 지표 색 tone)"
+        ]
+      },
+      {
+        "title": "바뀜",
+        "items": [
+          "대시보드 차트 세로축이 숫자 길이에 맞춰 넓어지고 천 단위 쉼표가 붙어요. 꺾은선은 값 범위에 맞춰 눈금을 잡아요(막대는 0부터)."
+        ]
+      }
+    ]
+  },
+  {
+    "version": "0.1.0",
     "date": "2026-10-22",
     "summary": "Figma TNV Design System(트윈뷰 대시보드)을 처음 공개했어요.",
     "groups": [
@@ -12,8 +31,7 @@
           "대시보드 부품: Card variant=panel(반투명 큰 패널), TabsList variant=solid, Progress size(sm·md)·tone(primary·operation·production)·% 라벨, MetricRow(지표 한 줄)",
           "대시보드 차트: ChartRadial · ChartColumn · ChartTrend · ChartBrush · ChartGroupedBar · ChartLegendList, ChartBarItem 지표 색·목표선, 범례 세로 배치",
           "차트 지표 색 fuel(연료, #46B2FF): chart-fuel 토큰, Column·BarItem tone=fuel. 연료와 성능은 같은 파랑 계열이라 한 차트에 같이 쓰지 않는 규칙을 docs/tnv.md에 추가",
-          "대시보드 차트 ChartMultiLine(작은 여러 줄 꺾은선, 계열 2~4개) · ChartColumnTarget(작은 막대 + 예측 표시선)",
-          "설비 상태 부품 StatusBadge(run·idle·error·maintenance·offline, size default·sm) · 상태 범례 StatusLegend · 라벨–값 한 줄 DataRow(plain·boxed, 지표 색 tone)"
+          "대시보드 차트 ChartMultiLine(작은 여러 줄 꺾은선, 계열 2~4개) · ChartColumnTarget(작은 막대 + 예측 표시선)"
         ]
       },
       {
@@ -23,8 +41,7 @@
           "지표 색 5개(가동·생산·품질·전력·가스)를 Figma 값으로 바로잡음",
           "다크 모드 차트 기본색 chart-1~5를 라이트와 같은 색 계열로 통일(파랑 단색 → 파랑·보라·청록·주황)",
           "전력(electricity) 라이트를 노랑 계열 #B08C00으로 변경",
-          "선택 항목 글자(accent-foreground) 다크를 파랑 #4E9FFF로 변경",
-          "대시보드 차트 세로축이 숫자 길이에 맞춰 넓어지고 천 단위 쉼표가 붙어요. 꺾은선은 값 범위에 맞춰 눈금을 잡아요(막대는 0부터)."
+          "선택 항목 글자(accent-foreground) 다크를 파랑 #4E9FFF로 변경"
         ]
       },
       {
