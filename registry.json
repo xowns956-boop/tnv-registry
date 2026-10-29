@@ -1146,7 +1146,7 @@
       "name": "tnv",
       "type": "registry:block",
       "title": "TNV Design System",
-      "description": "TNV Design System v0.1.0 전체 — 토큰 + 부품 65개 + AI 규칙 문서(docs/tnv.md)",
+      "description": "TNV Design System v0.1.0 전체 — 토큰 + 부품 68개 + AI 규칙 문서(docs/tnv.md)",
       "registryDependencies": [
         "http://localhost:3400/r/0.1.0/tnv-foundations.json",
         "http://localhost:3400/r/0.1.0/accordion.json",
@@ -1166,6 +1166,7 @@
         "http://localhost:3400/r/0.1.0/checkbox.json",
         "http://localhost:3400/r/0.1.0/combobox.json",
         "http://localhost:3400/r/0.1.0/command.json",
+        "http://localhost:3400/r/0.1.0/data-row.json",
         "http://localhost:3400/r/0.1.0/data-table.json",
         "http://localhost:3400/r/0.1.0/date-picker.json",
         "http://localhost:3400/r/0.1.0/dialog-body.json",
@@ -1198,6 +1199,7 @@
         "http://localhost:3400/r/0.1.0/sonner.json",
         "http://localhost:3400/r/0.1.0/spinner.json",
         "http://localhost:3400/r/0.1.0/stat-card.json",
+        "http://localhost:3400/r/0.1.0/status-badge.json",
         "http://localhost:3400/r/0.1.0/stepper.json",
         "http://localhost:3400/r/0.1.0/switch.json",
         "http://localhost:3400/r/0.1.0/table.json",
@@ -1212,6 +1214,7 @@
         "http://localhost:3400/r/0.1.0/form-action-bar.json",
         "http://localhost:3400/r/0.1.0/page-heading.json",
         "http://localhost:3400/r/0.1.0/site-header.json",
+        "http://localhost:3400/r/0.1.0/status-legend.json",
         "http://localhost:3400/r/0.1.0/theme-provider.json",
         "http://localhost:3400/r/0.1.0/use-mobile.json"
       ],
@@ -1560,6 +1563,25 @@
       "files": [
         {
           "path": "components/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "data-row",
+      "type": "registry:ui",
+      "title": "data-row",
+      "description": "TNV v0.1 · DataRow — 라벨 · 값 한 줄. 요약 수치 카드(에너지 사용량 등)에 쌓아 쓴다. 진행 막대가 필요하면 MetricRow",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/data-row.tsx",
           "type": "registry:ui"
         }
       ]
@@ -2210,6 +2232,25 @@
       ]
     },
     {
+      "name": "status-badge",
+      "type": "registry:ui",
+      "title": "status-badge",
+      "description": "TNV v0.1 · StatusBadge — 설비·공정 상태 배지. status: run(정상 가동) · idle(대기) · error(오류) · maintenance(점검) · offline(꺼짐)",
+      "dependencies": [
+        "class-variance-authority@0.7.1",
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/status-badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
       "name": "stepper",
       "type": "registry:ui",
       "title": "stepper",
@@ -2486,10 +2527,30 @@
       ]
     },
     {
+      "name": "status-legend",
+      "type": "registry:block",
+      "title": "status-legend",
+      "description": "TNV v0.1 · StatusLegend — 설비 상태 범례(Run · Idle · Error · Maintenance · Offline). 대시보드 카드 안에 넣는다",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/status-badge.json"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/status-legend.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/status-legend.tsx"
+        }
+      ]
+    },
+    {
       "name": "theme-provider",
       "type": "registry:component",
       "title": "theme-provider",
-      "description": "TNV Design System 0.1.0",
+      "description": "TNV v0.1 · 라이트·다크 두 모드 (Figma 2_Semantic · Color: Light | Dark)",
       "dependencies": [
         "next-themes@0.4.6"
       ],

@@ -14,6 +14,12 @@ type Row = Record<string, string | number>
 
 const axisTick = { fontSize: 12, fill: "var(--muted-foreground)" }
 
+// 세로축: 폭은 눈금 글자에 맞춰 자동(네 자리 이상 숫자가 잘리지 않게), 숫자는 천 단위 쉼표
+const formatTick = (v: number | string) => (typeof v === "number" ? v.toLocaleString("ko-KR") : v)
+const yAxisProps = { width: "auto", tickMargin: 4, tickLine: false, axisLine: false, tick: axisTick, tickFormatter: formatTick } as const
+// 꺾은선은 값이 있는 범위에 맞춰 눈금을 잡는다(546~561처럼 좁은 범위도 변화가 보이게). 막대는 0부터
+const lineDomain: [string, string] = ["auto", "auto"]
+
 // 가운데 정렬 범례(차트 밖에서 쓸 때) · Figma ChartLegendContent (6012:447): 색 표시 8px(둥글기 2) + 이름
 function ChartLegendList({
   items,
@@ -170,7 +176,7 @@ function ChartColumn({
       <ChartContainer config={config} className={cn("aspect-auto w-full", title || legend ? "h-19" : "h-24")}>
         <BarChart data={data} accessibilityLayer margin={{ top: 6, right: 0, bottom: 0, left: 0 }} barGap={2}>
           <CartesianGrid vertical={false} stroke="var(--border)" />
-          <YAxis width={28} tickMargin={0} tickLine={false} axisLine={false} tick={axisTick} tickCount={4} />
+          <YAxis {...yAxisProps} tickCount={4} />
           <XAxis dataKey={xKey} tickLine={false} axisLine={false} tickMargin={4} height={18} tick={axisTick} />
           <ChartTooltip content={<ChartTooltipContent />} />
           {series.map((s) => (
@@ -305,7 +311,7 @@ function ChartTrend({
       <ChartContainer config={config} className="aspect-auto h-24 w-full">
         <LineChart data={shown} accessibilityLayer margin={{ top: 6, right: 0, bottom: 0, left: 0 }}>
           <CartesianGrid vertical={false} stroke="var(--border)" />
-          <YAxis width={28} tickMargin={0} tickLine={false} axisLine={false} tick={axisTick} tickCount={4} />
+          <YAxis {...yAxisProps} domain={lineDomain} tickCount={4} />
           <XAxis dataKey={xKey} tickLine={false} axisLine={false} tickMargin={4} height={18} tick={axisTick} />
           <ChartTooltip content={<ChartTooltipContent />} />
           {series.map((s) => (
@@ -347,7 +353,7 @@ function ChartMultiLine({
       <ChartContainer config={config} className={cn("aspect-auto w-full", title || legend ? "h-19" : "h-24")}>
         <LineChart data={data} accessibilityLayer margin={{ top: 6, right: 0, bottom: 0, left: 0 }}>
           <CartesianGrid vertical={false} stroke="var(--border)" />
-          <YAxis width={28} tickMargin={0} tickLine={false} axisLine={false} tick={axisTick} tickCount={4} />
+          <YAxis {...yAxisProps} domain={lineDomain} tickCount={4} />
           <XAxis dataKey={xKey} tickLine={false} axisLine={false} tickMargin={4} height={18} tick={axisTick} />
           <ChartTooltip content={<ChartTooltipContent indicator="line" />} />
           {series.map((s) => (
@@ -399,7 +405,7 @@ function ChartColumnTarget({
       <ChartContainer config={config} className="aspect-auto h-19 w-full">
         <BarChart data={data} accessibilityLayer margin={{ top: 6, right: 0, bottom: 0, left: 0 }}>
           <CartesianGrid vertical={false} stroke="var(--border)" />
-          <YAxis width={28} tickMargin={0} tickLine={false} axisLine={false} tick={axisTick} tickCount={4} />
+          <YAxis {...yAxisProps} tickCount={4} />
           <XAxis dataKey={xKey} tickLine={false} axisLine={false} tickMargin={4} height={18} tick={axisTick} />
           {/* 예측선을 막대와 같은 자리에 겹치려고 숨긴 두 번째 x축을 쓴다 */}
           <XAxis dataKey={xKey} xAxisId="target" hide />
@@ -449,7 +455,7 @@ function ChartGroupedBar({
     <ChartContainer config={config} className={cn("aspect-auto h-33 w-full", className)}>
       <BarChart data={data} accessibilityLayer margin={{ top: 6, right: 0, bottom: 0, left: 0 }} barGap={2} barCategoryGap={2}>
         <CartesianGrid vertical={false} stroke="var(--border)" />
-        <YAxis width={28} tickMargin={0} tickLine={false} axisLine={false} tick={axisTick} tickCount={5} />
+        <YAxis {...yAxisProps} tickCount={5} />
         <XAxis dataKey={xKey} tickLine={false} axisLine={false} tickMargin={4} height={18} interval={0} tick={{ ...axisTick, fontSize: 10 }} />
         <ChartTooltip content={<ChartTooltipContent />} />
         <Bar dataKey={actualKey} radius={[2, 2, 0, 0]} maxBarSize={5}>

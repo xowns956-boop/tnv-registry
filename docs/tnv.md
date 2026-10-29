@@ -25,14 +25,31 @@
 
 UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 **디자이너의 일**이다. AI는 TNV에 있는 것만 조립한다. Figma 시안이나 요청에 TNV에 없는 요소가 있으면 아래 순서를 그대로 따른다.
 
+**원칙: 이미지 요소는 TNV 부품으로 표현할 수 있으면 최대한 표현한다. 모양·색이 달라도 같은 역할이면 TNV 부품으로 바꾼다.**
+
+**역할별 대응표** (자주 놓치는 것 — "없음"으로 빼기 전에 반드시 본다)
+
+| 이미지 속 역할 | TNV 부품 |
+|---|---|
+| 설비·공정 상태 표시(Run 등) | `StatusBadge` |
+| 상태 범례(Run·Idle·Error·Maintenance·Offline) | `StatusLegend` |
+| 판정 표시(양호·유의·불량) | `StatusBadge size="sm"` (status run·idle·error + 문구) |
+| 라벨–값 한 줄 / 라벨·값 상자(이동평균·실시간 등) | `DataRow` variant plain / boxed |
+| 3줄 이상 꺾은선 + 구간 선택 | `ChartMultiLine` + 아래에 `ChartBrush` |
+
 1. **찾기**: 요소마다 3장 부품 표와 레지스트리 목록에서 찾는다. 이름이 달라도 역할이 같은 부품(예: Chip·Tag·Badge)이 있는지 한 번 더 찾는다. 있으면 그걸 쓴다.
-2. **"없음"으로 빼기 전에 바꿔 쓸 수 있는 부품부터 찾는다.** 부품 파일 안의 하위 부품까지 확인한다(예: `avatar.tsx`의 `AvatarGroup`, `badge.tsx`의 `Badge` default).
+2. **"없음"으로 확정하기 전에 한 번 더 찾는다(2차 확인).** 한 번 찾고 바로 "없음"으로 정하지 않는다. "없음" 후보마다 아래 순서로 다시 찾고, **찾아본 부품 이름을 보고에 같이 적는다.**
+   1. 3장 부품 표
+   2. 부품 파일 안 하위 부품 (예: `avatar.tsx`의 `AvatarGroup`, `badge.tsx`의 `Badge` default)
+   3. TNV 부품끼리 잇기 — 부품을 고치지 않고 그대로 이어 쓴다 (예: `ChartMultiLine` 아래에 `ChartBrush`를 두고 고른 구간만큼 data를 잘라 넘김)
+   4. 위 역할별 대응표
+   - 그래도 없을 때만 "디자인 필요" 칸으로 둔다(아래 4번).
    - 같은 역할을 하는 부품이 있으면 그 부품을 쓴다. 기준은 **TNV 부품의 모양**이다.
    - 받은 이미지와 모양·색이 달라도(예: 원 vs 둥근 사각, 초록 체크 vs 파랑 체크) 차이로 보고하지 않고, 없는 UI로도 보지 않는다.
-   - 그 역할을 하는 부품이나 옵션 자체가 없을 때만 "디자인 필요" 칸으로 둔다(아래 4번).
+   - 그 역할을 하는 부품이나 옵션 자체가 없을 때만 "디자인 필요" 칸으로 둔다.
 3. **없으면 무조건 "TNV에 없음"으로 알린다.** 아래는 하지 않는다.
    - 새 부품·차트·패턴을 지어내거나 비슷한 모양을 직접 그리기
-   - 기존 TNV 부품을 조합하거나 클래스를 덮어써서 비슷하게 흉내 내기
+   - 기존 TNV 부품을 조합하거나 클래스를 덮어써서 없는 부품의 모양을 비슷하게 흉내 내기 (부품을 고치지 않고 그대로 이어 쓰는 2-3은 괜찮다)
    - "제 방식대로 만들까요?", "비슷하게 만들어 볼까요?" 같은 **선택지를 내미는 질문** (만드는 쪽을 고를 수 있게 하지 않는다)
    - shadcn 기본 부품·외부 라이브러리·다른 디자인 시스템으로 대신하기
 4. **화면에는 "디자인 필요" 칸을 반드시 표시한다. 빼먹거나 숨기지 않고, 아무 글자 없는 빈 칸으로 두지도 않는다.** 화면을 보는 사람(개발자·기획자)이 무엇이 없는지, 누구에게 요청할지 바로 알아야 한다. 나머지 화면은 TNV 부품으로 계속 만든다.
@@ -48,7 +65,8 @@ UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 
 ❌ TNV에 없음 — 디자이너에게 요청해야 함
 - 요소: 실시간 부하 막대 + AI 예측선
 - 위치: 압연공정 › 오른쪽 패널 › 조열·중간열·사상열 카드
-- 가장 가까운 TNV 부품: Chart/Column (막대만, 예측선 없음) — 참고용, 대신 쓰지 않음
+- 찾아본 TNV 부품: 3장 Charts 표 · ChartColumn · ChartColumnTarget · ChartBarItem · 역할별 대응표
+- 가장 가까운 TNV 부품: ChartColumnTarget (막대 + 예측 표시선, 실시간 부하 막대 모양 다름) — 참고용, 대신 쓰지 않음
 - 화면 처리: "디자인 필요" 칸으로 둠
 
 👉 위 항목은 TNV에 없어서 만들 수 없어요. 디자이너에게 요청해 주세요.
@@ -113,7 +131,7 @@ Figma 변수 이름에서 `/`를 `-`로 바꾼 이름이다. 의미 색은 그�
 | Inputs | `ui/input`, `ui/textarea`, `ui/input-group`, `ui/number-input`, `ui/number-stepper` | 오류는 `aria-invalid`. NumberStepper(− 값 +) `value`·`onValueChange`·`min`·`max`·`step` — 태블릿 숫자 입력 |
 | Dropdowns | `ui/select`, `ui/dropdown-menu`, `ui/autocomplete`, `ui/multi-select` | Select `size`: default·sm, DropdownMenuItem `variant`: default·destructive |
 | Checkboxes · Radios · Switches · Labels | `ui/checkbox`, `ui/radio-group`, `ui/switch`, `ui/label` | Label `required` (빨간 점) |
-| Badges · Avatars · Tooltips · Separators · Skeletons | `ui/badge`, `ui/avatar`, `ui/tooltip`, `ui/separator`, `ui/skeleton` | Badge `variant`: default·secondary·destructive·outline |
+| Badges · Avatars · Tooltips · Separators · Skeletons | `ui/badge`, `ui/status-badge`, `ui/avatar`, `ui/tooltip`, `ui/separator`, `ui/skeleton` | Badge `variant`: default·secondary·destructive·outline. StatusBadge(설비·공정 상태) `status`: run·idle·error·maintenance·offline / `size`: default(20)·sm(16, 표 칸·판정 표시) / 문구는 children(없으면 상태 이름, 예: 양호·유의·불량) |
 | Cards | `ui/card`, `ui/stat-card` (`StatCard`, `SectionCards`) | Card `variant`: default(흰 카드, 여백 16)·panel(대시보드 좌우 반투명 큰 패널, 제목 24) / `size`: default(16)·sm(12). StatCard `label`·`value`·`badge`·`summary`·`detail`·`trend`(up·down)·`tone`(default·emphasis=진한 바탕) |
 | Tabs | `ui/tabs` | TabsList `variant`: default·line·solid(대시보드 상단 전환 — 탭마다 따로 선 버튼, 선택 = primary) |
 | Popovers · Dialogs · Sheets | `ui/popover`, `ui/dialog`, `ui/alert-dialog`, `ui/sheet`, `ui/dialog-body` | Sheet `side`: right·left·top·bottom. 팝업 내용: `DialogBodyTable`(columns·rows)·`DialogBodyInfo`(items)·`DialogBodyLotInput`·`DialogBodyTextarea`·`DialogBodyOptionList`(options)·`DialogBodyOptionButtons`(options·onSelect) |
@@ -125,12 +143,13 @@ Figma 변수 이름에서 `/`를 `-`로 바꾼 이름이다. 의미 색은 그�
 | Sidebar | `ui/sidebar`, `ui/sidebar-brand`, `ui/nav-user` | collapsible="icon"으로 접힘(폭 56, 펼침 256), NavUser `layout`: full·avatar. 조립 규칙은 4장 |
 | Tables | `ui/table`, `ui/data-table` | DataTable `columns`(sortValue·muted)·`selectable`·`searchText`·`actions` |
 | Forms | `ui/field` (`Field`, `FieldLabel`, `FieldDescription`, `FieldError`) | 오류는 `Field data-invalid` + 컨트롤 `aria-invalid` |
-| Charts | `ui/chart`, `ui/chart-presets`, `ui/chart-dashboard` | 기본: `ChartBar`·`ChartLine`·`ChartPie`·`ChartBarGradient`·`ChartBarItem`(`tone`·`target`)·`ChartBarLabeled`·`ChartCombo`. 대시보드: `ChartRadial`(`values` 1개=작은 링·3개=큰 링, `tone` default·metric, `caption`·`valueText`)·`ChartColumn`(카드용 작은 막대, `series` 1~2·`tone`)·`ChartTrend`(작은 꺾은선 + `ChartBrush` 구간 선택, `tone` default·metric)·`ChartMultiLine`(작은 여러 줄 꺾은선, 계열 2~4개 = chart-1~4, 구간 선택 없음)·`ChartColumnTarget`(작은 막대 + 예측 표시선, 막대 chart-1 · 예측선 warning, `valueKey`·`targetKey`·`valueLabel`·`targetLabel`)·`ChartGroupedBar`(빌렛 위치별 실제값=구간 색 + AI 예측=production)·`ChartLegendList`(`orientation` horizontal·vertical). `ChartLegendContent`도 `orientation` 지원. 막대 tone: default·operation·performance·quality·production·electricity·gas·fuel(연료, #46B2FF) |
+| Charts | `ui/chart`, `ui/chart-presets`, `ui/chart-dashboard` | 기본: `ChartBar`·`ChartLine`·`ChartPie`·`ChartBarGradient`·`ChartBarItem`(`tone`·`target`)·`ChartBarLabeled`·`ChartCombo`. 대시보드: `ChartRadial`(`values` 1개=작은 링·3개=큰 링, `tone` default·metric, `caption`·`valueText`)·`ChartColumn`(카드용 작은 막대, `series` 1~2·`tone`)·`ChartTrend`(작은 꺾은선 + `ChartBrush` 구간 선택, `tone` default·metric)·`ChartMultiLine`(작은 여러 줄 꺾은선, 계열 2~4개 = chart-1~4, 구간 선택이 필요하면 아래에 `ChartBrush`(`count`·`value`·`onValueChange`)를 이어 붙이고 고른 구간만큼 data를 잘라 넘김)·`ChartColumnTarget`(작은 막대 + 예측 표시선, 막대 chart-1 · 예측선 warning, `valueKey`·`targetKey`·`valueLabel`·`targetLabel`)·`ChartGroupedBar`(빌렛 위치별 실제값=구간 색 + AI 예측=production)·`ChartLegendList`(`orientation` horizontal·vertical). `ChartLegendContent`도 `orientation` 지원. 막대 tone: default·operation·performance·quality·production·electricity·gas·fuel(연료, #46B2FF). 대시보드 차트 세로축은 눈금 글자 폭에 맞춰 자동으로 넓어지고 천 단위 쉼표가 붙는다. 꺾은선(Trend·MultiLine)은 값이 있는 범위에 맞춰 눈금을 잡고(좁은 범위도 변화가 보임), 막대는 0부터 |
+| Items | `ui/data-row` | DataRow(라벨 · 값 한 줄) `label`·`value` / `variant`: plain(한 줄, 높이 24)·boxed(테두리 작은 칸, text-xs — 이동평균·실시간·온도 같은 2열 요약 칸) / `tone`(값 글자색): default·operation·performance·quality·production·electricity·gas. 진행 막대가 필요하면 MetricRow |
 | Progress | `ui/progress`, `ui/metric-row` | Progress `size`: sm(8)·md(14) / `tone`: primary·operation(가동률)·production(생산량) / `showLabel`(md에서 막대 안 %). MetricRow `label`·`value`·`target`(md)·`percent`·`size`·`tone` — 지표 한 줄(sm = 라벨·값 한 줄, md = 라벨 위 + 값·목표 + % 막대) |
 | Toggles · Spinners · Kbd | `ui/toggle`, `ui/toggle-group`, `ui/spinner`, `ui/kbd` | Toggle `variant`: default·outline·solid·pill, `size`: default·sm |
 | Tree · Chips · Page Tabs | `ui/tree`, `ui/filter-chip`, `ui/page-tabs` | Tree `nodes`·`selectedId`, PageTab `active`·`onClose` |
 | Layout | `ui/accordion`, `ui/toolbar` | |
-| 03_Patterns | `blocks/site-header`, `blocks/page-heading`, `blocks/filter-bar`, `blocks/form-action-bar`, `ui/form-table` | Figma의 Show 옵션 = props 유무. 정보·조건 표 = `FormTable` > `FormTableRow` > `FormTableField`(`label`, `type`: text·control), 한 줄에 칸 1~2개 |
+| 03_Patterns | `blocks/site-header`, `blocks/page-heading`, `blocks/filter-bar`, `blocks/form-action-bar`, `blocks/status-legend`, `ui/form-table` | Figma의 Show 옵션 = props 유무. StatusLegend = 설비 상태 범례(StatusBadge 5개, Run·Idle·Error·Maintenance·Offline). 정보·조건 표 = `FormTable` > `FormTableRow` > `FormTableField`(`label`, `type`: text·control), 한 줄에 칸 1~2개 |
 
 `button`의 `xs`·`icon-sm`, `badge`의 `ghost`·`link`, `avatar`의 `size`는 shadcn 호환용이며 Figma에 없다. 새 화면에서는 쓰지 않는다.
 
@@ -183,9 +202,9 @@ div (h-dvh, bg-page-background) — 1440보다 좁으면 이 틀 안에서만 �
 - **스크롤바**: 좌우 패널 안 스크롤은 화살표·바탕 없이 가는 둥근 막대(폭 6, 좌우 여백 2)만 보이고, **스크롤하는 동안에만** 나타났다가 멈추고 0.8초 뒤 사라진다. 막대 색 = `muted-foreground` 50%. **TNV 부품에는 아직 없다 → 디자이너에게 넘김.** 가열·압연 테스트 화면은 디자이너가 정한 이 모양대로 임시 구현(`.panel-scroll` + 스크롤 중 `data-scrolling`)해 둔 상태다. 새 화면에서 같은 모양을 새로 지어내지 않는다.
 
 #### 상태 표시 (Run · Idle · Error · Maintenance · Offline)
-- 색: Run = `success` · Idle = `warning` · Error = `destructive` · Maintenance = `ees-maintenance` · Offline = `neutral`.
-- 배지·범례 = `Badge` + `-subtle` 바탕 · `-subtle-foreground` 글자. 카드 제목 앞 색 막대 = `-text` 색, 막대에 `aria-label`("상태: Run").
-- **StatusLegend(상태 범례)·제목 앞 상태 막대는 TNV 부품에 아직 없다 → 디자이너에게 넘김.** 가열·압연 테스트 화면은 위 색으로 임시 조합해 둔 상태다. 새 화면에서는 "TNV에 없는 것이 필요할 때" 순서대로 "디자인 필요" 칸으로 두고, 디자이너에게 요청하라고 안내한다.
+- 상태 배지 = `StatusBadge`(`status` run·idle·error·maintenance·offline), 상태 범례 = `StatusLegend`, 표 칸·판정 표시(양호·유의·불량) = `StatusBadge size="sm"` + 문구. `Badge`에 색 클래스를 덧입혀 따로 만들지 않는다.
+- 색(부품에 들어 있음): Run = `success` · Idle = `warning` · Error = `destructive` · Maintenance = `ees-maintenance` · Offline = `dark`, 모두 `-subtle` 바탕 · `-subtle-foreground` 글자.
+- **카드 제목 앞 상태 막대는 TNV 부품에 아직 없다 → 디자이너에게 넘김.** 새 화면에서는 "TNV에 없는 것이 필요할 때" 순서대로 "디자인 필요" 칸으로 두고, 디자이너에게 요청하라고 안내한다.
 
 #### 지표 색
 - 가동률 = `tone="operation"`, 생산량 = `tone="production"`, 그 밖 진행률 = `primary`. 차트 계열 색도 `chart-operation`·`chart-production`·`chart-electricity` 등 지표 색을 쓴다.

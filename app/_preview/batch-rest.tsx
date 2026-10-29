@@ -64,6 +64,7 @@ import { Stepper, StepperItem, StepperSeparator } from "@/components/ui/stepper"
 import { Toggle } from "@/components/ui/toggle"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { Toolbar, ToolbarSeparator } from "@/components/ui/toolbar"
+import { StatusLegend } from "@/components/blocks/status-legend"
 import { Tree } from "@/components/ui/tree"
 
 import { Row, Section } from "./section"
@@ -336,6 +337,9 @@ export function BatchRest() {
           <Button variant="outline">취소</Button>
           <Button>저장</Button>
         </FormActionBar>
+        <Row label="StatusLegend (설비 상태 범례)">
+          <StatusLegend />
+        </Row>
       </Section>
     </>
   )

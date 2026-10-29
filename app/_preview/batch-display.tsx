@@ -29,6 +29,7 @@ import {
 } from "@/components/ui/dialog"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { Separator } from "@/components/ui/separator"
+import { StatusBadge } from "@/components/ui/status-badge"
 import {
   Sheet,
   SheetContent,
@@ -54,12 +55,26 @@ const Slot = () => (
 export function BatchDisplay() {
   return (
     <>
-      <Section id="badge" title="Badge · Avatar · Tooltip · Separator · Skeleton" figma="- Badges · Avatars · Tooltips · Separators · Skeletons">
+      <Section id="badge" title="Badge · StatusBadge · Avatar · Tooltip · Separator · Skeleton" figma="- Badges · Avatars · Tooltips · Separators · Skeletons">
         <Row label="Badge">
           <Badge>배지</Badge>
           <Badge variant="secondary">배지</Badge>
           <Badge variant="destructive">배지</Badge>
           <Badge variant="outline">배지</Badge>
+        </Row>
+        <Row label="StatusBadge · size=default">
+          <StatusBadge status="run" />
+          <StatusBadge status="idle" />
+          <StatusBadge status="error" />
+          <StatusBadge status="maintenance" />
+          <StatusBadge status="offline" />
+        </Row>
+        <Row label="StatusBadge · size=sm (판정 표시)">
+          <StatusBadge size="sm" status="run">양호</StatusBadge>
+          <StatusBadge size="sm" status="idle">유의</StatusBadge>
+          <StatusBadge size="sm" status="error">불량</StatusBadge>
+          <StatusBadge size="sm" status="maintenance" />
+          <StatusBadge size="sm" status="offline" />
         </Row>
         <Row label="Avatar">
           <Avatar><AvatarFallback>관</AvatarFallback></Avatar>

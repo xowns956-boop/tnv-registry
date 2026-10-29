@@ -17,7 +17,7 @@ export const PREVIEW_GROUPS: { label: string; items: PreviewSection[] }[] = [
   {
     label: "표시",
     items: [
-      { id: "badge", label: "배지·아바타", title: "Badge · Avatar · Tooltip · Separator · Skeleton", keywords: "배지 아바타 툴팁 구분선 스켈레톤" },
+      { id: "badge", label: "배지·아바타", title: "Badge · StatusBadge · Avatar · Tooltip · Separator · Skeleton", keywords: "배지 상태배지 상태 판정 아바타 툴팁 구분선 스켈레톤" },
       { id: "card", label: "카드", title: "Card · StatCard · SectionCards", keywords: "카드 통계" },
       { id: "tabs", label: "탭", title: "Tabs", keywords: "탭" },
       { id: "overlay", label: "팝업", title: "Popover · Dialog · AlertDialog · Sheet", keywords: "팝오버 팝업 다이얼로그 모달 시트" },
@@ -35,7 +35,7 @@ export const PREVIEW_GROUPS: { label: string; items: PreviewSection[] }[] = [
       { id: "chart", label: "차트", title: "Charts", keywords: "차트 그래프" },
       { id: "toggle", label: "진행·토글", title: "Progress · Toggle · Spinner · Kbd", keywords: "진행 토글 로딩 키" },
       { id: "tree", label: "트리·화면 탭", title: "Tree · FilterChip · PageTabs · Toolbar · Accordion", keywords: "트리 칩 화면탭 툴바 아코디언" },
-      { id: "patterns", label: "화면 패턴", title: "Patterns", keywords: "패턴 헤더 필터바 페이지제목 SiteHeader FilterBar PageHeading FormActionBar" },
+      { id: "patterns", label: "화면 패턴", title: "Patterns", keywords: "패턴 헤더 필터바 페이지제목 상태범례 SiteHeader FilterBar PageHeading FormActionBar StatusLegend" },
     ],
   },
   {
@@ -44,7 +44,7 @@ export const PREVIEW_GROUPS: { label: string; items: PreviewSection[] }[] = [
       { id: "tnv-chart", label: "대시보드 차트", title: "대시보드 차트", keywords: "차트 링 원형 막대 추이 묶음 브러시 radial column trend grouped" },
       { id: "tnv-tabs", label: "버튼형 탭", title: "Tabs · variant=solid", keywords: "탭 solid 대시보드" },
       { id: "tnv-progress", label: "진행 막대", title: "Progress · size · tone", keywords: "진행 막대 가동률 생산량" },
-      { id: "tnv-metric", label: "지표 한 줄", title: "MetricRow", keywords: "지표 메트릭 가동률 생산량" },
+      { id: "tnv-metric", label: "지표 한 줄", title: "MetricRow · DataRow", keywords: "지표 메트릭 가동률 생산량 라벨 값 이동평균 실시간" },
       { id: "tnv-panel", label: "패널", title: "Card · variant=panel", keywords: "패널 카드 대시보드" },
     ],
   },

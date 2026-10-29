@@ -28,7 +28,7 @@ const items = sources.map(({ path, kind }) => {
   const pkgs = [...new Set(imports.filter((i) => !i.startsWith(".") && !i.startsWith("@/")).map((i) => (i.startsWith("@") ? i.split("/").slice(0, 2).join("/") : i.split("/")[0])))]
     .filter((p) => !NOT_DEPS.has(p))
   const local = [...new Set(imports.filter((i) => i.startsWith("@/components/") || i.startsWith("@/hooks/")).map(nameOf))]
-  const figma = (src.match(/\/\/ (TNV v0\.1 · Figma[^\n]*)/) || [])[1]
+  const figma = (src.match(/\/\/ (TNV v0\.1 · [^\n]*)/) || [])[1]
   const name = nameOf(path)
   return {
     name,
