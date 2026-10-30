@@ -1146,7 +1146,7 @@
       "name": "tnv",
       "type": "registry:block",
       "title": "TNV Design System",
-      "description": "TNV Design System v0.1.0 전체 — 토큰 + 부품 68개 + AI 규칙 문서(docs/tnv.md)",
+      "description": "TNV Design System v0.1.0 전체 — 토큰 + 부품 69개 + AI 규칙 문서(docs/tnv.md)",
       "registryDependencies": [
         "http://localhost:3400/r/0.1.0/tnv-foundations.json",
         "http://localhost:3400/r/0.1.0/accordion.json",
@@ -1190,6 +1190,7 @@
         "http://localhost:3400/r/0.1.0/popover.json",
         "http://localhost:3400/r/0.1.0/progress.json",
         "http://localhost:3400/r/0.1.0/radio-group.json",
+        "http://localhost:3400/r/0.1.0/resizable.json",
         "http://localhost:3400/r/0.1.0/select.json",
         "http://localhost:3400/r/0.1.0/separator.json",
         "http://localhost:3400/r/0.1.0/sheet.json",
@@ -2042,6 +2043,26 @@
       "files": [
         {
           "path": "components/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "title": "resizable",
+      "description": "TNV v0.1 · Resizable — 칸 나누기(스플리터). 경계선을 끌어 두 칸의 크기를 바꾼다",
+      "dependencies": [
+        "lucide-react@1.59.0",
+        "react-resizable-panels@4.15.2",
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/resizable.tsx",
           "type": "registry:ui"
         }
       ]

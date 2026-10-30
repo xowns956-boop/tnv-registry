@@ -42,6 +42,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination"
 import { Progress } from "@/components/ui/progress"
+import { ResizableHandle, ResizablePanel, ResizablePanelGroup } from "@/components/ui/resizable"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import {
   Sidebar,
@@ -322,6 +323,48 @@ export function BatchRest() {
             <AccordionContent><div className="flex h-20 items-center justify-center rounded-md border border-border bg-alpha-muted-50 text-xs text-muted-foreground">내용 자리</div></AccordionContent>
           </AccordionItem>
         </Accordion>
+      </Section>
+
+      <Section id="resizable" title="Resizable" figma="- Layout › Resizable">
+        <Row label="좌우로 나눔 · 손잡이 있음 (경계를 끌어서 크기 조절)">
+          <div className="h-40 w-full max-w-xl rounded-sm border border-border">
+            <ResizablePanelGroup orientation="horizontal">
+            <ResizablePanel defaultSize="40%" minSize="20%">
+              <div className="flex h-full items-center justify-center p-4 text-sm">설비 목록</div>
+            </ResizablePanel>
+            <ResizableHandle withHandle />
+            <ResizablePanel defaultSize="60%" minSize="20%">
+              <div className="flex h-full items-center justify-center p-4 text-sm">상세 정보</div>
+            </ResizablePanel>
+          </ResizablePanelGroup>
+          </div>
+        </Row>
+        <Row label="위아래로 나눔 · 손잡이 없음">
+          <div className="h-56 w-full max-w-xl rounded-sm border border-border">
+            <ResizablePanelGroup orientation="vertical">
+            <ResizablePanel defaultSize="50%" minSize="20%">
+              <div className="flex h-full items-center justify-center p-4 text-sm">추이 차트</div>
+            </ResizablePanel>
+            <ResizableHandle />
+            <ResizablePanel defaultSize="50%" minSize="20%">
+              <div className="flex h-full items-center justify-center p-4 text-sm">이력 표</div>
+            </ResizablePanel>
+          </ResizablePanelGroup>
+          </div>
+        </Row>
+        <Row label="위아래로 나눔 · 손잡이 있음">
+          <div className="h-56 w-full max-w-xl rounded-sm border border-border">
+            <ResizablePanelGroup orientation="vertical">
+            <ResizablePanel defaultSize="50%" minSize="20%">
+              <div className="flex h-full items-center justify-center p-4 text-sm">위 칸</div>
+            </ResizablePanel>
+            <ResizableHandle withHandle />
+            <ResizablePanel defaultSize="50%" minSize="20%">
+              <div className="flex h-full items-center justify-center p-4 text-sm">아래 칸</div>
+            </ResizablePanel>
+          </ResizablePanelGroup>
+          </div>
+        </Row>
       </Section>
 
       <Section id="patterns" title="Patterns" figma="03_Patterns (37:74 · 38:34 · 80:153)">

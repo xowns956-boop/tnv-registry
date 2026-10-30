@@ -35,6 +35,7 @@ export const PREVIEW_GROUPS: { label: string; items: PreviewSection[] }[] = [
       { id: "chart", label: "차트", title: "Charts", keywords: "차트 그래프" },
       { id: "toggle", label: "진행·토글", title: "Progress · Toggle · Spinner · Kbd", keywords: "진행 토글 로딩 키" },
       { id: "tree", label: "트리·화면 탭", title: "Tree · FilterChip · PageTabs · Toolbar · Accordion", keywords: "트리 칩 화면탭 툴바 아코디언" },
+      { id: "resizable", label: "칸 나누기", title: "Resizable", keywords: "스플리터 splitter 칸 나누기 크기 조절 분할 패널" },
       { id: "patterns", label: "화면 패턴", title: "Patterns", keywords: "패턴 헤더 필터바 페이지제목 상태범례 SiteHeader FilterBar PageHeading FormActionBar StatusLegend" },
     ],
   },
