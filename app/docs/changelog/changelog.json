@@ -7,7 +7,7 @@
       {
         "title": "추가",
         "items": [
-          "칸 나누기(스플리터) 부품 Resizable: ResizablePanelGroup(orientation horizontal·vertical) · ResizablePanel · ResizableHandle(withHandle 손잡이 표시). 높이가 정해진 상자 안에 넣어 써요."
+          "Resizable(스플리터): 막대를 끌어 좌우·위아래 칸 크기 조절이 가능해요."
         ]
       }
     ]
