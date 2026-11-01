@@ -29,7 +29,7 @@ const tones = ["default", "operation", "performance", "quality", "production", "
 export function BatchTnv() {
   return (
     <>
-      <Section id="tnv-chart" title="대시보드 차트" figma="- Charts › Chart (6012:405 · 6026:446 · 6028:352 · 6042:62)">
+      <Section id="tnv-chart" title="대시보드 차트">
         <Row label="Chart/Radial · tone=default·metric · rings=3·1">
           <ChartRadial values={[75, 90, 65]} caption="Total" valueText="63%" aria-label="종합 63%" />
           <ChartRadial values={[75, 90, 65]} tone="metric" caption="Total" valueText="63%" aria-label="종합 63%" />
@@ -59,7 +59,7 @@ export function BatchTnv() {
         <ChartGroupedBar data={billets} xKey="pos" actualKey="actual" predictKey="ai" />
       </Section>
 
-      <Section id="tnv-tabs" title="Tabs · variant=solid" figma="- Tabs › TabsList (51:139) · TabsTrigger (24:15) variant=solid">
+      <Section id="tnv-tabs" title="Tabs · variant=solid">
         <Tabs defaultValue="group">
           <TabsList variant="solid">
             <TabsTrigger value="group" className="w-40">공장 그룹</TabsTrigger>
@@ -69,7 +69,7 @@ export function BatchTnv() {
         </Tabs>
       </Section>
 
-      <Section id="tnv-progress" title="Progress · size · tone" figma="- Progress › Progress (48:41)">
+      <Section id="tnv-progress" title="Progress · size · tone">
         <Row label="size=sm">
           <Progress value={60} className="max-w-80" aria-label="진행률" />
           <Progress value={75} tone="operation" className="max-w-80" aria-label="가동률" />
@@ -82,7 +82,7 @@ export function BatchTnv() {
         </Row>
       </Section>
 
-      <Section id="tnv-metric" title="MetricRow · DataRow" figma="- Progress › MetricRow (6003:7046) · - Items › DataRow (6013:171)">
+      <Section id="tnv-metric" title="MetricRow · DataRow">
         <Row label="size=sm">
           <MetricRow className="w-80" label="가동률" value="82%" percent={82} tone="operation" />
           <MetricRow className="w-80" label="생산량" value="64%" percent={64} tone="production" />
@@ -108,7 +108,7 @@ export function BatchTnv() {
         </Row>
       </Section>
 
-      <Section id="tnv-panel" title="Card · variant=panel" figma="- Cards › Card (6003:7020) variant=panel">
+      <Section id="tnv-panel" title="Card · variant=panel">
         <div className="rounded-xl bg-page-background p-6">
           <Card variant="panel" className="w-96">
             <CardHeader>

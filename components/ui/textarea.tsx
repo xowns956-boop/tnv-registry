@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cn } from "cn"
 
-// TNV v0.1 · Figma "- Inputs › Textarea" (10:93)
+// TNV v0.1 · Textarea
 function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
   return (
     <textarea

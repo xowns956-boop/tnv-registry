@@ -3,10 +3,10 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
 import { Slot } from "radix-ui"
 
-// TNV v0.1 · Figma "- Buttons › Button" (9:458)
+// TNV v0.1 · Button
 // variant: default·destructive·outline·secondary·ghost·link / size: default·sm·lg·icon
 // state=pressed(누르는 동안) = :active
-// xs·icon-sm은 Figma에 없는 크기 — 다른 부품(입력 그룹·대화상자 닫기 등) 안에서만 쓴다.
+// xs·icon-sm은 디자인 파일에 없는 크기 — 다른 부품(입력 그룹·대화상자 닫기 등) 안에서만 쓴다.
 const buttonVariants = cva(
   "group/button inline-flex shrink-0 items-center justify-center gap-2 rounded-md border border-transparent bg-clip-padding text-sm font-medium whitespace-nowrap transition-colors outline-none select-none focus-visible:ring-3 focus-visible:ring-alpha-ring-50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-3 aria-invalid:ring-alpha-destructive-20 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {

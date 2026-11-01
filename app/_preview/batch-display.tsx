@@ -55,7 +55,7 @@ const Slot = () => (
 export function BatchDisplay() {
   return (
     <>
-      <Section id="badge" title="Badge · StatusBadge · Avatar · Tooltip · Separator · Skeleton" figma="- Badges · Avatars · Tooltips · Separators · Skeletons">
+      <Section id="badge" title="Badge · StatusBadge · Avatar · Tooltip · Separator · Skeleton">
         <Row label="Badge">
           <Badge>배지</Badge>
           <Badge variant="secondary">배지</Badge>
@@ -96,7 +96,7 @@ export function BatchDisplay() {
         </Row>
       </Section>
 
-      <Section id="card" title="Card · StatCard · SectionCards" figma="- Cards (23:6 · 38:344 · 38:345)">
+      <Section id="card" title="Card · StatCard · SectionCards">
         <Row>
           <Card className="w-96">
             <CardHeader>
@@ -115,7 +115,7 @@ export function BatchDisplay() {
         </SectionCards>
       </Section>
 
-      <Section id="tabs" title="Tabs" figma="- Tabs (24:15 · 51:139 · 24:23)">
+      <Section id="tabs" title="Tabs">
         <Tabs defaultValue="info" className="w-96">
           <TabsList>
             <TabsTrigger value="info">기본 정보</TabsTrigger>
@@ -136,7 +136,7 @@ export function BatchDisplay() {
         </Tabs>
       </Section>
 
-      <Section id="overlay" title="Popover · Dialog · AlertDialog · Sheet" figma="- Popovers · Dialogs · Sheets">
+      <Section id="overlay" title="Popover · Dialog · AlertDialog · Sheet">
         <Row>
           <Popover>
             <PopoverTrigger asChild><Button variant="outline">팝오버</Button></PopoverTrigger>

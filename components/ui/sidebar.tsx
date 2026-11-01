@@ -24,8 +24,8 @@ import {
 } from "@/components/ui/tooltip"
 import { PanelLeftIcon } from "lucide-react"
 
-// TNV v0.1 · Figma "- Sidebar" (32:48 MenuButton collapsed·state · 32:55 SubButton · 32:56 GroupLabel · 32:58 Trigger · 32:591 Sidebar)
-// Figma 간격: 머리 칸 64(SidebarBrand) · 그룹 사이 8(SidebarContent gap-2) · 메뉴 사이 8(SidebarMenu gap-2) · 하위 메뉴 사이 6(gap-1.5) · 버튼 32 · 접힘 폭 56(아이콘 가운데)
+// TNV v0.1 · Sidebar (MenuButton collapsed·state · SubButton · GroupLabel · Trigger · Sidebar)
+// 간격: 머리 칸 64(SidebarBrand) · 그룹 사이 8(SidebarContent gap-2) · 메뉴 사이 8(SidebarMenu gap-2) · 하위 메뉴 사이 6(gap-1.5) · 버튼 32 · 접힘 폭 56(아이콘 가운데)
 const SIDEBAR_COOKIE_NAME = "sidebar_state"
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
 const SIDEBAR_WIDTH = "16rem"

@@ -5,7 +5,7 @@ import { cn } from "cn"
 import { Accordion as AccordionPrimitive } from "radix-ui"
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
 
-// TNV v0.1 · Figma "- Layout › Accordion" (2044:264) — state: expanded·collapsed, 테두리 있는 패널형
+// TNV v0.1 · Accordion — state: expanded·collapsed, 테두리 있는 패널형
 function Accordion({
   className,
   ...props

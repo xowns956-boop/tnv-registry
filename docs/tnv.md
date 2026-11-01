@@ -2,7 +2,7 @@
 
 이 프로젝트의 디자인 시스템이다. 사용자가 "디자인 시스템 써", "TNV 써", "use the design system"이라고 하면 이 규칙을 따른다.
 
-- 원본: Figma `TNV Design System` (fileKey `uGVI6qGaR7PcZ7g0SrRnGK`) — 트윈뷰(twiNvew) 공정 모니터링 대시보드용
+- 트윈뷰(twiNvew) 공정 모니터링 대시보드용
 - 대상: React + Tailwind CSS v4 + shadcn (radix 기반, style `radix-nova`, 아이콘 lucide)
 - 설치: `npx shadcn@latest add https://xowns956-boop.github.io/tnv-registry/r/0.1.0/tnv-foundations.json https://xowns956-boop.github.io/tnv-registry/r/0.1.0/tnv.json` (pnpm이면 `pnpm dlx`, tnv-foundations는 꼭 함께)
 - 부품 하나만: `npx shadcn@latest add https://xowns956-boop.github.io/tnv-registry/r/0.1.0/<이름>.json`
@@ -14,7 +14,7 @@
 1. 화면은 **TNV 부품(`components/ui`, `components/blocks`)만으로 조립한다.** 아직 설치 안 한 TNV 부품은 같은 버전 레지스트리에서 추가한다. **TNV에 없는 것은 만들지 않고 "없음"으로 알린 뒤 디자이너에게 넘긴다 → 아래 "TNV에 없는 것이 필요할 때".**
 2. 색·간격·둥글기·글자·그림자는 **토큰 클래스만** 쓴다 (`bg-primary`, `text-muted-foreground`, `rounded-md`, `shadow-xs`). hex·px 값을 직접 쓰지 않는다.
 3. **다크가 기본이다.** `ThemeProvider`(next-themes)의 기본값이 `dark`라 처음 열면 다크로 보인다. 라이트 색도 들어 있지만 지금은 화면에 테마 전환 버튼을 두지 않는다(나중에 기능으로 추가 예정). 색은 시맨틱 토큰만 쓰면 두 모드가 자동으로 맞는다.
-4. 부품의 크기·둥글기·상태 클래스를 화면에서 덮어쓰지 않는다. 바꿔야 하면 디자이너에게 확인하고 Figma와 함께 고친다.
+4. 부품의 크기·둥글기·상태 클래스를 화면에서 덮어쓰지 않는다. 바꿔야 하면 디자이너에게 확인하고 디자인 파일과 함께 고친다.
 5. 레지스트리 버전을 임의로 올리지 않는다. 프로젝트에서 고친 부품 파일을 덮어쓰지 않는다 (`--overwrite` 금지, 먼저 비교).
 6. `components/ui`·`components/blocks`에 **새 파일을 추가하지 않는다.** 이 두 폴더에는 TNV에서 설치한 부품만 둔다.
 7. **다른 shadcn 부품이나 다른 UI 라이브러리를 설치하지 않는다.**
@@ -23,7 +23,7 @@
 
 ### TNV에 없는 것이 필요할 때 — 만들지 않고 디자이너에게 넘긴다
 
-UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 **디자이너의 일**이다. AI는 TNV에 있는 것만 조립한다. Figma 시안이나 요청에 TNV에 없는 요소가 있으면 아래 순서를 그대로 따른다.
+UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 **디자이너의 일**이다. AI는 TNV에 있는 것만 조립한다. 디자인 시안이나 요청에 TNV에 없는 요소가 있으면 아래 순서를 그대로 따른다.
 
 **원칙: 이미지 요소는 TNV 부품으로 표현할 수 있으면 최대한 표현한다. 모양·색이 달라도 같은 역할이면 TNV 부품으로 바꾼다.**
 
@@ -92,7 +92,7 @@ UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 
 
 ## 2. 토큰
 
-Figma 변수 이름에서 `/`를 `-`로 바꾼 이름이다. 의미 색은 그룹명이 겹치면 그룹을 뗀다 (`primary/primary` → `primary`, `base/background` → `background`, `border/ring` → `ring`). `alpha/` 그룹은 `alpha-`를 붙인다.
+디자인 파일의 변수 이름에서 `/`를 `-`로 바꾼 이름이다. 의미 색은 그룹명이 겹치면 그룹을 뗀다 (`primary/primary` → `primary`, `base/background` → `background`, `border/ring` → `ring`). `alpha/` 그룹은 `alpha-`를 붙인다.
 
 ### 색 역할 (Tailwind 클래스로 그대로 사용: `bg-*`, `text-*`, `border-*`, `ring-*`)
 
@@ -121,16 +121,16 @@ Figma 변수 이름에서 `/`를 `-`로 바꾼 이름이다. 의미 색은 그�
 
 ### 간격·글자·둥글기·그림자
 
-- 간격: 4px 단위 (`p-1`=4, `p-2`=8, `p-3`=12, `p-4`=16, `p-6`=24 …). Figma `spacing/N` = Tailwind `N`.
+- 간격: 4px 단위 (`p-1`=4, `p-2`=8, `p-3`=12, `p-4`=16, `p-6`=24 …). 디자인 파일 `spacing/N` = Tailwind `N`.
 - 글자: Pretendard Variable. `text-2xs`(10) · `text-xs`(12/16) · `text-sm`(14/20, 기본) · `text-base`(16/24) · `text-lg`(18/28) · `text-xl`(20/28) · `text-2xl`(24/32) · `text-3xl`(30/36) · `text-4xl`(36/40), 큰 제목 `text-h1`~`text-h6`, `text-display-1`~`4`. 굵기 `font-normal`·`font-medium`·`font-semibold`·`font-bold`.
-- Figma 글자 스타일 `text-sm/medium` = `text-sm font-medium`.
+- 디자인 파일의 글자 스타일 `text-sm/medium` = `text-sm font-medium`.
 - 둥글기: `rounded-3xs`(2) · `rounded-2xs`(4) · `rounded-xs`(6) · `rounded-sm`(8) · `rounded-md`(10, 버튼·입력) · `rounded-lg`(12, 탭 바·팝업) · `rounded-xl`(16, 카드) · `rounded-full`.
 - 그림자: `shadow-2xs` · `shadow-xs`(버튼·입력) · `shadow-sm`(카드) · `shadow-md`(드롭다운) · `shadow-lg`(팝업·시트) · `shadow-xl`(차트 툴팁) · `shadow-panel`(대시보드 패널) · `shadow-header`(상단 바) · `shadow-primary-glow`(선택된 solid 탭).
 - 최대 폭: `max-w-layout` (1440).
 
-## 3. 부품 (Figma 페이지 → 파일)
+## 3. 부품 (분류 → 파일)
 
-| Figma | 파일 | 주요 props (Figma variant 이름 그대로) |
+| 분류 | 파일 | 주요 props |
 |---|---|---|
 | Buttons | `ui/button`, `ui/button-group`, `ui/menu-tile` | `variant`: default·destructive·outline·secondary·ghost·link / `size`: default(36)·sm(32)·lg(40)·icon(36) / 누르는 동안 pressed 색(자동). MenuTile `icon`·`children`(메뉴명) — 태블릿 메뉴용 큰 타일 |
 | Inputs | `ui/input`, `ui/textarea`, `ui/input-group`, `ui/number-input`, `ui/number-stepper` | 오류는 `aria-invalid`. NumberStepper(− 값 +) `value`·`onValueChange`·`min`·`max`·`step` — 태블릿 숫자 입력 |
@@ -154,9 +154,9 @@ Figma 변수 이름에서 `/`를 `-`로 바꾼 이름이다. 의미 색은 그�
 | Toggles · Spinners · Kbd | `ui/toggle`, `ui/toggle-group`, `ui/spinner`, `ui/kbd` | Toggle `variant`: default·outline·solid·pill, `size`: default·sm |
 | Tree · Chips · Page Tabs | `ui/tree`, `ui/filter-chip`, `ui/page-tabs` | Tree `nodes`·`selectedId`, PageTab `active`·`onClose` |
 | Layout | `ui/accordion`, `ui/toolbar`, `ui/resizable` | Resizable(칸 나누기·스플리터): `ResizablePanelGroup` `orientation`: horizontal(좌우)·vertical(위아래) → `ResizablePanel`(`defaultSize`·`minSize`, 문자열 "40%") + `ResizableHandle`(`withHandle`: 손잡이 표시). 그룹은 높이가 정해진 상자 안에 둔다 |
-| 03_Patterns | `blocks/site-header`, `blocks/page-heading`, `blocks/filter-bar`, `blocks/form-action-bar`, `blocks/status-legend`, `ui/form-table` | Figma의 Show 옵션 = props 유무. StatusLegend = 설비 상태 범례(StatusBadge 5개, Run·Idle·Error·Maintenance·Offline). 정보·조건 표 = `FormTable` > `FormTableRow` > `FormTableField`(`label`, `type`: text·control), 한 줄에 칸 1~2개 |
+| 03_Patterns | `blocks/site-header`, `blocks/page-heading`, `blocks/filter-bar`, `blocks/form-action-bar`, `blocks/status-legend`, `ui/form-table` | Show 옵션 = props 유무. StatusLegend = 설비 상태 범례(StatusBadge 5개, Run·Idle·Error·Maintenance·Offline). 정보·조건 표 = `FormTable` > `FormTableRow` > `FormTableField`(`label`, `type`: text·control), 한 줄에 칸 1~2개 |
 
-`button`의 `xs`·`icon-sm`, `badge`의 `ghost`·`link`, `avatar`의 `size`는 shadcn 호환용이며 Figma에 없다. 새 화면에서는 쓰지 않는다.
+`button`의 `xs`·`icon-sm`, `badge`의 `ghost`·`link`, `avatar`의 `size`는 shadcn 호환용이며 디자인 파일에 없다. 새 화면에서는 쓰지 않는다.
 
 ## 4. 화면 조립 패턴 (어드민)
 
@@ -174,7 +174,7 @@ SidebarProvider
       └─ FormActionBar (등록·수정 화면 맨 아래)
 ```
 
-- 사이드바는 Figma `Sidebar`(32:591) 구조 그대로: `SidebarHeader` 안에 `SidebarBrand`(접혀도 넣는다. 머리 칸 64) → `SidebarContent` → `SidebarGroup`(펼침일 때 `SidebarGroupLabel`) → `SidebarMenu` → `SidebarMenuItem` → `SidebarMenuButton`(`tooltip`에 메뉴명) → `SidebarFooter`(`NavUser`, 필요할 때만).
+- 사이드바는 `Sidebar` 구조 그대로: `SidebarHeader` 안에 `SidebarBrand`(접혀도 넣는다. 머리 칸 64) → `SidebarContent` → `SidebarGroup`(펼침일 때 `SidebarGroupLabel`) → `SidebarMenu` → `SidebarMenuItem` → `SidebarMenuButton`(`tooltip`에 메뉴명) → `SidebarFooter`(`NavUser`, 필요할 때만).
 - 사이드바 간격은 부품 기본값을 쓴다(메뉴 사이 8, 하위 메뉴 사이 6, 그룹 사이 8, 버튼 32, 접힘 때 아이콘 가운데). `className`으로 gap·padding·높이를 바꾸지 않는다.
 - 주요 버튼(`variant="default"`)은 화면 영역마다 하나. 나머지는 outline·secondary·ghost.
 - 빈 상태: DataTable `emptyText` / 불러오는 중: `Skeleton`·`Spinner` / 오류: `Alert variant="destructive"` 또는 `toast.error`.
@@ -196,14 +196,14 @@ div (h-dvh, bg-page-background) — 1440보다 좁으면 이 틀 안에서만 �
 - 1440보다 좁으면 바깥 틀(`overflow-x-auto`) 안에서 가로 스크롤한다. 페이지 전체가 가로로 밀리지 않게 한다.
 
 #### 가운데 3D 자리
-- 3D는 개발에서 따로 얹는다. 가운데 위쪽은 **빈 칸**(`data-slot="viewer-3d"`, `flex-1`)으로 둔다. Figma의 3D 이미지·위 라벨(#01, Furnace 등)은 코드에 넣지 않는다.
+- 3D는 개발에서 따로 얹는다. 가운데 위쪽은 **빈 칸**(`data-slot="viewer-3d"`, `flex-1`)으로 둔다. 시안의 3D 이미지·위 라벨(#01, Furnace 등)은 코드에 넣지 않는다.
 - 아래에 상태 범례(오른쪽 정렬)와 표 카드(접기 가능)를 둔다.
 
 #### 패널
 - 패널 안 카드는 `Card`(default) 그대로. 카드 안의 여백·간격은 덮어쓰지 않는다.
 - **간격**: 패널 안 카드·항목 사이는 `gap-4`(16)로 통일한다. 왼쪽 = 패널 내용 칸 `flex flex-col gap-4`, 오른쪽 = `Accordion className="gap-4"` + 각 `AccordionItem className="not-last:mb-0"`(부품 기본 아래 여백 8을 빼고 gap으로 띄움).
 - **접기**: 왼쪽 패널 제목줄 오른쪽에 접기 버튼(`Button variant="outline" size="icon"`, 아이콘 열림 `ChevronsLeft` · 닫힘 `ChevronsRight`, `aria-label` "패널 접기"/"패널 펼치기"). 이 버튼 하나로 **왼쪽 패널 · 오른쪽 패널 · 가운데 아래 표 카드를 함께 숨긴다**(3D 영역을 넓게 볼 때). 접히면 왼쪽에 펼치기 버튼만 남고, 상태 범례는 남긴다. 열림 상태는 화면(page)에 하나만 둔다.
-- **높이 채우기**: 왼쪽 패널은 Figma Fill처럼 카드가 남는 높이를 나눠 채우고, 늘어난 만큼 차트가 커진다(차트 최소 높이는 TNV 기본값 유지). 화면이 낮으면 카드를 내용보다 줄이지 않고(`shrink-0`) 패널 안에서 스크롤한다. 오른쪽 패널에서 펼친 항목은 내용 높이만큼만 차지하고 남는 공간은 비워 둔다.
+- **높이 채우기**: 왼쪽 패널은 카드가 남는 높이를 나눠 채우고, 늘어난 만큼 차트가 커진다(차트 최소 높이는 TNV 기본값 유지). 화면이 낮으면 카드를 내용보다 줄이지 않고(`shrink-0`) 패널 안에서 스크롤한다. 오른쪽 패널에서 펼친 항목은 내용 높이만큼만 차지하고 남는 공간은 비워 둔다.
 - **스크롤바**: 좌우 패널 안 스크롤은 화살표·바탕 없이 가는 둥근 막대(폭 6, 좌우 여백 2)만 보이고, **스크롤하는 동안에만** 나타났다가 멈추고 0.8초 뒤 사라진다. 막대 색 = `muted-foreground` 50%. **TNV 부품에는 아직 없다 → 디자이너에게 넘김.** 가열·압연 테스트 화면은 디자이너가 정한 이 모양대로 임시 구현(`.panel-scroll` + 스크롤 중 `data-scrolling`)해 둔 상태다. 새 화면에서 같은 모양을 새로 지어내지 않는다.
 
 #### 상태 표시 (Run · Idle · Error · Maintenance · Offline)
@@ -214,7 +214,7 @@ div (h-dvh, bg-page-background) — 1440보다 좁으면 이 틀 안에서만 �
 #### 지표 색
 - 가동률 = `tone="operation"`, 생산량 = `tone="production"`, 그 밖 진행률 = `primary`. 차트 계열 색도 `chart-operation`·`chart-production`·`chart-electricity` 등 지표 색을 쓴다.
 - 지표 색은 묶음별로 쓴다. 에너지 묶음 = 연료 `fuel`·전력 `electricity`·탄소 `gas`, 설비 효율 묶음 = 가동 `operation`·성능 `performance`·품질 `quality`.
-- **연료(`fuel`, #46B2FF)와 성능(`performance`, #108FFF)은 같은 파랑 계열이라 한 차트·한 범례에 같이 쓰지 않는다.** 꼭 같이 보여야 하면 디자이너에게 먼저 묻는다(Figma `05_Guide › 07 · 차트 색 — 연료와 성능`).
+- **연료(`fuel`, #46B2FF)와 성능(`performance`, #108FFF)은 같은 파랑 계열이라 한 차트·한 범례에 같이 쓰지 않는다.** 꼭 같이 보여야 하면 디자이너에게 먼저 묻는다.
 - 연료가 아닌 지표(예: 로압)에 연료색을 쓰지 않는다. 지표 색이 정해지지 않은 차트는 `tone="default"`.
 
 ## 5. 접근성

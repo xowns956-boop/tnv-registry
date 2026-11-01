@@ -4,7 +4,7 @@ import { ChevronsUpDownIcon } from "lucide-react"
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
-// TNV v0.1 · Figma "- Sidebar › NavUser" (43:485) — Name · Email · Show Chevron · layout: full·avatar
+// TNV v0.1 · NavUser — Name · Email · Show Chevron · layout: full·avatar
 // 메뉴를 붙일 때는 DropdownMenuTrigger asChild 안에 넣는다.
 function NavUser({
   name,

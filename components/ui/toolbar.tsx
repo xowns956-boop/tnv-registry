@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cn } from "cn"
 
-// TNV v0.1 · Figma "- Layout › Toolbar" (2044:210)
+// TNV v0.1 · Toolbar
 // 테두리 있는 버튼 줄. 안에는 Button size="sm"을 넣고, 묶음 사이는 ToolbarSeparator로 나눈다.
 function Toolbar({ className, ...props }: React.ComponentProps<"div">) {
   return (

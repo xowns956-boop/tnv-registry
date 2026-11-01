@@ -4,7 +4,7 @@ import * as React from "react"
 import { cn } from "cn"
 import { Popover as PopoverPrimitive } from "radix-ui"
 
-// TNV v0.1 · Figma "- Popovers › PopoverContent" (26:3) — 288px, 안쪽 여백 16
+// TNV v0.1 · PopoverContent — 288px, 안쪽 여백 16
 function Popover({
   ...props
 }: React.ComponentProps<typeof PopoverPrimitive.Root>) {

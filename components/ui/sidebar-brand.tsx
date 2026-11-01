@@ -3,8 +3,8 @@ import { cn } from "cn"
 
 import { Badge } from "@/components/ui/badge"
 
-// TNV v0.1 · Figma "- Sidebar › SidebarBrand" (43:109) — Name · Subtitle · Show Badge · Show Subtitle · collapsed
-// 사이드바가 접히면(collapsible="icon") 로고만 남는다. 높이는 Figma대로 48(머리 칸 64)로 고정해 접혀도, 부제가 있어도 같다.
+// TNV v0.1 · SidebarBrand — Name · Subtitle · Show Badge · Show Subtitle · collapsed
+// 사이드바가 접히면(collapsible="icon") 로고만 남는다. 높이는 48(머리 칸 64)로 고정해 접혀도, 부제가 있어도 같다.
 function SidebarBrand({
   name,
   subtitle,

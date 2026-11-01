@@ -4,7 +4,7 @@ import * as React from "react"
 import { cn } from "cn"
 import { Label as LabelPrimitive } from "radix-ui"
 
-// TNV v0.1 · Figma "- Labels › Label" (11:54) — Required: bool
+// TNV v0.1 · Label — Required: bool
 function Label({
   className,
   required = false,

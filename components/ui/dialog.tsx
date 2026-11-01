@@ -7,7 +7,7 @@ import { Dialog as DialogPrimitive } from "radix-ui"
 import { Button } from "@/components/ui/button"
 import { XIcon } from "lucide-react"
 
-// TNV v0.1 · Figma "- Dialogs › DialogContent" (26:11) · DialogOverlay (26:51)
+// TNV v0.1 · DialogContent · DialogOverlay
 function Dialog({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Root>) {

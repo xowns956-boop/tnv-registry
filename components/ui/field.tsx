@@ -7,7 +7,7 @@ import { cn } from "cn"
 import { Label } from "@/components/ui/label"
 import { Separator } from "@/components/ui/separator"
 
-// TNV v0.1 · Figma "- Forms › FormItem" (34:92) · Form (34:93) — control: input·textarea·select·checkbox / state: default·error
+// TNV v0.1 · FormItem · Form — control: input·textarea·select·checkbox / state: default·error
 function FieldSet({ className, ...props }: React.ComponentProps<"fieldset">) {
   return (
     <fieldset

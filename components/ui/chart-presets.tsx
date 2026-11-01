@@ -13,15 +13,14 @@ import {
   type ChartConfig,
 } from "@/components/ui/chart"
 
-// TNV v0.1 · Figma "- Charts" 예시 차트 (35:27 Bar · 35:68 Line · 43:1319 Pie · 43:1334 BarGradient
-// · 2031:30 BarItem · 2031:35 BarLabeled · 2031:56 Combo)
+// TNV v0.1 · Charts 예시 차트 (Bar · Line · Pie · BarGradient · BarItem · BarLabeled · Combo)
 // 색은 config의 color에 var(--chart-1) 같은 토큰을 넣는다. 눈금 글자는 text-xs muted-foreground, 격자선은 border.
 
 type Row = Record<string, string | number>
 
 const axisTick = { fontSize: 12, fill: "var(--muted-foreground)" }
 
-// 막대·선 색 (Figma tone): default = chart-1, 나머지는 지표 색
+// 막대·선 색 (tone): default = chart-1, 나머지는 지표 색
 const chartTone = {
   default: "var(--chart-1)",
   operation: "var(--chart-operation)",
@@ -94,7 +93,7 @@ function ChartPie({
   )
 }
 
-// Figma paint style "chart/bar-gradient": 위 chart-1-bold → 아래 chart-1-subtler
+// chart/bar-gradient: 위 chart-1-bold → 아래 chart-1-subtler
 function ChartBarGradient({
   data,
   xKey,
@@ -128,7 +127,7 @@ function ChartBarGradient({
   )
 }
 
-// 막대 하나 · Figma Chart/BarItem (6026:83): 위 값(primary-text, Show Value) · 막대(72px 폭, 위 둥글기 md, tone 색) · 목표선(warning 2px, Show Target) · 아래 이름
+// 막대 하나 · Chart/BarItem: 위 값(primary-text, Show Value) · 막대(72px 폭, 위 둥글기 md, tone 색) · 목표선(warning 2px, Show Target) · 아래 이름
 function ChartBarItem({
   label,
   valueText,

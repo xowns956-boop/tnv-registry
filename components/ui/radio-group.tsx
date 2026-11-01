@@ -17,7 +17,7 @@ function RadioGroup({
   )
 }
 
-// TNV v0.1 · Figma "- Radios › RadioGroupItem" (11:109)
+// TNV v0.1 · RadioGroupItem
 function RadioGroupItem({
   className,
   ...props

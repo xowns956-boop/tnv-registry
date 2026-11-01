@@ -7,7 +7,7 @@ import { CalendarIcon } from "lucide-react"
 import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 
-// TNV v0.1 · Figma "- Date Pickers › DatePicker" (29:118) — Value: text · Open: bool
+// TNV v0.1 · DatePicker — Value: text · Open: bool
 // 트리거(outline, 달력 아이콘 + 값) + 아래 Calendar 팝오버.
 const defaultFormat = (date: Date) =>
   new Intl.DateTimeFormat("ko-KR", { year: "numeric", month: "2-digit", day: "2-digit" }).format(date)

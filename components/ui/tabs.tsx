@@ -23,7 +23,7 @@ function Tabs({
   )
 }
 
-// TNV v0.1 · Figma "- Tabs › TabsList" (51:139) · TabsTrigger (24:15) — variant: default·line·solid
+// TNV v0.1 · TabsList · TabsTrigger — variant: default·line·solid
 const tabsListVariants = cva(
   "group/tabs-list inline-flex w-fit items-center text-foreground group-data-vertical/tabs:h-fit group-data-vertical/tabs:flex-col",
   {

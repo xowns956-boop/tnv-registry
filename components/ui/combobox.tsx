@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/command"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 
-// TNV v0.1 · Figma "- Command › Combobox" (30:106) — Value: text · Open: bool
+// TNV v0.1 · Combobox — Value: text · Open: bool
 // outline 트리거 + 팝오버 안 Command(검색 입력 + 목록).
 type ComboboxOption = { value: string; label: string }
 

@@ -6,7 +6,7 @@ import { Popover as PopoverPrimitive } from "radix-ui"
 import { cn } from "cn"
 import { CheckIcon } from "lucide-react"
 
-// TNV v0.1 · Figma "- Dropdowns › Autocomplete" (2022:3)
+// TNV v0.1 · Autocomplete
 // 입력칸(Input과 같은 모양) + 아래 목록(SelectContent·SelectItem과 같은 모양). 글자를 치면 목록이 걸러진다.
 type AutocompleteOption = { value: string; label: string }
 

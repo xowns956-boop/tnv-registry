@@ -4,7 +4,7 @@ import * as React from "react"
 import { cn } from "cn"
 import { Separator as SeparatorPrimitive } from "radix-ui"
 
-// TNV v0.1 · Figma "- Separators › Separator" (11:63) — orientation: horizontal·vertical
+// TNV v0.1 · Separator — orientation: horizontal·vertical
 function Separator({
   className,
   orientation = "horizontal",

@@ -13,7 +13,7 @@ import { ko } from "react-day-picker/locale"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { ChevronLeftIcon, ChevronRightIcon, ChevronDownIcon } from "lucide-react"
 
-// TNV v0.1 · Figma "- Date Pickers › Calendar" (29:18) · CalendarDay (29:17) — 32px 칸, 오늘=accent, 선택=primary
+// TNV v0.1 · Calendar · CalendarDay — 32px 칸, 오늘=accent, 선택=primary
 // 기본 언어는 한국어(ko). 서버·브라우저 날짜 표기가 같아야 hydration 오류가 나지 않는다.
 function Calendar({
   className,

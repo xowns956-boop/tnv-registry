@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cn } from "cn"
 
-// TNV v0.1 · Figma "03_Patterns › PageHeading" (37:74) — Title · Description · Show Description · Show Secondary · Show Primary
+// TNV v0.1 · PageHeading — Title · Description · Show Description · Show Secondary · Show Primary
 // actions에는 Button(보조는 variant="outline", 주요는 기본) 을 넣는다. 주요 버튼은 하나만.
 function PageHeading({
   title,

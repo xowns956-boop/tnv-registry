@@ -4,7 +4,7 @@ import * as React from "react"
 import { cn } from "cn"
 import { ChevronDownIcon, ChevronRightIcon } from "lucide-react"
 
-// TNV v0.1 · Figma "- Tree" (62:177 TreeItem · 62:178 Tree)
+// TNV v0.1 · Tree (TreeItem · Tree)
 // level: 0·1·2 (들여쓰기 8 → 24 → 40px) / expand: open·closed·leaf / state: default·selected
 // 키보드: ↑↓ 이동 · → 펼치기 · ← 접기 · Enter/Space 선택
 type TreeNode = {

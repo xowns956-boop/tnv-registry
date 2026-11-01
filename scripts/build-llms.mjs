@@ -19,11 +19,11 @@ const rules = read("docs/tnv.md")
 const r = (name) => `${BASE}/r/${VERSION}/${name}.json`
 const foundations = registry.items.find((i) => i.name === "tnv-foundations")
 const parts = registry.items.filter((i) => !["tnv-foundations", "tnv"].includes(i.name))
-// 부품 설명은 "TNV v0.1 · Figma "...")" 주석에서 왔다. Figma 위치만 남긴다.
+// 부품 설명은 "TNV v0.1 · ..." 주석에서 왔다.
 const describe = (i) => i.description.replace(/^TNV v0\.1 · /, "")
 const installCmd = `npx shadcn@latest add ${r("tnv-foundations")} ${r("tnv")}`
 
-const summary = `> React + Tailwind CSS v4 + shadcn(radix) 기반 트윈뷰(공정 모니터링) 대시보드 디자인 시스템. Figma "TNV Design System"과 같은 이름·토큰을 쓴다. Pretendard Variable 글꼴, lucide 아이콘, 다크 기본(라이트 색도 포함, 전환 버튼은 아직 두지 않음). 현재 버전 ${VERSION}.`
+const summary = `> React + Tailwind CSS v4 + shadcn(radix) 기반 트윈뷰(공정 모니터링) 대시보드 디자인 시스템. 디자인 파일과 같은 이름·토큰을 쓴다. Pretendard Variable 글꼴, lucide 아이콘, 다크 기본(라이트 색도 포함, 전환 버튼은 아직 두지 않음). 현재 버전 ${VERSION}.`
 
 const llms = `# TNV Design System
 

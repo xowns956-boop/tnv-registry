@@ -19,7 +19,7 @@ const ToggleGroupContext = React.createContext<
   orientation: "horizontal",
 })
 
-// TNV v0.1 · Figma "- Toggles › ToggleGroup" (50:229) · ToggleGroupItem (50:184) — variant: default·outline, position은 자동(first·middle·last)
+// TNV v0.1 · ToggleGroup · ToggleGroupItem — variant: default·outline, position은 자동(first·middle·last)
 function ToggleGroup({
   className,
   variant,

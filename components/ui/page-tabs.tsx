@@ -4,7 +4,7 @@ import * as React from "react"
 import { cn } from "cn"
 import { XIcon } from "lucide-react"
 
-// TNV v0.1 · Figma "- Page Tabs" (62:500 PageTab state: default·hover·active · 62:501 PageTabBar)
+// TNV v0.1 · Page Tabs (PageTab state: default·hover·active · PageTabBar)
 // 열린 화면을 브라우저 탭처럼 보여 주는 줄. 각 탭은 아이콘 · 이름 · 닫기(Show Close).
 function PageTabBar({ className, ...props }: React.ComponentProps<"div">) {
   return (

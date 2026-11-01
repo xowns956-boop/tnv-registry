@@ -10,13 +10,13 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Textarea } from "@/components/ui/textarea"
 
-// TNV v0.1 · Figma "- Dialogs › DialogBody" (4047:18) — DialogContent 안에 넣는 내용 부품 6종.
+// TNV v0.1 · DialogBody — DialogContent 안에 넣는 내용 부품 6종.
 // 공통 틀: 카드 바탕 + 1px 테두리 + 둥글기 2xs(4), 줄 사이 1px 선.
 const frame = "w-full overflow-hidden rounded-2xs border border-border bg-card text-sm"
 
 type Option = { value: string; label: React.ReactNode; disabled?: boolean }
 
-// Figma "DialogBody / Table" (4047:19) — 목록 표
+// DialogBody / Table — 목록 표
 function DialogBodyTable<T>({
   columns,
   rows,
@@ -56,7 +56,7 @@ function DialogBodyTable<T>({
   )
 }
 
-// Figma "DialogBody / Info" (4047:88) — 항목 제목(muted 120px) + 값
+// DialogBody / Info — 항목 제목(muted 120px) + 값
 function DialogBodyInfo({
   items,
   className,
@@ -76,7 +76,7 @@ function DialogBodyInfo({
   )
 }
 
-// Figma "DialogBody / LotInput" (4047:149) — LOT 번호 입력 한 줄 (MES)
+// DialogBody / LotInput — LOT 번호 입력 한 줄 (MES)
 function DialogBodyLotInput({
   label = "LOT NO",
   id,
@@ -97,7 +97,7 @@ function DialogBodyLotInput({
   )
 }
 
-// Figma "DialogBody / Textarea" (4047:161) — 여러 줄 입력, 높이 160(spacing 40)
+// DialogBody / Textarea — 여러 줄 입력, 높이 160(spacing 40)
 function DialogBodyTextarea({ className, ...props }: React.ComponentProps<typeof Textarea>) {
   return (
     <Textarea
@@ -109,7 +109,7 @@ function DialogBodyTextarea({ className, ...props }: React.ComponentProps<typeof
   )
 }
 
-// Figma "DialogBody / OptionList" (4047:164) — 하나 고르기 목록 (라디오 줄)
+// DialogBody / OptionList — 하나 고르기 목록 (라디오 줄)
 function DialogBodyOptionList({
   options,
   className,
@@ -137,7 +137,7 @@ function DialogBodyOptionList({
   )
 }
 
-// Figma "DialogBody / OptionButtons" (4047:175) — 방식 고르기 버튼(세로, outline lg)
+// DialogBody / OptionButtons — 방식 고르기 버튼(세로, outline lg)
 function DialogBodyOptionButtons({
   options,
   onSelect,

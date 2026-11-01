@@ -2,9 +2,9 @@ import * as React from "react"
 import { cn } from "cn"
 import { CheckIcon, XIcon } from "lucide-react"
 
-// TNV v0.1 · Figma "- Steppers" (2043:178 Stepper · 2043:86 StepperItem · 2043:95 StepperSeparator)
+// TNV v0.1 · Steppers (Stepper · StepperItem · StepperSeparator)
 // state: disabled·invalid·upcoming·current·done / orientation: horizontal·vertical
-// Figma의 vertical = 동그라미 위·글자 아래(가로로 나열), horizontal = 동그라미 옆에 글자(세로로 나열).
+// vertical = 동그라미 위·글자 아래(가로로 나열), horizontal = 동그라미 옆에 글자(세로로 나열).
 type StepState = "disabled" | "invalid" | "upcoming" | "current" | "done"
 type StepOrientation = "horizontal" | "vertical"
 
@@ -58,7 +58,7 @@ function StepperItem({
   state?: StepState
   index: React.ReactNode
   label: React.ReactNode
-  /** Figma "Show Optional" — 단계 이름 아래 작은 보조 문구 */
+  /** Show Optional — 단계 이름 아래 작은 보조 문구 */
   optional?: React.ReactNode
 }) {
   const orientation = React.useContext(StepperContext)

@@ -99,7 +99,7 @@ export function BatchRest() {
 
   return (
     <>
-      <Section id="breadcrumb" title="Breadcrumb · Pagination · Stepper" figma="- Breadcrumbs · Pagination · Steppers">
+      <Section id="breadcrumb" title="Breadcrumb · Pagination · Stepper">
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem><BreadcrumbLink href="#">상위 메뉴</BreadcrumbLink></BreadcrumbItem>
@@ -143,7 +143,7 @@ export function BatchRest() {
         </Row>
       </Section>
 
-      <Section id="alert" title="Alert · Sonner" figma="- Alerts · Toasts">
+      <Section id="alert" title="Alert · Sonner">
         <Alert className="max-w-md"><InfoIcon /><AlertTitle>알림</AlertTitle><AlertDescription>확인이 필요한 내용이 있습니다.</AlertDescription></Alert>
         <Alert variant="destructive" className="max-w-md"><InfoIcon /><AlertTitle>알림</AlertTitle><AlertDescription>확인이 필요한 내용이 있습니다.</AlertDescription></Alert>
         <Row label="Sonner (누르면 토스트)">
@@ -155,7 +155,7 @@ export function BatchRest() {
         </Row>
       </Section>
 
-      <Section id="date" title="Calendar · DatePicker · Command · Combobox" figma="- Date Pickers · Command">
+      <Section id="date" title="Calendar · DatePicker · Command · Combobox">
         <Row>
           <Calendar mode="range" selected={range as never} onSelect={setRange as never} className="rounded-md border border-border" />
           <div className="flex flex-col gap-3">
@@ -176,7 +176,7 @@ export function BatchRest() {
         </Row>
       </Section>
 
-      <Section id="sidebar" title="Sidebar · SidebarBrand · NavUser" figma="- Sidebar">
+      <Section id="sidebar" title="Sidebar · SidebarBrand · NavUser">
         <div className="h-96 overflow-hidden rounded-md border border-border">
           <SidebarProvider className="min-h-0 h-full">
             <Sidebar collapsible="none" className="h-full border-r border-sidebar-border">
@@ -206,7 +206,7 @@ export function BatchRest() {
         </div>
       </Section>
 
-      <Section id="table" title="DataTable · Table" figma="- Tables (2099:7867)">
+      <Section id="table" title="DataTable · Table">
         <DataTable
           data={equips}
           getRowId={(r) => r.id}
@@ -225,7 +225,7 @@ export function BatchRest() {
         <DataTable data={[] as Equip[]} getRowId={(r) => r.id} columns={[{ key: "name", header: "설비명" }, { key: "line", header: "라인" }]} />
       </Section>
 
-      <Section id="form" title="Form (Field)" figma="- Forms (34:92)">
+      <Section id="form" title="Form (Field)">
         <Row>
           <Field className="w-80">
             <FieldLabel htmlFor="f1">라벨</FieldLabel>
@@ -250,7 +250,7 @@ export function BatchRest() {
         </Row>
       </Section>
 
-      <Section id="chart" title="Charts" figma="- Charts">
+      <Section id="chart" title="Charts">
         <div className="grid gap-6 lg:grid-cols-2">
           <ChartBar data={months} config={seriesConfig} xKey="month" />
           <ChartLine data={months} config={seriesConfig} xKey="month" />
@@ -261,7 +261,7 @@ export function BatchRest() {
         <ChartCombo data={months} xKey="month" barKey="a" lineKey="rate" barLabel="생산량" lineLabel="불량률" />
       </Section>
 
-      <Section id="toggle" title="Progress · Toggle · Spinner · Kbd" figma="- Progress · Toggles · Spinners · Kbd">
+      <Section id="toggle" title="Progress · Toggle · Spinner · Kbd">
         <Progress value={50} className="max-w-80" aria-label="진행률" />
         {(["default", "outline", "solid", "pill"] as const).map((v) => (
           <Row key={v} label={`Toggle variant=${v}`}>
@@ -289,7 +289,7 @@ export function BatchRest() {
         </Row>
       </Section>
 
-      <Section id="tree" title="Tree · FilterChip · PageTabs · Toolbar · Accordion" figma="- Tree · Chips · Page Tabs · Layout">
+      <Section id="tree" title="Tree · FilterChip · PageTabs · Toolbar · Accordion">
         <Row>
           <Tree
             aria-label="설비 분류"
@@ -325,7 +325,7 @@ export function BatchRest() {
         </Accordion>
       </Section>
 
-      <Section id="resizable" title="Resizable" figma="- Layout › Resizable">
+      <Section id="resizable" title="Resizable">
         <Row label="좌우로 나눔 · 손잡이 있음 (경계를 끌어서 크기 조절)">
           <div className="h-40 w-full max-w-xl rounded-sm border border-border">
             <ResizablePanelGroup orientation="horizontal">
@@ -367,7 +367,7 @@ export function BatchRest() {
         </Row>
       </Section>
 
-      <Section id="patterns" title="Patterns" figma="03_Patterns (37:74 · 38:34 · 80:153)">
+      <Section id="patterns" title="Patterns">
         <PageHeading title="페이지 제목" description="페이지 설명을 입력합니다." actions={<><Button variant="outline">보조 버튼</Button><Button>주요 버튼</Button></>} />
         <FilterBar>
           <Input className="w-62" placeholder="검색" aria-label="검색" />

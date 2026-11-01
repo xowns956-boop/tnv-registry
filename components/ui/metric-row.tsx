@@ -3,7 +3,7 @@ import { cn } from "cn"
 
 import { Progress } from "@/components/ui/progress"
 
-// TNV v0.1 · Figma "- Progress › MetricRow" (6003:7046) — 지표 한 줄. size: sm·md / tone: primary·operation·production
+// TNV v0.1 · MetricRow — 지표 한 줄. size: sm·md / tone: primary·operation·production
 // sm = 라벨 · 값 한 줄 + Progress sm (공장 카드 가동률·생산량)
 // md = 라벨 위, 값 + 목표(target) + Progress md(% 라벨) (월별 생산량)
 const valueTone = {

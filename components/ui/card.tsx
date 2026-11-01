@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cn } from "cn"
 
-// TNV v0.1 · Figma "- Cards › Card" (6003:7020) — variant: default·panel / size: default·sm
+// TNV v0.1 · Card — variant: default·panel / size: default·sm
 // default = 흰 카드(테두리 1 + shadow-sm, 둥글기 16, 여백·간격 16 · sm 12)
 // panel = 대시보드 좌우 반투명 큰 패널(테두리 2 + shadow-panel, 여백 14 · 간격 12, 제목 text-2xl)
 function Card({

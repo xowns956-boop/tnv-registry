@@ -7,7 +7,7 @@
       "name": "tnv-foundations",
       "type": "registry:style",
       "title": "TNV Foundations",
-      "description": "TNV Design System 토큰(Figma TNV Design System 기준) — 색(라이트·다크), 간격, 글자, 둥글기, 그림자",
+      "description": "TNV Design System 토큰 — 색(라이트·다크), 간격, 글자, 둥글기, 그림자",
       "dependencies": [
         "pretendard@1.3.9",
         "tw-animate-css@1.4.0",
@@ -1231,7 +1231,7 @@
       "name": "accordion",
       "type": "registry:ui",
       "title": "accordion",
-      "description": "TNV v0.1 · Figma \"- Layout › Accordion\" (2044:264) — state: expanded·collapsed, 테두리 있는 패널형",
+      "description": "TNV v0.1 · Accordion — state: expanded·collapsed, 테두리 있는 패널형",
       "dependencies": [
         "cn@0.5.0",
         "radix-ui@1.8.1",
@@ -1251,7 +1251,7 @@
       "name": "alert-dialog",
       "type": "registry:ui",
       "title": "alert-dialog",
-      "description": "TNV v0.1 · Figma \"- Dialogs › AlertDialogContent\" (26:36)",
+      "description": "TNV v0.1 · AlertDialogContent",
       "dependencies": [
         "cn@0.5.0",
         "radix-ui@1.8.1"
@@ -1271,7 +1271,7 @@
       "name": "alert",
       "type": "registry:ui",
       "title": "alert",
-      "description": "TNV v0.1 · Figma \"- Alerts › Alert\" (28:20) — variant: default·destructive",
+      "description": "TNV v0.1 · Alert — variant: default·destructive",
       "dependencies": [
         "class-variance-authority@0.7.1",
         "cn@0.5.0"
@@ -1290,7 +1290,7 @@
       "name": "autocomplete",
       "type": "registry:ui",
       "title": "autocomplete",
-      "description": "TNV v0.1 · Figma \"- Dropdowns › Autocomplete\" (2022:3)",
+      "description": "TNV v0.1 · Autocomplete",
       "dependencies": [
         "cmdk@1.1.1",
         "radix-ui@1.8.1",
@@ -1311,7 +1311,7 @@
       "name": "avatar",
       "type": "registry:ui",
       "title": "avatar",
-      "description": "TNV v0.1 · Figma \"- Avatars › Avatar\" (81:373) — type: fallback·image, 32px",
+      "description": "TNV v0.1 · Avatar — type: fallback·image, 32px",
       "dependencies": [
         "cn@0.5.0",
         "radix-ui@1.8.1"
@@ -1330,7 +1330,7 @@
       "name": "badge",
       "type": "registry:ui",
       "title": "badge",
-      "description": "TNV v0.1 · Figma \"- Badges › Badge\" (12:151) — variant: default·secondary·destructive·outline (ghost·link는 shadcn 호환용)",
+      "description": "TNV v0.1 · Badge — variant: default·secondary·destructive·outline (ghost·link는 shadcn 호환용)",
       "dependencies": [
         "class-variance-authority@0.7.1",
         "cn@0.5.0",
@@ -1350,7 +1350,7 @@
       "name": "breadcrumb",
       "type": "registry:ui",
       "title": "breadcrumb",
-      "description": "TNV v0.1 · Figma \"- Breadcrumbs\" (27:7 Link · 27:8 Page · 27:10 Separator · 27:13 Ellipsis)",
+      "description": "TNV v0.1 · Breadcrumbs (Link · Page · Separator · Ellipsis)",
       "dependencies": [
         "cn@0.5.0",
         "radix-ui@1.8.1",
@@ -1370,7 +1370,7 @@
       "name": "button-group",
       "type": "registry:ui",
       "title": "button-group",
-      "description": "TNV v0.1 · Figma \"- Buttons › ButtonGroup\" (51:92)",
+      "description": "TNV v0.1 · ButtonGroup",
       "dependencies": [
         "class-variance-authority@0.7.1",
         "cn@0.5.0",
@@ -1391,7 +1391,7 @@
       "name": "button",
       "type": "registry:ui",
       "title": "button",
-      "description": "TNV v0.1 · Figma \"- Buttons › Button\" (9:458)",
+      "description": "TNV v0.1 · Button",
       "dependencies": [
         "class-variance-authority@0.7.1",
         "cn@0.5.0",
@@ -1411,7 +1411,7 @@
       "name": "calendar",
       "type": "registry:ui",
       "title": "calendar",
-      "description": "TNV v0.1 · Figma \"- Date Pickers › Calendar\" (29:18) · CalendarDay (29:17) — 32px 칸, 오늘=accent, 선택=primary",
+      "description": "TNV v0.1 · Calendar · CalendarDay — 32px 칸, 오늘=accent, 선택=primary",
       "dependencies": [
         "cn@0.5.0",
         "react-day-picker@10.0.2",
@@ -1432,7 +1432,7 @@
       "name": "card",
       "type": "registry:ui",
       "title": "card",
-      "description": "TNV v0.1 · Figma \"- Cards › Card\" (6003:7020) — variant: default·panel / size: default·sm",
+      "description": "TNV v0.1 · Card — variant: default·panel / size: default·sm",
       "dependencies": [
         "cn@0.5.0"
       ],
@@ -1450,7 +1450,7 @@
       "name": "chart-dashboard",
       "type": "registry:ui",
       "title": "chart-dashboard",
-      "description": "TNV v0.1 · Figma \"- Charts\" 대시보드 차트 (6012:405 Radial · 6026:446 Column · ColumnTarget · 6028:260 ChartBrush · 6028:352 Trend · MultiLine · 6042:62 GroupedBar · 6012:447 Legend)",
+      "description": "TNV v0.1 · Charts 대시보드 차트 (Radial · Column · ColumnTarget · ChartBrush · Trend · MultiLine · GroupedBar · Legend)",
       "dependencies": [
         "cn@0.5.0",
         "recharts@3.8.0"
@@ -1471,7 +1471,7 @@
       "name": "chart-presets",
       "type": "registry:ui",
       "title": "chart-presets",
-      "description": "TNV v0.1 · Figma \"- Charts\" 예시 차트 (35:27 Bar · 35:68 Line · 43:1319 Pie · 43:1334 BarGradient",
+      "description": "TNV v0.1 · Charts 예시 차트 (Bar · Line · Pie · BarGradient · BarItem · BarLabeled · Combo)",
       "dependencies": [
         "cn@0.5.0",
         "recharts@3.8.0"
@@ -1491,7 +1491,7 @@
       "name": "chart",
       "type": "registry:ui",
       "title": "chart",
-      "description": "TNV v0.1 · Figma \"- Charts\" (35:3 ChartTooltipContent · 35:17 ChartLegendContent) — 계열 색은 chart-1~6 토큰",
+      "description": "TNV v0.1 · Charts (ChartTooltipContent · ChartLegendContent) — 계열 색은 chart-1~6 토큰",
       "dependencies": [
         "cn@0.5.0",
         "recharts@3.8.0"
@@ -1510,7 +1510,7 @@
       "name": "checkbox",
       "type": "registry:ui",
       "title": "checkbox",
-      "description": "TNV v0.1 · Figma \"- Checkboxes › Checkbox\" (11:86)",
+      "description": "TNV v0.1 · Checkbox",
       "dependencies": [
         "cn@0.5.0",
         "radix-ui@1.8.1",
@@ -1530,7 +1530,7 @@
       "name": "combobox",
       "type": "registry:ui",
       "title": "combobox",
-      "description": "TNV v0.1 · Figma \"- Command › Combobox\" (30:106) — Value: text · Open: bool",
+      "description": "TNV v0.1 · Combobox — Value: text · Open: bool",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -1551,7 +1551,7 @@
       "name": "command",
       "type": "registry:ui",
       "title": "command",
-      "description": "TNV v0.1 · Figma \"- Command\" (30:27 Item · 30:28 Input · 30:33 GroupHeading · 30:35 Command)",
+      "description": "TNV v0.1 · Command (Item · Input · GroupHeading · Command)",
       "dependencies": [
         "cmdk@1.1.1",
         "cn@0.5.0",
@@ -1591,7 +1591,7 @@
       "name": "data-table",
       "type": "registry:ui",
       "title": "data-table",
-      "description": "TNV v0.1 · Figma \"- Tables › DataTable\" (2099:7867) — state: default·empty",
+      "description": "TNV v0.1 · DataTable — state: default·empty",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -1614,7 +1614,7 @@
       "name": "date-picker",
       "type": "registry:ui",
       "title": "date-picker",
-      "description": "TNV v0.1 · Figma \"- Date Pickers › DatePicker\" (29:118) — Value: text · Open: bool",
+      "description": "TNV v0.1 · DatePicker — Value: text · Open: bool",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -1635,7 +1635,7 @@
       "name": "dialog-body",
       "type": "registry:ui",
       "title": "dialog-body",
-      "description": "TNV v0.1 · Figma \"- Dialogs › DialogBody\" (4047:18) — DialogContent 안에 넣는 내용 부품 6종.",
+      "description": "TNV v0.1 · DialogBody — DialogContent 안에 넣는 내용 부품 6종.",
       "dependencies": [
         "cn@0.5.0"
       ],
@@ -1659,7 +1659,7 @@
       "name": "dialog",
       "type": "registry:ui",
       "title": "dialog",
-      "description": "TNV v0.1 · Figma \"- Dialogs › DialogContent\" (26:11) · DialogOverlay (26:51)",
+      "description": "TNV v0.1 · DialogContent · DialogOverlay",
       "dependencies": [
         "cn@0.5.0",
         "radix-ui@1.8.1",
@@ -1680,7 +1680,7 @@
       "name": "dropdown-menu",
       "type": "registry:ui",
       "title": "dropdown-menu",
-      "description": "TNV v0.1 · Figma \"- Dropdowns › DropdownMenu*\" (25:55 · 25:72 · 25:81 · 25:82 · 25:84 · 25:178)",
+      "description": "TNV v0.1 · DropdownMenu",
       "dependencies": [
         "cn@0.5.0",
         "radix-ui@1.8.1",
@@ -1700,7 +1700,7 @@
       "name": "field",
       "type": "registry:ui",
       "title": "field",
-      "description": "TNV v0.1 · Figma \"- Forms › FormItem\" (34:92) · Form (34:93) — control: input·textarea·select·checkbox / state: default·error",
+      "description": "TNV v0.1 · FormItem · Form — control: input·textarea·select·checkbox / state: default·error",
       "dependencies": [
         "class-variance-authority@0.7.1",
         "cn@0.5.0"
@@ -1721,7 +1721,7 @@
       "name": "filter-chip",
       "type": "registry:ui",
       "title": "filter-chip",
-      "description": "TNV v0.1 · Figma \"- Chips › FilterChip\" (62:237) — Show Remove: bool",
+      "description": "TNV v0.1 · FilterChip — Show Remove: bool",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -1740,7 +1740,7 @@
       "name": "form-table",
       "type": "registry:ui",
       "title": "form-table",
-      "description": "TNV v0.1 · Figma \"03_Patterns › FormTable\" (4046:181 · Row 4046:166 · Field 4046:165)",
+      "description": "TNV v0.1 · FormTable (Row · Field)",
       "dependencies": [
         "cn@0.5.0"
       ],
@@ -1758,7 +1758,7 @@
       "name": "input-group",
       "type": "registry:ui",
       "title": "input-group",
-      "description": "TNV v0.1 · Figma \"- Inputs › InputGroup\" (48:77)",
+      "description": "TNV v0.1 · InputGroup",
       "dependencies": [
         "class-variance-authority@0.7.1",
         "cn@0.5.0"
@@ -1780,7 +1780,7 @@
       "name": "input",
       "type": "registry:ui",
       "title": "input",
-      "description": "TNV v0.1 · Figma \"- Inputs › Input\" (10:66) — state: default·focus·disabled·invalid(aria-invalid)",
+      "description": "TNV v0.1 · Input — state: default·focus·disabled·invalid(aria-invalid)",
       "dependencies": [
         "cn@0.5.0"
       ],
@@ -1798,7 +1798,7 @@
       "name": "kbd",
       "type": "registry:ui",
       "title": "kbd",
-      "description": "TNV v0.1 · Figma \"- Kbd\" (48:10 Kbd · 48:12 KbdGroup)",
+      "description": "TNV v0.1 · Kbd (Kbd · KbdGroup)",
       "dependencies": [
         "cn@0.5.0"
       ],
@@ -1816,7 +1816,7 @@
       "name": "label",
       "type": "registry:ui",
       "title": "label",
-      "description": "TNV v0.1 · Figma \"- Labels › Label\" (11:54) — Required: bool",
+      "description": "TNV v0.1 · Label — Required: bool",
       "dependencies": [
         "cn@0.5.0",
         "radix-ui@1.8.1"
@@ -1835,7 +1835,7 @@
       "name": "menu-tile",
       "type": "registry:ui",
       "title": "menu-tile",
-      "description": "TNV v0.1 · Figma \"- Buttons › MenuTile\" (4045:6191) — state: default·pressed(:active) / Show Icon",
+      "description": "TNV v0.1 · MenuTile — state: default·pressed(:active) / Show Icon",
       "dependencies": [
         "cn@0.5.0"
       ],
@@ -1853,7 +1853,7 @@
       "name": "metric-row",
       "type": "registry:ui",
       "title": "metric-row",
-      "description": "TNV v0.1 · Figma \"- Progress › MetricRow\" (6003:7046) — 지표 한 줄. size: sm·md / tone: primary·operation·production",
+      "description": "TNV v0.1 · MetricRow — 지표 한 줄. size: sm·md / tone: primary·operation·production",
       "dependencies": [
         "cn@0.5.0"
       ],
@@ -1872,7 +1872,7 @@
       "name": "multi-select",
       "type": "registry:ui",
       "title": "multi-select",
-      "description": "TNV v0.1 · Figma \"- Dropdowns › MultiSelect\" (2022:32)",
+      "description": "TNV v0.1 · MultiSelect",
       "dependencies": [
         "cmdk@1.1.1",
         "radix-ui@1.8.1",
@@ -1894,7 +1894,7 @@
       "name": "nav-user",
       "type": "registry:ui",
       "title": "nav-user",
-      "description": "TNV v0.1 · Figma \"- Sidebar › NavUser\" (43:485) — Name · Email · Show Chevron · layout: full·avatar",
+      "description": "TNV v0.1 · NavUser — Name · Email · Show Chevron · layout: full·avatar",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -1914,7 +1914,7 @@
       "name": "number-input",
       "type": "registry:ui",
       "title": "number-input",
-      "description": "TNV v0.1 · Figma \"- Inputs › NumberInput\" (2024:3)",
+      "description": "TNV v0.1 · NumberInput",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -1933,7 +1933,7 @@
       "name": "number-stepper",
       "type": "registry:ui",
       "title": "number-stepper",
-      "description": "TNV v0.1 · Figma \"- Inputs › NumberInput / Stepper\" (4045:6163)",
+      "description": "TNV v0.1 · NumberInput / Stepper",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -1954,7 +1954,7 @@
       "name": "page-tabs",
       "type": "registry:ui",
       "title": "page-tabs",
-      "description": "TNV v0.1 · Figma \"- Page Tabs\" (62:500 PageTab state: default·hover·active · 62:501 PageTabBar)",
+      "description": "TNV v0.1 · Page Tabs (PageTab state: default·hover·active · PageTabBar)",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -1973,7 +1973,7 @@
       "name": "pagination",
       "type": "registry:ui",
       "title": "pagination",
-      "description": "TNV v0.1 · Figma \"- Pagination\" (27:56 Link isActive · 27:65 Previous · 27:74 Next · 27:75 Ellipsis)",
+      "description": "TNV v0.1 · Pagination (Link isActive · Previous · Next · Ellipsis)",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -1993,7 +1993,7 @@
       "name": "popover",
       "type": "registry:ui",
       "title": "popover",
-      "description": "TNV v0.1 · Figma \"- Popovers › PopoverContent\" (26:3) — 288px, 안쪽 여백 16",
+      "description": "TNV v0.1 · PopoverContent — 288px, 안쪽 여백 16",
       "dependencies": [
         "cn@0.5.0",
         "radix-ui@1.8.1"
@@ -2012,7 +2012,7 @@
       "name": "progress",
       "type": "registry:ui",
       "title": "progress",
-      "description": "TNV v0.1 · Figma \"- Progress › Progress\" (48:41) — size: sm(8)·md(14) / tone: primary·operation(가동률)·production(생산량) / Show Label(md 전용)",
+      "description": "TNV v0.1 · Progress — size: sm(8)·md(14) / tone: primary·operation(가동률)·production(생산량) / Show Label(md 전용)",
       "dependencies": [
         "class-variance-authority@0.7.1",
         "cn@0.5.0",
@@ -2032,7 +2032,7 @@
       "name": "radio-group",
       "type": "registry:ui",
       "title": "radio-group",
-      "description": "TNV v0.1 · Figma \"- Radios › RadioGroupItem\" (11:109)",
+      "description": "TNV v0.1 · RadioGroupItem",
       "dependencies": [
         "cn@0.5.0",
         "radix-ui@1.8.1"
@@ -2071,7 +2071,7 @@
       "name": "select",
       "type": "registry:ui",
       "title": "select",
-      "description": "TNV v0.1 · Figma \"- Dropdowns › Select\" (12:118) size: default·sm / SelectItem (25:110) / SelectContent (25:216)",
+      "description": "TNV v0.1 · Select size: default·sm / SelectItem / SelectContent",
       "dependencies": [
         "cn@0.5.0",
         "radix-ui@1.8.1",
@@ -2091,7 +2091,7 @@
       "name": "separator",
       "type": "registry:ui",
       "title": "separator",
-      "description": "TNV v0.1 · Figma \"- Separators › Separator\" (11:63) — orientation: horizontal·vertical",
+      "description": "TNV v0.1 · Separator — orientation: horizontal·vertical",
       "dependencies": [
         "cn@0.5.0",
         "radix-ui@1.8.1"
@@ -2110,7 +2110,7 @@
       "name": "sheet",
       "type": "registry:ui",
       "title": "sheet",
-      "description": "TNV v0.1 · Figma \"- Sheets › SheetContent\" (26:147) — side: right·left·top·bottom",
+      "description": "TNV v0.1 · SheetContent — side: right·left·top·bottom",
       "dependencies": [
         "cn@0.5.0",
         "radix-ui@1.8.1",
@@ -2131,7 +2131,7 @@
       "name": "sidebar-brand",
       "type": "registry:ui",
       "title": "sidebar-brand",
-      "description": "TNV v0.1 · Figma \"- Sidebar › SidebarBrand\" (43:109) — Name · Subtitle · Show Badge · Show Subtitle · collapsed",
+      "description": "TNV v0.1 · SidebarBrand — Name · Subtitle · Show Badge · Show Subtitle · collapsed",
       "dependencies": [
         "cn@0.5.0"
       ],
@@ -2150,7 +2150,7 @@
       "name": "sidebar",
       "type": "registry:ui",
       "title": "sidebar",
-      "description": "TNV v0.1 · Figma \"- Sidebar\" (32:48 MenuButton collapsed·state · 32:55 SubButton · 32:56 GroupLabel · 32:58 Trigger · 32:591 Sidebar)",
+      "description": "TNV v0.1 · Sidebar (MenuButton collapsed·state · SubButton · GroupLabel · Trigger · Sidebar)",
       "dependencies": [
         "class-variance-authority@0.7.1",
         "cn@0.5.0",
@@ -2178,7 +2178,7 @@
       "name": "skeleton",
       "type": "registry:ui",
       "title": "skeleton",
-      "description": "TNV v0.1 · Figma \"- Skeletons › Skeleton\" (12:166)",
+      "description": "TNV v0.1 · Skeleton",
       "dependencies": [
         "cn@0.5.0"
       ],
@@ -2196,7 +2196,7 @@
       "name": "sonner",
       "type": "registry:ui",
       "title": "sonner",
-      "description": "TNV v0.1 · Figma \"- Toasts › Sonner\" (28:70) — type: default·success·info·warning·error",
+      "description": "TNV v0.1 · Sonner — type: default·success·info·warning·error",
       "dependencies": [
         "next-themes@0.4.6",
         "sonner@2.0.8",
@@ -2216,7 +2216,7 @@
       "name": "spinner",
       "type": "registry:ui",
       "title": "spinner",
-      "description": "TNV v0.1 · Figma \"- Spinners › Spinner\" (48:23) — 16px loader-circle",
+      "description": "TNV v0.1 · Spinner — 16px loader-circle",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -2235,7 +2235,7 @@
       "name": "stat-card",
       "type": "registry:ui",
       "title": "stat-card",
-      "description": "TNV v0.1 · Figma \"- Cards › StatCard\" (38:344) — trend: up·down / tone: default·emphasis / Show Badge · Show Footer",
+      "description": "TNV v0.1 · StatCard — trend: up·down / tone: default·emphasis / Show Badge · Show Footer",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -2275,7 +2275,7 @@
       "name": "stepper",
       "type": "registry:ui",
       "title": "stepper",
-      "description": "TNV v0.1 · Figma \"- Steppers\" (2043:178 Stepper · 2043:86 StepperItem · 2043:95 StepperSeparator)",
+      "description": "TNV v0.1 · Steppers (Stepper · StepperItem · StepperSeparator)",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -2294,7 +2294,7 @@
       "name": "switch",
       "type": "registry:ui",
       "title": "switch",
-      "description": "TNV v0.1 · Figma \"- Switches › Switch\" (11:132)",
+      "description": "TNV v0.1 · Switch",
       "dependencies": [
         "cn@0.5.0",
         "radix-ui@1.8.1"
@@ -2313,7 +2313,7 @@
       "name": "table",
       "type": "registry:ui",
       "title": "table",
-      "description": "TNV v0.1 · Figma \"- Tables\" (33:42 Header · 33:16 Head · 33:103 Row default·hover·selected · 33:41 Cell)",
+      "description": "TNV v0.1 · Tables (Header · Head · Row default·hover·selected · Cell)",
       "dependencies": [
         "cn@0.5.0"
       ],
@@ -2331,7 +2331,7 @@
       "name": "tabs",
       "type": "registry:ui",
       "title": "tabs",
-      "description": "TNV v0.1 · Figma \"- Tabs › TabsList\" (51:139) · TabsTrigger (24:15) — variant: default·line·solid",
+      "description": "TNV v0.1 · TabsList · TabsTrigger — variant: default·line·solid",
       "dependencies": [
         "class-variance-authority@0.7.1",
         "cn@0.5.0",
@@ -2351,7 +2351,7 @@
       "name": "textarea",
       "type": "registry:ui",
       "title": "textarea",
-      "description": "TNV v0.1 · Figma \"- Inputs › Textarea\" (10:93)",
+      "description": "TNV v0.1 · Textarea",
       "dependencies": [
         "cn@0.5.0"
       ],
@@ -2369,7 +2369,7 @@
       "name": "toggle-group",
       "type": "registry:ui",
       "title": "toggle-group",
-      "description": "TNV v0.1 · Figma \"- Toggles › ToggleGroup\" (50:229) · ToggleGroupItem (50:184) — variant: default·outline, position은 자동(first·middle·last)",
+      "description": "TNV v0.1 · ToggleGroup · ToggleGroupItem — variant: default·outline, position은 자동(first·middle·last)",
       "dependencies": [
         "class-variance-authority@0.7.1",
         "cn@0.5.0",
@@ -2390,7 +2390,7 @@
       "name": "toggle",
       "type": "registry:ui",
       "title": "toggle",
-      "description": "TNV v0.1 · Figma \"- Toggles › Toggle\" (50:123) — variant: default·outline·solid·pill / size: default·sm / pressed",
+      "description": "TNV v0.1 · Toggle — variant: default·outline·solid·pill / size: default·sm / pressed",
       "dependencies": [
         "class-variance-authority@0.7.1",
         "cn@0.5.0",
@@ -2410,7 +2410,7 @@
       "name": "toolbar",
       "type": "registry:ui",
       "title": "toolbar",
-      "description": "TNV v0.1 · Figma \"- Layout › Toolbar\" (2044:210)",
+      "description": "TNV v0.1 · Toolbar",
       "dependencies": [
         "cn@0.5.0"
       ],
@@ -2428,7 +2428,7 @@
       "name": "tooltip",
       "type": "registry:ui",
       "title": "tooltip",
-      "description": "TNV v0.1 · Figma \"- Tooltips › Tooltip\" (12:191) — side: top·right·bottom·left",
+      "description": "TNV v0.1 · Tooltip — side: top·right·bottom·left",
       "dependencies": [
         "cn@0.5.0",
         "radix-ui@1.8.1"
@@ -2447,7 +2447,7 @@
       "name": "tree",
       "type": "registry:ui",
       "title": "tree",
-      "description": "TNV v0.1 · Figma \"- Tree\" (62:177 TreeItem · 62:178 Tree)",
+      "description": "TNV v0.1 · Tree (TreeItem · Tree)",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -2466,7 +2466,7 @@
       "name": "filter-bar",
       "type": "registry:block",
       "title": "filter-bar",
-      "description": "TNV v0.1 · Figma \"03_Patterns › FilterBar\" (38:34) — Show Search · Show Filter 1·2 · Show Date · Show Reset",
+      "description": "TNV v0.1 · FilterBar — Show Search · Show Filter 1·2 · Show Date · Show Reset",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -2487,7 +2487,7 @@
       "name": "form-action-bar",
       "type": "registry:block",
       "title": "form-action-bar",
-      "description": "TNV v0.1 · Figma \"03_Patterns › FormActionBar\" (80:153)",
+      "description": "TNV v0.1 · FormActionBar",
       "dependencies": [
         "cn@0.5.0"
       ],
@@ -2506,7 +2506,7 @@
       "name": "page-heading",
       "type": "registry:block",
       "title": "page-heading",
-      "description": "TNV v0.1 · Figma \"03_Patterns › PageHeading\" (37:74) — Title · Description · Show Description · Show Secondary · Show Primary",
+      "description": "TNV v0.1 · PageHeading — Title · Description · Show Description · Show Secondary · Show Primary",
       "dependencies": [
         "cn@0.5.0"
       ],
@@ -2525,7 +2525,7 @@
       "name": "site-header",
       "type": "registry:block",
       "title": "site-header",
-      "description": "TNV v0.1 · Figma \"03_Patterns › SiteHeader\" (37:53)",
+      "description": "TNV v0.1 · SiteHeader",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -2571,7 +2571,7 @@
       "name": "theme-provider",
       "type": "registry:component",
       "title": "theme-provider",
-      "description": "TNV v0.1 · 라이트·다크 두 모드 (Figma 2_Semantic · Color: Light | Dark)",
+      "description": "TNV v0.1 · 라이트·다크 두 모드",
       "dependencies": [
         "next-themes@0.4.6"
       ],

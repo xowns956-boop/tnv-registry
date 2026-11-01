@@ -4,7 +4,7 @@ import { FilterXIcon } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 
-// TNV v0.1 · Figma "03_Patterns › FilterBar" (38:34) — Show Search · Show Filter 1·2 · Show Date · Show Reset
+// TNV v0.1 · FilterBar — Show Search · Show Filter 1·2 · Show Date · Show Reset
 // 안에 Input(검색) · Select(필터) · DatePicker(날짜)를 차례로 넣고, 맨 끝에 FilterBarReset.
 function FilterBar({ className, ...props }: React.ComponentProps<"div">) {
   return (

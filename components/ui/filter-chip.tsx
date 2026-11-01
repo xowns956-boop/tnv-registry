@@ -2,7 +2,7 @@ import * as React from "react"
 import { cn } from "cn"
 import { XIcon } from "lucide-react"
 
-// TNV v0.1 · Figma "- Chips › FilterChip" (62:237) — Show Remove: bool
+// TNV v0.1 · FilterChip — Show Remove: bool
 function FilterChip({
   className,
   children,

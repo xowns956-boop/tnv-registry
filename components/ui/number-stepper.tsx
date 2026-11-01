@@ -7,7 +7,7 @@ import { MinusIcon, PlusIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 
-// TNV v0.1 · Figma "- Inputs › NumberInput / Stepper" (4045:6163)
+// TNV v0.1 · NumberInput / Stepper
 // − 버튼(outline icon) + 가운데 값 입력칸 + + 버튼. 태블릿처럼 손가락으로 숫자를 바꿀 때 쓴다.
 type NumberStepperProps = Omit<React.ComponentProps<"input">, "type" | "value" | "defaultValue" | "onChange" | "min" | "max" | "step"> & {
   value?: number | null

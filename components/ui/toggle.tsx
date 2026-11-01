@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
 import { Toggle as TogglePrimitive } from "radix-ui"
 
-// TNV v0.1 · Figma "- Toggles › Toggle" (50:123) — variant: default·outline·solid·pill / size: default·sm / pressed
+// TNV v0.1 · Toggle — variant: default·outline·solid·pill / size: default·sm / pressed
 const toggleVariants = cva(
   "group/toggle inline-flex items-center justify-center gap-2 text-sm font-medium whitespace-nowrap text-foreground transition-colors outline-none focus-visible:ring-3 focus-visible:ring-alpha-ring-50 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {

@@ -7,7 +7,7 @@ import { Bar, BarChart, CartesianGrid, Cell, Line, LineChart, XAxis, YAxis } fro
 import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart"
 import { chartTone, type ChartTone } from "@/components/ui/chart-presets"
 
-// TNV v0.1 · Figma "- Charts" 대시보드 차트 (6012:405 Radial · 6026:446 Column · ColumnTarget · 6028:260 ChartBrush · 6028:352 Trend · MultiLine · 6042:62 GroupedBar · 6012:447 Legend)
+// TNV v0.1 · Charts 대시보드 차트 (Radial · Column · ColumnTarget · ChartBrush · Trend · MultiLine · GroupedBar · Legend)
 // 대시보드 카드 안에 들어가는 작은 차트. 눈금 글자 text-xs muted-foreground, 격자선 border.
 
 type Row = Record<string, string | number>
@@ -20,7 +20,7 @@ const yAxisProps = { width: "auto", tickMargin: 4, tickLine: false, axisLine: fa
 // 꺾은선은 값이 있는 범위에 맞춰 눈금을 잡는다(546~561처럼 좁은 범위도 변화가 보이게). 막대는 0부터
 const lineDomain: [string, string] = ["auto", "auto"]
 
-// 가운데 정렬 범례(차트 밖에서 쓸 때) · Figma ChartLegendContent (6012:447): 색 표시 8px(둥글기 2) + 이름
+// 가운데 정렬 범례(차트 밖에서 쓸 때) · ChartLegendContent: 색 표시 8px(둥글기 2) + 이름
 function ChartLegendList({
   items,
   orientation = "horizontal",
@@ -81,7 +81,7 @@ function MiniChartHeader({
   )
 }
 
-// ── Radial · Figma Chart/Radial (6012:405) ──
+// ── Radial · Chart/Radial ──
 // rings=3: 160px, 링 두께 12·간격 4, 바깥→안 = values[0]~[2], 가운데 caption + 값(text-xl)
 // rings=1: 72px, 링 두께 7, 가운데 값만(text-sm, 링 색)
 // 바탕 링 = secondary. tone=default(chart-1~3) · metric(가동 operation · 성능 performance · 품질 quality / 링 1개는 production)
@@ -149,7 +149,7 @@ function ChartRadial({
   )
 }
 
-// ── Column · Figma Chart/Column (6026:446) ──
+// ── Column · Chart/Column ──
 // 대시보드 카드용 작은 막대 차트(300×96). 막대 8px · 위 둥글기 4. series 1 = tone 색, series 2 = production(범례는 머리 오른쪽)
 function ChartColumn({
   data,
@@ -188,7 +188,7 @@ function ChartColumn({
   )
 }
 
-// ── ChartBrush · Figma ChartBrush (6028:260) ──
+// ── ChartBrush ──
 // 차트 아래 구간 선택 막대. 바탕 secondary(둥글기 4), 선택 구간 primary 30% + primary 테두리, 양쪽 손잡이 2×12.
 // 구간을 끌어 옮기고, 손잡이를 끌어 넓히거나 줄인다. 키보드 ←→로 구간 이동.
 function ChartBrush({
@@ -272,7 +272,7 @@ function ChartBrush({
   )
 }
 
-// ── Trend · Figma Chart/Trend (6028:352) ──
+// ── Trend · Chart/Trend ──
 // 대시보드 카드용 작은 추이(꺾은선) 차트(300폭). 계열 2개(선 1.5) + 범례(머리 오른쪽, 선 모양) + 아래 구간 선택(ChartBrush)
 // tone=default(chart-1 · chart-3) · metric(production · quality)
 function ChartTrend({
@@ -324,7 +324,7 @@ function ChartTrend({
   )
 }
 
-// ── MultiLine · Figma Chart/MultiLine ──
+// ── MultiLine · Chart/MultiLine ──
 // 대시보드 카드용 작은 여러 줄 꺾은선(300폭 · 높이 96). 계열 2~4개 = chart-1~4 차례, 선 1.5 · 점 없음.
 // 범례 = 머리 오른쪽(선 모양). ChartTrend와 달리 구간 선택(ChartBrush)이 없다
 const multiLineColors = ["var(--chart-1)", "var(--chart-2)", "var(--chart-3)", "var(--chart-4)"]
@@ -365,7 +365,7 @@ function ChartMultiLine({
   )
 }
 
-// ── ColumnTarget · Figma Chart/ColumnTarget ──
+// ── ColumnTarget · Chart/ColumnTarget ──
 // 대시보드 카드용 작은 막대 + 예측(목표) 표시선. 막대 = chart-1(폭 12 · 위 둥글기 4),
 // 예측 = warning 가로선(두께 2, 막대보다 양옆 2씩 넓게 — ChartBarItem 목표선과 같은 색). 범례 = 머리 오른쪽(막대 = 네모, 예측 = 선)
 function TargetTick({ x = 0, y = 0, width = 0, fill }: { x?: number; y?: number; width?: number; fill?: string }) {
@@ -418,7 +418,7 @@ function ChartColumnTarget({
   )
 }
 
-// ── GroupedBar · Figma Chart/GroupedBar (6042:62) ──
+// ── GroupedBar · Chart/GroupedBar ──
 // 칸 많은 2계열 묶음 막대 — 빌렛 위치별 실제값 + 예측값. 막대 5px · 사이 2 · 위 둥글기 2, x 글자 10px.
 // 실제값 = 구간 색(zone: preheat 예열 · heating 가열 · soak 균열), 예측값 = production(AI 예측)
 const zoneColor = {

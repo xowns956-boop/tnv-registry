@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cn } from "cn"
 
-// TNV v0.1 · Figma "- Buttons › MenuTile" (4045:6191) — state: default·pressed(:active) / Show Icon
+// TNV v0.1 · MenuTile — state: default·pressed(:active) / Show Icon
 // 아이콘 + 메뉴명 큰 타일 (태블릿 메뉴용). 폭은 감싸는 그리드가 정한다.
 function MenuTile({
   className,

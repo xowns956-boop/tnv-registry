@@ -4,7 +4,7 @@ import * as React from "react"
 import { cn } from "cn"
 import { Avatar as AvatarPrimitive } from "radix-ui"
 
-// TNV v0.1 · Figma "- Avatars › Avatar" (81:373) — type: fallback·image, 32px
+// TNV v0.1 · Avatar — type: fallback·image, 32px
 function Avatar({
   className,
   size = "default",

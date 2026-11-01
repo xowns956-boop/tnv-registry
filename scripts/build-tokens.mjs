@@ -115,7 +115,7 @@ const item = {
   name: "tnv-foundations",
   type: "registry:style",
   title: "TNV Foundations",
-  description: "TNV Design System 토큰(Figma TNV Design System 기준) — 색(라이트·다크), 간격, 글자, 둥글기, 그림자",
+  description: "TNV Design System 토큰 — 색(라이트·다크), 간격, 글자, 둥글기, 그림자",
   dependencies: ["pretendard@1.3.9", "tw-animate-css@1.4.0", "shadcn@4.22.1"],
   cssVars: { theme, light: lightVars, dark },
   css,

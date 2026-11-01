@@ -6,7 +6,7 @@ import { AlertDialog as AlertDialogPrimitive } from "radix-ui"
 
 import { Button } from "@/components/ui/button"
 
-// TNV v0.1 · Figma "- Dialogs › AlertDialogContent" (26:36)
+// TNV v0.1 · AlertDialogContent
 function AlertDialog({
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Root>) {

@@ -3,7 +3,7 @@ import { cn } from "cn"
 import { Slot } from "radix-ui"
 import { ChevronRightIcon, MoreHorizontalIcon } from "lucide-react"
 
-// TNV v0.1 · Figma "- Breadcrumbs" (27:7 Link · 27:8 Page · 27:10 Separator · 27:13 Ellipsis)
+// TNV v0.1 · Breadcrumbs (Link · Page · Separator · Ellipsis)
 function Breadcrumb({ className, ...props }: React.ComponentProps<"nav">) {
   return (
     <nav

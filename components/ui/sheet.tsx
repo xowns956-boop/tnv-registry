@@ -7,7 +7,7 @@ import { Dialog as SheetPrimitive } from "radix-ui"
 import { Button } from "@/components/ui/button"
 import { XIcon } from "lucide-react"
 
-// TNV v0.1 · Figma "- Sheets › SheetContent" (26:147) — side: right·left·top·bottom
+// TNV v0.1 · SheetContent — side: right·left·top·bottom
 function Sheet({ ...props }: React.ComponentProps<typeof SheetPrimitive.Root>) {
   return <SheetPrimitive.Root data-slot="sheet" {...props} />
 }

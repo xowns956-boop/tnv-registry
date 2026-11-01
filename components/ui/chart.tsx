@@ -6,7 +6,7 @@ import * as RechartsPrimitive from "recharts"
 import type { TooltipValueType } from "recharts"
 
 // Format: { THEME_NAME: CSS_SELECTOR }
-// TNV v0.1 · Figma "- Charts" (35:3 ChartTooltipContent · 35:17 ChartLegendContent) — 계열 색은 chart-1~6 토큰
+// TNV v0.1 · Charts (ChartTooltipContent · ChartLegendContent) — 계열 색은 chart-1~6 토큰
 const THEMES = { light: "", dark: ".dark" } as const
 
 const INITIAL_DIMENSION = { width: 320, height: 200 } as const
@@ -282,7 +282,7 @@ function ChartLegendContent({
 }: React.ComponentProps<"div"> & {
   hideIcon?: boolean
   nameKey?: string
-  // TNV · Figma ChartLegendContent (6012:447) orientation: horizontal(차트 아래) · vertical(차트 옆, 간격 12, text-sm)
+  // TNV · ChartLegendContent orientation: horizontal(차트 아래) · vertical(차트 옆, 간격 12, text-sm)
   orientation?: "horizontal" | "vertical"
 } & RechartsPrimitive.DefaultLegendContentProps) {
   const { config } = useChart()

@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cn } from "cn"
 
-// TNV v0.1 · Figma "- Inputs › Input" (10:66) — state: default·focus·disabled·invalid(aria-invalid)
+// TNV v0.1 · Input — state: default·focus·disabled·invalid(aria-invalid)
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
     <input

@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "cn"
 import { Progress as ProgressPrimitive } from "radix-ui"
 
-// TNV v0.1 · Figma "- Progress › Progress" (48:41) — size: sm(8)·md(14) / tone: primary·operation(가동률)·production(생산량) / Show Label(md 전용)
+// TNV v0.1 · Progress — size: sm(8)·md(14) / tone: primary·operation(가동률)·production(생산량) / Show Label(md 전용)
 const progressVariants = cva("relative flex w-full items-center overflow-hidden rounded-full", {
   variants: {
     size: {

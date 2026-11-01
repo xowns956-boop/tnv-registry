@@ -16,16 +16,16 @@ import {
   TableRow,
 } from "@/components/ui/table"
 
-// TNV v0.1 · Figma "- Tables › DataTable" (2099:7867) — state: default·empty
+// TNV v0.1 · DataTable — state: default·empty
 // 위: 검색 + 오른쪽 actions / 가운데: 테두리 있는 표(정렬·체크박스) / 아래: 선택 개수 + 이전·다음
 // TableHead type: text·sortable·checkbox·action, TableCell type: text·muted·checkbox·action
 type DataTableColumn<T> = {
   key: string
   header: React.ReactNode
   cell?: (row: T) => React.ReactNode
-  /** 정렬 가능한 열 (Figma TableHead type=sortable) */
+  /** 정렬 가능한 열 (TableHead type=sortable) */
   sortValue?: (row: T) => string | number
-  /** 흐린 글자 열 (Figma TableCell type=muted) */
+  /** 흐린 글자 열 (TableCell type=muted) */
   muted?: boolean
   className?: string
 }

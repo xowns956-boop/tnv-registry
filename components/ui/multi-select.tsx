@@ -8,7 +8,7 @@ import { CheckIcon, ChevronDownIcon } from "lucide-react"
 
 import { FilterChip } from "@/components/ui/filter-chip"
 
-// TNV v0.1 · Figma "- Dropdowns › MultiSelect" (2022:32)
+// TNV v0.1 · MultiSelect
 // 트리거 안에 고른 항목이 FilterChip으로 쌓이고, 목록은 SelectContent·SelectItem과 같은 모양.
 type MultiSelectOption = { value: string; label: string }
 

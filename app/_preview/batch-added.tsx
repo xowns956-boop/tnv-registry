@@ -35,7 +35,7 @@ const options = [
 export function BatchAdded() {
   return (
     <>
-      <Section id="added-button" title="Button · state=pressed" figma="- Buttons › Button (pressed 열)">
+      <Section id="added-button" title="Button · state=pressed">
         <Row label="누르고 있는 동안 pressed 색">
           <Button>기본</Button>
           <Button variant="destructive">삭제</Button>
@@ -46,21 +46,21 @@ export function BatchAdded() {
         </Row>
       </Section>
 
-      <Section id="added-stat" title="StatCard · tone" figma="- Cards › StatCard (tone=emphasis)">
+      <Section id="added-stat" title="StatCard · tone">
         <SectionCards>
           <StatCard tone="emphasis" label="오늘 생산량" value="10,350개" badge="+4.3%" trend="up" summary="어제 대비 증가" detail="목표 11,000개 중 94%" />
           <StatCard label="불량률" value="1.8%" badge="-20%" trend="down" summary="지난주 대비 감소" detail="최근 6개월 기준" />
         </SectionCards>
       </Section>
 
-      <Section id="added-stepper" title="NumberStepper" figma="- Inputs › NumberInput / Stepper (4045:6163)">
+      <Section id="added-stepper" title="NumberStepper">
         <Row>
           <NumberStepper defaultValue={0} min={0} aria-label="수량" />
           <NumberStepper defaultValue={5} disabled aria-label="수량(비활성)" />
         </Row>
       </Section>
 
-      <Section id="added-menu-tile" title="MenuTile" figma="- Buttons › MenuTile (4045:6191)">
+      <Section id="added-menu-tile" title="MenuTile">
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <MenuTile icon={<LayoutGridIcon />}>메뉴명</MenuTile>
           <MenuTile icon={<FactoryIcon />}>생산 실적</MenuTile>
@@ -69,7 +69,7 @@ export function BatchAdded() {
         </div>
       </Section>
 
-      <Section id="added-form-table" title="FormTable" figma="03_Patterns › FormTable (4046:181)">
+      <Section id="added-form-table" title="FormTable">
         <FormTable className="max-w-[552px]">
           <FormTableRow>
             <FormTableField label="작업지시">WO-2410-0012</FormTableField>
@@ -96,7 +96,7 @@ export function BatchAdded() {
         </FormTable>
       </Section>
 
-      <Section id="added-dialog-body" title="DialogBody (팝업 내용)" figma="- Dialogs › DialogBody (4047:18)">
+      <Section id="added-dialog-body" title="DialogBody (팝업 내용)">
         <div className="grid gap-6 lg:grid-cols-2">
           <Row label="DialogBodyTable">
             <DialogBodyTable

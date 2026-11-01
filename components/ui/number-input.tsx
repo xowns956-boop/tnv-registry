@@ -4,7 +4,7 @@ import * as React from "react"
 import { cn } from "cn"
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
 
-// TNV v0.1 · Figma "- Inputs › NumberInput" (2024:3)
+// TNV v0.1 · NumberInput
 // 36px 입력칸 + 오른쪽 위/아래 버튼(테두리 왼쪽 1px). 키보드 ↑/↓는 input type="number" 기본 동작.
 type NumberInputProps = Omit<React.ComponentProps<"input">, "type" | "value" | "defaultValue" | "onChange"> & {
   value?: number | null

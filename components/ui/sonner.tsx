@@ -4,7 +4,7 @@ import { useTheme } from "next-themes"
 import { Toaster as Sonner, type ToasterProps } from "sonner"
 import { CircleCheckIcon, InfoIcon, TriangleAlertIcon, OctagonXIcon, Loader2Icon } from "lucide-react"
 
-// TNV v0.1 · Figma "- Toasts › Sonner" (28:70) — type: default·success·info·warning·error
+// TNV v0.1 · Sonner — type: default·success·info·warning·error
 const Toaster = ({ ...props }: ToasterProps) => {
   const { theme = "system" } = useTheme()
 

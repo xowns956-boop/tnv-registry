@@ -48,7 +48,7 @@ export function BatchForms() {
 
   return (
     <>
-      <Section id="button" title="Button · ButtonGroup" figma="- Buttons (9:458 · 51:92)">
+      <Section id="button" title="Button · ButtonGroup">
         {(["default", "destructive", "outline", "secondary", "ghost", "link"] as const).map((v) => (
           <Row key={v} label={`variant=${v}`}>
             <Button variant={v}>버튼</Button>
@@ -71,7 +71,7 @@ export function BatchForms() {
         </Row>
       </Section>
 
-      <Section id="input" title="Input · Textarea · InputGroup · NumberInput" figma="- Inputs (10:66 · 10:93 · 48:77 · 2024:3)">
+      <Section id="input" title="Input · Textarea · InputGroup · NumberInput">
         <Row label="Input: default · filled · disabled · invalid">
           <Input className="w-80" placeholder="내용을 입력하세요" />
           <Input className="w-80" defaultValue="입력한 내용" />
@@ -94,7 +94,7 @@ export function BatchForms() {
         </Row>
       </Section>
 
-      <Section id="select" title="Select · DropdownMenu · Autocomplete · MultiSelect" figma="- Dropdowns (12:118 · 25:55 · 2022:3 · 2022:32)">
+      <Section id="select" title="Select · DropdownMenu · Autocomplete · MultiSelect">
         <Row label="Select: default · sm · disabled · invalid">
           <Select>
             <SelectTrigger aria-label="라인"><SelectValue placeholder="선택하세요" /></SelectTrigger>
@@ -141,7 +141,7 @@ export function BatchForms() {
         </Row>
       </Section>
 
-      <Section id="checkbox" title="Checkbox · Radio · Switch · Label · FilterChip" figma="- Checkboxes · Radios · Switches · Labels · Chips">
+      <Section id="checkbox" title="Checkbox · Radio · Switch · Label · FilterChip">
         <Row label="Checkbox">
           <div className="flex items-center gap-2"><Checkbox id="c1" /><Label htmlFor="c1">기본</Label></div>
           <div className="flex items-center gap-2"><Checkbox id="c2" defaultChecked /><Label htmlFor="c2">선택됨</Label></div>

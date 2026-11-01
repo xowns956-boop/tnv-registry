@@ -1,6 +1,6 @@
 import { cn } from "cn"
 
-// TNV v0.1 · Figma "- Skeletons › Skeleton" (12:166)
+// TNV v0.1 · Skeleton
 function Skeleton({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div

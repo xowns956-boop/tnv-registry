@@ -18,7 +18,7 @@ import { NavUser } from "@/components/ui/nav-user"
 import { Separator } from "@/components/ui/separator"
 import { SidebarTrigger } from "@/components/ui/sidebar"
 
-// TNV v0.1 · Figma "03_Patterns › SiteHeader" (37:53)
+// TNV v0.1 · SiteHeader
 // Show Sidebar Trigger · Show Home · Show Level 2 · Show Action · Show Search · Show Icon Buttons · Show User
 // 사이드바 트리거를 쓰려면 SidebarProvider 안에 둔다.
 type Crumb = { label: string; href?: string }

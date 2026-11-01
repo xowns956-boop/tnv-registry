@@ -5,7 +5,7 @@ import { TrendingDownIcon, TrendingUpIcon } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardAction, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
-// TNV v0.1 · Figma "- Cards › StatCard" (38:344) — trend: up·down / tone: default·emphasis / Show Badge · Show Footer
+// TNV v0.1 · StatCard — trend: up·down / tone: default·emphasis / Show Badge · Show Footer
 // tone="emphasis"는 card-emphasis 바탕 + card-emphasis-foreground 글자 (옆 카드와 살짝만 구분).
 // badge를 주면 오른쪽 위 배지가 보이고, summary·detail을 주면 아래 설명이 보인다.
 function StatCard({
@@ -65,7 +65,7 @@ function StatCard({
   )
 }
 
-// TNV v0.1 · Figma "- Cards › SectionCards" (38:345) — StatCard 여러 개를 한 줄에 (좁으면 줄바꿈)
+// TNV v0.1 · SectionCards — StatCard 여러 개를 한 줄에 (좁으면 줄바꿈)
 function SectionCards({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div

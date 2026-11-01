@@ -5,7 +5,7 @@ import { cn } from "cn"
 import { DropdownMenu as DropdownMenuPrimitive } from "radix-ui"
 import { CheckIcon, ChevronRightIcon } from "lucide-react"
 
-// TNV v0.1 · Figma "- Dropdowns › DropdownMenu*" (25:55 · 25:72 · 25:81 · 25:82 · 25:84 · 25:178)
+// TNV v0.1 · DropdownMenu
 // DropdownMenuItem variant: default·destructive
 function DropdownMenu({
   ...props
