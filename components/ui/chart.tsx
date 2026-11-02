@@ -282,7 +282,7 @@ function ChartLegendContent({
 }: React.ComponentProps<"div"> & {
   hideIcon?: boolean
   nameKey?: string
-  // TNV · ChartLegendContent orientation: horizontal(차트 아래) · vertical(차트 옆, 간격 12, text-sm)
+  // TNV · ChartLegendContent orientation: horizontal(차트 아래, 넘치면 다음 줄로 · 줄 간격 4) · vertical(차트 옆, 간격 12, text-sm)
   orientation?: "horizontal" | "vertical"
 } & RechartsPrimitive.DefaultLegendContentProps) {
   const { config } = useChart()
@@ -297,9 +297,7 @@ function ChartLegendContent({
         "flex items-center justify-center gap-4",
         orientation === "vertical"
           ? "flex-col items-start justify-start gap-3 text-sm text-foreground"
-          : verticalAlign === "top"
-            ? "pb-3"
-            : "pt-3",
+          : cn("flex-wrap gap-y-1", verticalAlign === "top" ? "pb-3" : "pt-3"),
         className
       )}
     >
