@@ -14,7 +14,8 @@
           "차트 지표 색 fuel(연료, #46B2FF): chart-fuel 토큰, Column·BarItem tone=fuel. 연료와 성능은 같은 파랑 계열이라 한 차트에 같이 쓰지 않는 규칙을 docs/tnv.md에 추가",
           "대시보드 차트 ChartMultiLine(작은 여러 줄 꺾은선, 계열 2~4개) · ChartColumnTarget(작은 막대 + 예측 표시선)",
           "설비 상태 부품 StatusBadge(run·idle·error·maintenance·offline, size default·sm) · 상태 범례 StatusLegend · 라벨–값 한 줄 DataRow(plain·boxed, 지표 색 tone)",
-          "Resizable(스플리터): 막대를 끌어 좌우·위아래 칸 크기 조절이 가능해요."
+          "Resizable(스플리터): 막대를 끌어 좌우·위아래 칸 크기 조절이 가능해요.",
+          "브랜드 로고 Logo: TWINVUE 글자 로고예요. 높이만 바꾸면 너비는 비율대로 맞춰지고, 글자색은 다크·라이트에 맞게 바뀌어요."
         ]
       },
       {

@@ -5,6 +5,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { ChartColumn, ChartColumnTarget, ChartGroupedBar, ChartLegendList, ChartMultiLine, ChartRadial, ChartTrend } from "@/components/ui/chart-dashboard"
 import { ChartBarLabeled } from "@/components/ui/chart-presets"
 import { DataRow } from "@/components/ui/data-row"
+import { Logo } from "@/components/ui/logo"
 import { MetricRow } from "@/components/ui/metric-row"
 import { Progress } from "@/components/ui/progress"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -29,6 +30,15 @@ const tones = ["default", "operation", "performance", "quality", "production", "
 export function BatchTnv() {
   return (
     <>
+      <Section id="tnv-logo" title="Logo">
+        <Row label="Logo · 기본 높이 48 (h-12)">
+          <Logo />
+        </Row>
+        <Row label="높이 조절 · h-8 · h-6">
+          <Logo className="h-8" />
+          <Logo className="h-6" />
+        </Row>
+      </Section>
       <Section id="tnv-chart" title="대시보드 차트">
         <Row label="Chart/Radial · tone=default·metric · rings=3·1">
           <ChartRadial values={[75, 90, 65]} caption="Total" valueText="63%" aria-label="종합 63%" />

@@ -1146,7 +1146,7 @@
       "name": "tnv",
       "type": "registry:block",
       "title": "TNV Design System",
-      "description": "TNV Design System v0.1.0 전체 — 토큰 + 부품 69개 + AI 규칙 문서(docs/tnv.md)",
+      "description": "TNV Design System v0.1.0 전체 — 토큰 + 부품 70개 + AI 규칙 문서(docs/tnv.md)",
       "registryDependencies": [
         "http://localhost:3400/r/0.1.0/tnv-foundations.json",
         "http://localhost:3400/r/0.1.0/accordion.json",
@@ -1179,6 +1179,7 @@
         "http://localhost:3400/r/0.1.0/input.json",
         "http://localhost:3400/r/0.1.0/kbd.json",
         "http://localhost:3400/r/0.1.0/label.json",
+        "http://localhost:3400/r/0.1.0/logo.json",
         "http://localhost:3400/r/0.1.0/menu-tile.json",
         "http://localhost:3400/r/0.1.0/metric-row.json",
         "http://localhost:3400/r/0.1.0/multi-select.json",
@@ -1827,6 +1828,24 @@
       "files": [
         {
           "path": "components/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "logo",
+      "type": "registry:ui",
+      "title": "logo",
+      "description": "TNV v0.1 · Logo — TWINVUE 글자 로고(152×48). 높이 className으로 조절(h-12 기본, 너비는 비율대로)",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/logo.tsx",
           "type": "registry:ui"
         }
       ]
