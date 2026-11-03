@@ -2,11 +2,12 @@
 
 import * as React from "react"
 import { toast } from "sonner"
-import { BoldIcon, FactoryIcon, FolderIcon, ItalicIcon, LayoutDashboardIcon, SettingsIcon, UnderlineIcon, BellIcon, InfoIcon } from "lucide-react"
+import { BoldIcon, FactoryIcon, FolderIcon, ItalicIcon, LayoutDashboardIcon, SettingsIcon, UnderlineIcon, BellIcon, InfoIcon, ChevronsLeftIcon } from "lucide-react"
 
 import { FilterBar, FilterBarReset } from "@/components/blocks/filter-bar"
 import { FormActionBar } from "@/components/blocks/form-action-bar"
 import { PageHeading } from "@/components/blocks/page-heading"
+import { SectionTitle } from "@/components/blocks/section-title"
 import { SiteHeader } from "@/components/blocks/site-header"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
@@ -369,6 +370,10 @@ export function BatchRest() {
 
       <Section id="patterns" title="Patterns">
         <PageHeading title="페이지 제목" description="페이지 설명을 입력합니다." actions={<><Button variant="outline">보조 버튼</Button><Button>주요 버튼</Button></>} />
+        <div className="flex max-w-86 flex-col gap-3">
+          <SectionTitle title="가열공정" status="run" onBack={() => {}} action={<Button variant="outline" size="icon" aria-label="패널 접기"><ChevronsLeftIcon aria-hidden="true" /></Button>} />
+          <SectionTitle title="제목만" />
+        </div>
         <FilterBar>
           <Input className="w-62" placeholder="검색" aria-label="검색" />
           <Select><SelectTrigger aria-label="라인"><SelectValue placeholder="전체" /></SelectTrigger><SelectContent>{lines.map((l) => <SelectItem key={l.value} value={l.value}>{l.label}</SelectItem>)}</SelectContent></Select>

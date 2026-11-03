@@ -137,7 +137,7 @@ UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 
 | Dropdowns | `ui/select`, `ui/dropdown-menu`, `ui/autocomplete`, `ui/multi-select` | Select `size`: default·sm, DropdownMenuItem `variant`: default·destructive |
 | Checkboxes · Radios · Switches · Labels | `ui/checkbox`, `ui/radio-group`, `ui/switch`, `ui/label` | Label `required` (빨간 점) |
 | Badges · Avatars · Tooltips · Separators · Skeletons | `ui/badge`, `ui/status-badge`, `ui/avatar`, `ui/tooltip`, `ui/separator`, `ui/skeleton` | Badge `variant`: default·secondary·destructive·outline. StatusBadge(설비·공정 상태) `status`: run·idle·error·maintenance·offline / `size`: default(20)·sm(16, 표 칸·판정 표시) / 문구는 children(없으면 상태 이름, 예: 양호·유의·불량) |
-| Cards | `ui/card`, `ui/stat-card` (`StatCard`, `SectionCards`) | Card `variant`: default(흰 카드, 여백 16)·panel(대시보드 좌우 반투명 큰 패널, 제목 24) / `size`: default(16)·sm(12). StatCard `label`·`value`·`badge`·`summary`·`detail`·`trend`(up·down)·`tone`(default·emphasis=진한 바탕) |
+| Cards | `ui/card`, `ui/stat-card` (`StatCard`, `SectionCards`) | Card `variant`: default(흰 카드, 여백 16)·panel(대시보드 좌우 반투명 큰 패널, 제목 24) / `size`: default(16)·sm(12). StatCard `label`·`value`·`badge`·`summary`·`detail`·`trend`(up·down)·`tone`(default·emphasis=진한 바탕·selected=고른 카드, accent 바탕) |
 | Tabs | `ui/tabs` | TabsList `variant`: default·line·solid(대시보드 상단 전환 — 탭마다 따로 선 버튼, 선택 = primary) |
 | Popovers · Dialogs · Sheets | `ui/popover`, `ui/dialog`, `ui/alert-dialog`, `ui/sheet`, `ui/dialog-body` | Sheet `side`: right·left·top·bottom. 팝업 내용: `DialogBodyTable`(columns·rows)·`DialogBodyInfo`(items)·`DialogBodyLotInput`·`DialogBodyTextarea`·`DialogBodyOptionList`(options)·`DialogBodyOptionButtons`(options·onSelect) |
 | Breadcrumbs · Pagination | `ui/breadcrumb`, `ui/pagination` | PaginationLink `isActive` |
@@ -155,7 +155,7 @@ UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 
 | Tree · Chips · Page Tabs | `ui/tree`, `ui/filter-chip`, `ui/page-tabs` | Tree `nodes`·`selectedId`, PageTab `active`·`onClose` |
 | Layout | `ui/accordion`, `ui/toolbar`, `ui/resizable` | Resizable(칸 나누기·스플리터): `ResizablePanelGroup` `orientation`: horizontal(좌우)·vertical(위아래) → `ResizablePanel`(`defaultSize`·`minSize`, 문자열 "40%") + `ResizableHandle`(`withHandle`: 손잡이 표시). 그룹은 높이가 정해진 상자 안에 둔다 |
 | Logo | `ui/logo` (`Logo`) | TWINVUE 글자 로고. 높이만 `className`으로 조절(기본 `h-12` = 48, 너비는 비율대로). 글자는 `text-foreground`, N의 파란 획은 브랜드 색 고정. 대시보드 상단 바 로고 칸에 쓴다. 모양·색을 바꾸거나 다시 그리지 않는다 |
-| 03_Patterns | `blocks/site-header`, `blocks/page-heading`, `blocks/filter-bar`, `blocks/form-action-bar`, `blocks/status-legend`, `ui/form-table` | Show 옵션 = props 유무. StatusLegend = 설비 상태 범례(StatusBadge 5개, Run·Idle·Error·Maintenance·Offline). 정보·조건 표 = `FormTable` > `FormTableRow` > `FormTableField`(`label`, `type`: text·control), 한 줄에 칸 1~2개 |
+| 03_Patterns | `blocks/site-header`, `blocks/page-heading`, `blocks/section-title`, `blocks/filter-bar`, `blocks/form-action-bar`, `blocks/status-legend`, `ui/form-table` | Show 옵션 = props 유무. StatusLegend = 설비 상태 범례(StatusBadge 5개, Run·Idle·Error·Maintenance·Offline). SectionTitle = 옆 칸(aside) 맨 위 제목 줄(`title`, `onBack`=뒤로가기, `status`=StatusBadge, `action`=오른쪽 버튼 — 넣은 것만 보임). 정보·조건 표 = `FormTable` > `FormTableRow` > `FormTableField`(`label`, `type`: text·control), 한 줄에 칸 1~2개 |
 
 `button`의 `xs`·`icon-sm`, `badge`의 `ghost`·`link`, `avatar`의 `size`는 shadcn 호환용이며 디자인 파일에 없다. 새 화면에서는 쓰지 않는다.
 

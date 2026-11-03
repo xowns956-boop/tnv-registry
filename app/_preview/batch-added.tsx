@@ -50,6 +50,7 @@ export function BatchAdded() {
         <SectionCards>
           <StatCard tone="emphasis" label="오늘 생산량" value="10,350개" badge="+4.3%" trend="up" summary="어제 대비 증가" detail="목표 11,000개 중 94%" />
           <StatCard label="불량률" value="1.8%" badge="-20%" trend="down" summary="지난주 대비 감소" detail="최근 6개월 기준" />
+          <StatCard tone="selected" label="설비 가동률" value="92.4%" badge="+1.2%" trend="up" summary="선택된 카드" detail="tone=selected · accent 바탕" />
         </SectionCards>
       </Section>
 

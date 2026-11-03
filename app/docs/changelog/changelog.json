@@ -10,11 +10,13 @@
           "토큰(tnv-foundations): 트윈뷰 색(라이트·다크), 간격, 글자(Pretendard), 둥글기, 그림자(panel·header·primary-glow 포함)",
           "대시보드 부품: Card variant=panel(반투명 큰 패널), TabsList variant=solid, Progress size(sm·md)·tone(primary·operation·production)·% 라벨, MetricRow(지표 한 줄)",
           "대시보드 차트: ChartRadial · ChartColumn · ChartTrend · ChartBrush · ChartGroupedBar · ChartLegendList, ChartBarItem 지표 색·목표선, 범례 세로 배치",
-          "차트 지표 색 fuel(연료, #46B2FF): chart-fuel 토큰, Column·BarItem tone=fuel. 연료와 성능은 같은 파랑 계열이라 한 차트에 같이 쓰지 않는 규칙을 docs/tnv.md에 추가",
+          "차트 지표 색 fuel(연료, #46B2FF): chart-fuel 토큰, Column·BarItem tone=fuel. 연료와 성능은 같은 파랑 계열이라 한 차트에 같이 쓰지 않아요.",
           "대시보드 차트 ChartMultiLine(작은 여러 줄 꺾은선, 계열 2~4개) · ChartColumnTarget(작은 막대 + 예측 표시선)",
           "설비 상태 부품 StatusBadge(run·idle·error·maintenance·offline, size default·sm) · 상태 범례 StatusLegend · 라벨–값 한 줄 DataRow(plain·boxed, 지표 색 tone)",
           "Resizable(스플리터): 막대를 끌어 좌우·위아래 칸 크기 조절이 가능해요.",
-          "브랜드 로고 Logo: TWINVUE 글자 로고예요. 높이만 바꾸면 너비는 비율대로 맞춰지고, 글자색은 다크·라이트에 맞게 바뀌어요."
+          "브랜드 로고 Logo: TWINVUE 글자 로고예요. 높이만 바꾸면 너비는 비율대로 맞춰지고, 글자색은 다크·라이트에 맞게 바뀌어요.",
+          "StatCard tone=selected: 고른 카드를 accent 바탕으로 표시해요. 다크에서는 강조 카드(emphasis)와 바탕색이 같아요.",
+          "옆 칸 제목 줄 SectionTitle: 제목에 뒤로가기·상태 배지·오른쪽 버튼을 넣은 것만 보여요."
         ]
       },
       {

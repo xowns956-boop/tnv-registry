@@ -36,7 +36,7 @@ export const PREVIEW_GROUPS: { label: string; items: PreviewSection[] }[] = [
       { id: "toggle", label: "진행·토글", title: "Progress · Toggle · Spinner · Kbd", keywords: "진행 토글 로딩 키" },
       { id: "tree", label: "트리·화면 탭", title: "Tree · FilterChip · PageTabs · Toolbar · Accordion", keywords: "트리 칩 화면탭 툴바 아코디언" },
       { id: "resizable", label: "칸 나누기", title: "Resizable", keywords: "스플리터 splitter 칸 나누기 크기 조절 분할 패널" },
-      { id: "patterns", label: "화면 패턴", title: "Patterns", keywords: "패턴 헤더 필터바 페이지제목 상태범례 SiteHeader FilterBar PageHeading FormActionBar StatusLegend" },
+      { id: "patterns", label: "화면 패턴", title: "Patterns", keywords: "패턴 헤더 필터바 페이지제목 상태범례 SiteHeader FilterBar PageHeading FormActionBar StatusLegend SectionTitle 섹션제목 옆칸제목" },
     ],
   },
   {
@@ -54,7 +54,7 @@ export const PREVIEW_GROUPS: { label: string; items: PreviewSection[] }[] = [
     label: "현장 부품",
     items: [
       { id: "added-button", label: "버튼 눌림", title: "Button · state=pressed", keywords: "버튼 눌림" },
-      { id: "added-stat", label: "강조 카드", title: "StatCard · tone", keywords: "통계 카드 강조" },
+      { id: "added-stat", label: "강조 카드", title: "StatCard · tone", keywords: "통계 카드 강조 선택 selected" },
       { id: "added-stepper", label: "숫자 증감", title: "NumberStepper", keywords: "숫자 증감" },
       { id: "added-menu-tile", label: "메뉴 타일", title: "MenuTile", keywords: "메뉴 타일 태블릿" },
       { id: "added-form-table", label: "정보 표", title: "FormTable", keywords: "정보 조건 표" },

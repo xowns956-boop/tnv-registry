@@ -1146,7 +1146,7 @@
       "name": "tnv",
       "type": "registry:block",
       "title": "TNV Design System",
-      "description": "TNV Design System v0.1.0 전체 — 토큰 + 부품 70개 + AI 규칙 문서(docs/tnv.md)",
+      "description": "TNV Design System v0.1.0 전체 — 토큰 + 부품 71개 + AI 규칙 문서(docs/tnv.md)",
       "registryDependencies": [
         "http://localhost:3400/r/0.1.0/tnv-foundations.json",
         "http://localhost:3400/r/0.1.0/accordion.json",
@@ -1215,6 +1215,7 @@
         "http://localhost:3400/r/0.1.0/filter-bar.json",
         "http://localhost:3400/r/0.1.0/form-action-bar.json",
         "http://localhost:3400/r/0.1.0/page-heading.json",
+        "http://localhost:3400/r/0.1.0/section-title.json",
         "http://localhost:3400/r/0.1.0/site-header.json",
         "http://localhost:3400/r/0.1.0/status-legend.json",
         "http://localhost:3400/r/0.1.0/theme-provider.json",
@@ -2254,7 +2255,7 @@
       "name": "stat-card",
       "type": "registry:ui",
       "title": "stat-card",
-      "description": "TNV v0.1 · StatCard — trend: up·down / tone: default·emphasis / Show Badge · Show Footer",
+      "description": "TNV v0.1 · StatCard — trend: up·down / tone: default·emphasis·selected / Show Badge · Show Footer",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"
@@ -2537,6 +2538,28 @@
           "path": "components/blocks/page-heading.tsx",
           "type": "registry:component",
           "target": "components/blocks/page-heading.tsx"
+        }
+      ]
+    },
+    {
+      "name": "section-title",
+      "type": "registry:block",
+      "title": "section-title",
+      "description": "TNV v0.1 · SectionTitle — Title · Show Back · Show Status · Show Action",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json",
+        "http://localhost:3400/r/0.1.0/button.json",
+        "http://localhost:3400/r/0.1.0/status-badge.json"
+      ],
+      "files": [
+        {
+          "path": "components/blocks/section-title.tsx",
+          "type": "registry:component",
+          "target": "components/blocks/section-title.tsx"
         }
       ]
     },

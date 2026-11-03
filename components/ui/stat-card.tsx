@@ -5,8 +5,9 @@ import { TrendingDownIcon, TrendingUpIcon } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardAction, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
-// TNV v0.1 · StatCard — trend: up·down / tone: default·emphasis / Show Badge · Show Footer
+// TNV v0.1 · StatCard — trend: up·down / tone: default·emphasis·selected / Show Badge · Show Footer
 // tone="emphasis"는 card-emphasis 바탕 + card-emphasis-foreground 글자 (옆 카드와 살짝만 구분).
+// tone="selected"는 accent 바탕(고른 카드 표시), 글자·테두리·그림자는 default와 같다.
 // badge를 주면 오른쪽 위 배지가 보이고, summary·detail을 주면 아래 설명이 보인다.
 function StatCard({
   label,
@@ -25,7 +26,7 @@ function StatCard({
   summary?: React.ReactNode
   detail?: React.ReactNode
   trend?: "up" | "down"
-  tone?: "default" | "emphasis"
+  tone?: "default" | "emphasis" | "selected"
 }) {
   const TrendIcon = trend === "up" ? TrendingUpIcon : TrendingDownIcon
   const emphasis = tone === "emphasis"
@@ -35,7 +36,7 @@ function StatCard({
       data-slot="stat-card"
       data-trend={trend}
       data-tone={tone}
-      className={cn("shadow-xs", emphasis && "border-card-emphasis bg-card-emphasis text-card-emphasis-foreground", className)}
+      className={cn("shadow-xs", emphasis && "border-card-emphasis bg-card-emphasis text-card-emphasis-foreground", tone === "selected" && "bg-accent", className)}
       {...props}
     >
       <CardHeader>
