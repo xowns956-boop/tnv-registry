@@ -134,6 +134,24 @@ export function BatchDisplay() {
             <TabsTrigger value="set" disabled>설정</TabsTrigger>
           </TabsList>
         </Tabs>
+        <Row label="fill (480 칸)">
+          <div className="flex w-[480px] flex-col gap-4">
+            <Tabs defaultValue="info">
+              <TabsList fill>
+                <TabsTrigger value="info">기본 정보</TabsTrigger>
+                <TabsTrigger value="log">변경 이력</TabsTrigger>
+                <TabsTrigger value="alarm">알람</TabsTrigger>
+              </TabsList>
+            </Tabs>
+            <Tabs defaultValue="info">
+              <TabsList variant="line" fill>
+                <TabsTrigger value="info">기본 정보</TabsTrigger>
+                <TabsTrigger value="log">변경 이력</TabsTrigger>
+                <TabsTrigger value="alarm">알람</TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </div>
+        </Row>
       </Section>
 
       <Section id="overlay" title="Popover · Dialog · AlertDialog · Sheet">

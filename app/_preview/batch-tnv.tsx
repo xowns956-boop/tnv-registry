@@ -77,6 +77,15 @@ export function BatchTnv() {
             <TabsTrigger value="off" className="w-40" disabled>준비 중</TabsTrigger>
           </TabsList>
         </Tabs>
+        <Row label="fill (480 칸)">
+          <Tabs defaultValue="group" className="w-[480px]">
+            <TabsList variant="solid" fill>
+              <TabsTrigger value="group">공장 그룹</TabsTrigger>
+              <TabsTrigger value="list">공장 목록</TabsTrigger>
+              <TabsTrigger value="off" disabled>준비 중</TabsTrigger>
+            </TabsList>
+          </Tabs>
+        </Row>
       </Section>
 
       <Section id="tnv-progress" title="Progress · size · tone">

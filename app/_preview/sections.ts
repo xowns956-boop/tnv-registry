@@ -19,7 +19,7 @@ export const PREVIEW_GROUPS: { label: string; items: PreviewSection[] }[] = [
     items: [
       { id: "badge", label: "배지·아바타", title: "Badge · StatusBadge · Avatar · Tooltip · Separator · Skeleton", keywords: "배지 상태배지 상태 판정 아바타 툴팁 구분선 스켈레톤" },
       { id: "card", label: "카드", title: "Card · StatCard · SectionCards", keywords: "카드 통계" },
-      { id: "tabs", label: "탭", title: "Tabs", keywords: "탭" },
+      { id: "tabs", label: "탭", title: "Tabs", keywords: "탭 꽉채우기 fill" },
       { id: "overlay", label: "팝업", title: "Popover · Dialog · AlertDialog · Sheet", keywords: "팝오버 팝업 다이얼로그 모달 시트" },
     ],
   },

@@ -2351,7 +2351,7 @@
       "name": "tabs",
       "type": "registry:ui",
       "title": "tabs",
-      "description": "TNV v0.1 · TabsList · TabsTrigger — variant: default·line·solid",
+      "description": "TNV v0.1 · TabsList · TabsTrigger — variant: default·line·solid, fill: 꽉 채우기(기본 false)",
       "dependencies": [
         "class-variance-authority@0.7.1",
         "cn@0.5.0",
