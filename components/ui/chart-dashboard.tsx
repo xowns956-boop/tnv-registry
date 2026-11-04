@@ -108,6 +108,18 @@ function ChartRadial({
   const size = single ? 72 : 160
   const thickness = single ? 7 : 12
   const colors = single ? [tone === "metric" ? "var(--chart-production)" : "var(--chart-1)"] : radialColors[tone]
+  // 처음 그릴 때 0에서 값까지 링이 차오른다(원형 차트와 같게 0.4초 뒤 1.5초 ease). 값이 바뀌어도 같은 움직임으로 이어진다.
+  const [drawn, setDrawn] = React.useState(false)
+  React.useEffect(() => {
+    let inner = 0
+    const outer = requestAnimationFrame(() => {
+      inner = requestAnimationFrame(() => setDrawn(true))
+    })
+    return () => {
+      cancelAnimationFrame(outer)
+      cancelAnimationFrame(inner)
+    }
+  }, [])
   return (
     <div
       data-slot="chart-radial"
@@ -130,7 +142,9 @@ function ChartRadial({
                 fill="none"
                 stroke={colors[i]}
                 strokeWidth={thickness}
-                strokeDasharray={`${c * pct} ${c}`}
+                strokeDasharray={`${c} ${c}`}
+                strokeDashoffset={drawn ? c * (1 - pct) : c}
+                className="transition-[stroke-dashoffset] delay-400 duration-1500 ease-[ease] motion-reduce:transition-none"
               />
             </g>
           )

@@ -186,7 +186,7 @@ export default function InstallWithAI() {
             들어 있는 부품
           </h2>
           <p className="text-sm text-muted-foreground">
-            Figma <span className="text-foreground">TNV Design System</span>과 같은 이름이에요. 여기 없는 부품은 AI가 새로 만들지 않고 없다고
+            디자인 파일과 같은 이름이에요. 여기 없는 부품은 AI가 새로 만들지 않고 없다고
             알려 줘요.
           </p>
         </div>
