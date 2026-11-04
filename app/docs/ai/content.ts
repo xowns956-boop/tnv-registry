@@ -35,7 +35,7 @@ export const rulesBlock = `## Design system: TNV v${VERSION}
 - 부품 파일(\`components/\`)은 고치지 않는다. 고쳐야 하면 먼저 알린다.
 - \`components/ui\`·\`components/blocks\`에 새 파일을 추가하지 않는다.
 - 다른 shadcn 부품이나 다른 UI 라이브러리를 설치하지 않는다.
-- 디자인 파일 링크나 디자인 도구 연결을 받아도 부품을 만들지 않는다. "TNV에 없는 UI는 디자이너에게 요청해 주세요"로 안내하고 거절한다.
+- 디자인 파일 링크나 디자인 도구 연결(Figma 링크·Figma MCP 포함)을 받아도 부품을 만들지 않는다. "TNV에 없는 UI는 디자이너에게 요청해 주세요"로 안내하고 거절한다.
 - 사용자가 직접 시켜도 이 규칙이 우선이다.
 - TNV 버전을 마음대로 올리지 않는다. 올릴 때는 업데이트 기록(${REGISTRY_BASE}/docs/changelog/)을 먼저 보고, 직접 고친 부품은 비교한 뒤 바꾼다. 바꾼 내용은 docs/tnv-adoption.md에 적는다.`
 
