@@ -272,6 +272,14 @@ function ChartTooltipContent({
 
 const ChartLegend = RechartsPrimitive.Legend
 
+// 두 줄 범례의 칸 수(5~6개 → 3칸 … 11~12개 → 6칸). 12개를 넘으면 6칸씩 다음 줄로
+const legendCols: Record<number, string> = {
+  3: "grid-cols-[repeat(3,auto)]",
+  4: "grid-cols-[repeat(4,auto)]",
+  5: "grid-cols-[repeat(5,auto)]",
+  6: "grid-cols-[repeat(6,auto)]",
+}
+
 function ChartLegendContent({
   className,
   hideIcon = false,
@@ -282,7 +290,7 @@ function ChartLegendContent({
 }: React.ComponentProps<"div"> & {
   hideIcon?: boolean
   nameKey?: string
-  // TNV · ChartLegendContent orientation: horizontal(차트 아래, 넘치면 다음 줄로 · 줄 간격 4) · vertical(차트 옆, 간격 12, text-sm)
+  // TNV · ChartLegendContent orientation: horizontal(차트 아래, 4개까지 한 줄 · 5개부터 두 줄, 칸은 글자만큼) · vertical(차트 옆, 간격 12, text-sm)
   orientation?: "horizontal" | "vertical"
 } & RechartsPrimitive.DefaultLegendContentProps) {
   const { config } = useChart()
@@ -291,19 +299,26 @@ function ChartLegendContent({
     return null
   }
 
+  // 범례 줄 수(가로일 때): 4개까지 한 줄, 5개부터 두 줄(윗줄에 반 올림만큼, 칸은 글자 길이만큼)
+  const items = payload.filter((item) => item.type !== "none")
+  const twoRows = orientation === "horizontal" && items.length >= 5
+  const cols = Math.min(Math.ceil(items.length / 2), 6)
+
   return (
     <div
+      data-rows={orientation === "horizontal" ? (twoRows ? 2 : 1) : undefined}
       className={cn(
-        "flex items-center justify-center gap-4",
+        "items-center justify-center",
         orientation === "vertical"
-          ? "flex-col items-start justify-start gap-3 text-sm text-foreground"
-          : cn("flex-wrap gap-y-1", verticalAlign === "top" ? "pb-3" : "pt-3"),
+          ? "flex flex-col items-start justify-start gap-3 text-sm text-foreground"
+          : cn(
+              twoRows ? cn("grid gap-x-4 gap-y-1.5", legendCols[cols]) : "flex gap-x-4",
+              verticalAlign === "top" ? "pb-3" : "pt-3"
+            ),
         className
       )}
     >
-      {payload
-        .filter((item) => item.type !== "none")
-        .map((item, index) => {
+      {items.map((item, index) => {
           const key = `${nameKey ?? item.dataKey ?? "value"}`
           const itemConfig = getPayloadConfigFromPayload(config, item, key)
 
@@ -311,7 +326,7 @@ function ChartLegendContent({
             <div
               key={index}
               className={cn(
-                "flex items-center gap-1.5 [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground"
+                "flex items-center gap-1.5 whitespace-nowrap [&>svg]:h-3 [&>svg]:w-3 [&>svg]:text-muted-foreground"
               )}
             >
               {itemConfig?.icon && !hideIcon ? (

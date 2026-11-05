@@ -79,7 +79,7 @@ function ChartPie({
   className?: string
 }) {
   return (
-    <ChartContainer config={config} className={cn("aspect-auto h-47 w-42", className)}>
+    <ChartContainer config={config} className={cn("aspect-auto h-47 w-full", className)}>
       <PieChart accessibilityLayer margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
         <ChartTooltip content={<ChartTooltipContent hideLabel nameKey={nameKey} />} />
         <Pie data={data} dataKey={valueKey} nameKey={nameKey} outerRadius="100%" stroke="var(--card)" strokeWidth={2}>
