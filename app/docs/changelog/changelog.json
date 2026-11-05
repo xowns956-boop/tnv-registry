@@ -2,43 +2,43 @@
   {
     "version": "0.1.0",
     "date": "2026-11-03",
-    "summary": "TNV Design System(트윈뷰 대시보드)의 첫 공개판이에요.",
+    "summary": "트윈뷰 대시보드용 TNV 디자인 시스템 첫 공개판이에요.",
     "groups": [
       {
         "title": "추가",
         "items": [
-          "토큰(tnv-foundations): 트윈뷰 색(라이트·다크), 간격, 글자(Pretendard), 둥글기, 그림자(panel·header·primary-glow 포함)",
-          "대시보드 부품: Card variant=panel(반투명 큰 패널), TabsList variant=solid, Progress size(sm·md)·tone(primary·operation·production)·% 라벨, MetricRow(지표 한 줄)",
-          "대시보드 차트: ChartRadial · ChartColumn · ChartTrend · ChartBrush · ChartGroupedBar · ChartLegendList, ChartBarItem 지표 색·목표선, 범례 세로 배치",
-          "차트 지표 색 fuel(연료, #46B2FF): chart-fuel 토큰, Column·BarItem tone=fuel. 연료와 성능은 같은 파랑 계열이라 한 차트에 같이 쓰지 않아요.",
-          "대시보드 차트 ChartMultiLine(작은 여러 줄 꺾은선, 계열 2~4개) · ChartColumnTarget(작은 막대 + 예측 표시선)",
-          "설비 상태 부품 StatusBadge(run·idle·error·maintenance·offline, size default·sm) · 상태 범례 StatusLegend · 라벨–값 한 줄 DataRow(plain·boxed, 지표 색 tone)",
-          "Resizable(스플리터): 막대를 끌어 좌우·위아래 칸 크기 조절이 가능해요.",
-          "브랜드 로고 Logo: TWINVUE 글자 로고예요. 높이만 바꾸면 너비는 비율대로 맞춰지고, 글자색은 다크·라이트에 맞게 바뀌어요.",
-          "StatCard tone=selected: 고른 카드를 accent 바탕으로 표시해요. 다크에서는 강조 카드(emphasis)와 바탕색이 같아요.",
-          "옆 칸 제목 줄 SectionTitle: 제목에 뒤로가기·상태 배지·오른쪽 버튼을 넣은 것만 보여요.",
-          "Badge 상태 variant 4개(info·success·warning·destructive-subtle): 연한 바탕 + 진한 글자예요. 설비 가동 상태·판정은 그대로 StatusBadge를 써요.",
-          "ChartPie type=donut: 가운데가 빈 고리 원형 차트예요. 가운데 글자(caption·valueText)는 넣을 때만 보여요."
+          "기본 디자인 값: 트윈뷰 색(다크·라이트), 간격, 글자(Pretendard), 둥글기, 그림자",
+          "대시보드 부품: 반투명 큰 패널(Card panel), 버튼형 탭(Tabs solid), 진행 막대 색·크기(Progress), 지표 한 줄(MetricRow)",
+          "대시보드 차트: 링(ChartRadial), 작은 막대(ChartColumn), 추이 꺾은선과 구간 선택(ChartTrend·ChartBrush), 여러 줄 꺾은선(ChartMultiLine), 예측선 막대(ChartColumnTarget), 묶음 막대(ChartGroupedBar), 범례 목록(ChartLegendList)",
+          "차트 연료 색(fuel): 성능과 비슷한 파랑이라 한 차트에 같이 쓰지 않아요.",
+          "설비 상태 배지(StatusBadge)와 상태 범례(StatusLegend)",
+          "라벨–값 한 줄(DataRow)",
+          "칸 크기 조절(Resizable): 막대를 끌어 칸 크기를 바꿔요.",
+          "브랜드 로고(Logo): 높이만 정하면 너비는 비율대로 맞춰져요.",
+          "고른 카드 표시(StatCard selected)",
+          "옆 칸 제목 줄(SectionTitle): 뒤로가기·상태·버튼을 넣은 것만 보여요.",
+          "배지 상태 색 4개(Badge info·success·warning·destructive-subtle): 설비 상태와 판정은 StatusBadge를 써요.",
+          "도넛 차트(ChartPie donut): 가운데에 글자를 넣을 수 있어요."
         ]
       },
       {
         "title": "바뀜",
         "items": [
-          "지표 색 5개(가동·생산·품질·전력·가스)를 디자인 파일 값으로 바로잡음",
-          "다크 모드 차트 기본색 chart-1~5를 라이트와 같은 색 계열로 통일(파랑 단색 → 파랑·보라·청록·주황)",
-          "전력(electricity) 라이트를 노랑 계열 #B08C00으로 변경",
-          "선택 항목 글자(accent-foreground) 다크를 파랑 #4E9FFF로 변경",
-          "대시보드 차트 세로축이 숫자 길이에 맞춰 넓어지고 천 단위 쉼표가 붙어요. 꺾은선은 값 범위에 맞춰 눈금을 잡아요(막대는 0부터).",
-          "차트 범례가 칸을 넘치면 다음 줄로 내려가요. 원형 차트처럼 항목이 많을 때 양 끝이 잘리던 문제를 고쳤어요.",
-          "대시보드 링 차트(ChartRadial)가 처음 보일 때 원형 차트처럼 0에서 값까지 차올라요.",
-          "SectionTitle 제목이 말줄임될 때 마우스를 올리면 전체 제목이 보여요."
+          "지표 색 5개(가동·생산·품질·전력·가스)를 디자인 파일과 같게 맞췄어요.",
+          "다크 모드 차트 색이 라이트와 같은 색 묶음(파랑·보라·청록·주황)이 됐어요.",
+          "라이트 모드 전력 색을 노랑 계열로 바꿨어요.",
+          "다크 모드 선택 항목 글자를 더 밝은 파랑으로 바꿨어요.",
+          "대시보드 차트 세로축이 숫자 길이에 맞춰 넓어지고, 천 단위 쉼표가 붙어요.",
+          "차트 범례가 4개까지는 한 줄, 5개부터는 두 줄로 놓여요.",
+          "링 차트가 처음 보일 때 0에서 값까지 차올라요.",
+          "옆 칸 제목이 잘리면 마우스를 올려 전체 제목을 볼 수 있어요."
         ]
       },
       {
         "title": "알아 둘 점",
         "items": [
-          "다크가 기본이에요. 라이트 색도 들어 있지만 화면에 테마 전환 버튼은 아직 두지 않아요(나중에 기능으로 추가 예정).",
-          "가운데 3D 영역은 개발에서 따로 얹어요. TNV는 그 자리를 빈 칸으로 둬요."
+          "다크가 기본이에요. 테마 전환 버튼은 아직 없어요.",
+          "가운데 3D 영역은 개발에서 따로 넣어요. TNV는 그 자리를 비워 둬요."
         ]
       }
     ]
