@@ -62,6 +62,12 @@ export function BatchDisplay() {
           <Badge variant="destructive">배지</Badge>
           <Badge variant="outline">배지</Badge>
         </Row>
+        <Row label="Badge · 상태">
+          <Badge variant="info">진행 중</Badge>
+          <Badge variant="success">완료</Badge>
+          <Badge variant="warning">검토 필요</Badge>
+          <Badge variant="destructive-subtle">실패</Badge>
+        </Row>
         <Row label="StatusBadge · size=default">
           <StatusBadge status="run" />
           <StatusBadge status="idle" />

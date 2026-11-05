@@ -17,7 +17,7 @@ export const PREVIEW_GROUPS: { label: string; items: PreviewSection[] }[] = [
   {
     label: "표시",
     items: [
-      { id: "badge", label: "배지·아바타", title: "Badge · StatusBadge · Avatar · Tooltip · Separator · Skeleton", keywords: "배지 상태배지 상태 판정 아바타 툴팁 구분선 스켈레톤" },
+      { id: "badge", label: "배지·아바타", title: "Badge · StatusBadge · Avatar · Tooltip · Separator · Skeleton", keywords: "배지 상태배지 상태 info success warning 판정 아바타 툴팁 구분선 스켈레톤" },
       { id: "card", label: "카드", title: "Card · StatCard · SectionCards", keywords: "카드 통계" },
       { id: "tabs", label: "탭", title: "Tabs", keywords: "탭 꽉채우기 fill" },
       { id: "overlay", label: "팝업", title: "Popover · Dialog · AlertDialog · Sheet", keywords: "팝오버 팝업 다이얼로그 모달 시트" },
@@ -32,7 +32,7 @@ export const PREVIEW_GROUPS: { label: string; items: PreviewSection[] }[] = [
       { id: "sidebar", label: "사이드바", title: "Sidebar · SidebarBrand · NavUser", keywords: "사이드바 메뉴 사용자" },
       { id: "table", label: "표", title: "DataTable · Table", keywords: "표 테이블 그리드" },
       { id: "form", label: "입력 양식", title: "Form (Field)", keywords: "폼 필드 입력양식" },
-      { id: "chart", label: "차트", title: "Charts", keywords: "차트 그래프" },
+      { id: "chart", label: "차트", title: "Charts", keywords: "차트 그래프 파이 도넛 donut" },
       { id: "toggle", label: "진행·토글", title: "Progress · Toggle · Spinner · Kbd", keywords: "진행 토글 로딩 키" },
       { id: "tree", label: "트리·화면 탭", title: "Tree · FilterChip · PageTabs · Toolbar · Accordion", keywords: "트리 칩 화면탭 툴바 아코디언" },
       { id: "resizable", label: "칸 나누기", title: "Resizable", keywords: "스플리터 splitter 칸 나누기 크기 조절 분할 패널" },

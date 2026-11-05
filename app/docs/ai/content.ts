@@ -20,7 +20,7 @@ export const rulesBlock = `## Design system: TNV v${VERSION}
 사용자가 "디자인 시스템 써", "TNV 써", "TNV 디자인 시스템 써", "use the design system"이라고 하면 docs/tnv.md를 먼저 읽고 그 규칙대로 만든다.
 
 - 설치된 TNV 부품(\`components/ui\`, \`components/blocks\`)만 조립한다. TNV에 없는 부품·차트·패턴은 만들지도, 기존 부품을 조합해 흉내 내지도, "만들까요?"라고 묻지도 않는다. 무조건 "TNV에 없음"으로 알리고, 화면 그 자리에는 "디자인 필요: ○○ → 디자이너에게 요청" 칸을 빨간 점선으로 반드시 표시하고, 사용자에게 "디자이너에게 요청해 주세요"라고 분명히 안내한다(docs/tnv.md "TNV에 없는 것이 필요할 때").
-- 이미지 요소는 TNV 부품으로 표현할 수 있으면 최대한 표현한다. 상태 표시·범례는 StatusBadge·StatusLegend, 판정(양호·유의·불량)은 StatusBadge size=sm, 라벨–값 칸은 DataRow(plain·boxed), 여러 줄 꺾은선 + 구간 선택은 ChartMultiLine + ChartBrush (docs/tnv.md "역할별 대응표").
+- 이미지 요소는 TNV 부품으로 표현할 수 있으면 최대한 표현한다. 설비·공정 상태 표시·범례는 StatusBadge·StatusLegend, 판정(양호·유의·불량)은 StatusBadge size=sm, 그 밖의 상태 표시는 Badge 상태 variant(info·success·warning·destructive-subtle), 라벨–값 칸은 DataRow(plain·boxed), 여러 줄 꺾은선 + 구간 선택은 ChartMultiLine + ChartBrush (docs/tnv.md "역할별 대응표").
 - "없음"은 한 번 찾고 바로 정하지 않는다. 후보마다 3장 부품 표 → 부품 파일 안 하위 부품 → TNV 부품끼리 잇기 → 역할별 대응표 순서로 다시 찾고, 찾아본 부품 이름을 대응 목록과 보고에 같이 적는다.
 - "있음/없음"은 설치된 TNV 코드 부품(components/ui·components/blocks) 기준으로 판단한다. 코드에 없는 UI는 디자인 파일에 비슷한 게 있어도 무조건 "디자인 필요" 칸으로 두고 디자이너에게 알린다.
 - 이미지 요소마다 역할을 먼저 한 줄로 적고(예: "Run 초록 칸 = 설비 상태 표시"), 모양이 아니라 그 역할 이름으로 부품을 찾는다.

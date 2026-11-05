@@ -256,6 +256,7 @@ export function BatchRest() {
           <ChartBar data={months} config={seriesConfig} xKey="month" />
           <ChartLine data={months} config={seriesConfig} xKey="month" />
           <ChartPie data={[{ name: "a", value: 40 }, { name: "b", value: 30 }, { name: "c", value: 30 }]} config={seriesConfig} />
+          <ChartPie type="donut" caption="가동률" valueText="72%" data={[{ name: "a", value: 40 }, { name: "b", value: 30 }, { name: "c", value: 30 }]} config={seriesConfig} />
           <ChartBarGradient data={["월", "화", "수", "목", "금"].map((d, i) => ({ day: d, v: 1500 + i * 300 }))} xKey="day" yKey="v" label="생산량" />
         </div>
         <ChartBarLabeled items={[{ label: "항목 1", value: 120 }, { label: "항목 2", value: 250, valueText: "250 (2.4%)" }, { label: "항목 3", value: 140 }, { label: "항목 4", value: 125 }]} />

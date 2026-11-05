@@ -1332,7 +1332,7 @@
       "name": "badge",
       "type": "registry:ui",
       "title": "badge",
-      "description": "TNV v0.1 · Badge — variant: default·secondary·destructive·outline (ghost·link는 shadcn 호환용)",
+      "description": "TNV v0.1 · Badge — variant: default·secondary·destructive·outline · 상태 info·success·warning·destructive-subtle (ghost·link는 shadcn 호환용)",
       "dependencies": [
         "class-variance-authority@0.7.1",
         "cn@0.5.0",

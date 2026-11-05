@@ -136,7 +136,7 @@ UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 
 | Inputs | `ui/input`, `ui/textarea`, `ui/input-group`, `ui/number-input`, `ui/number-stepper` | 오류는 `aria-invalid`. NumberStepper(− 값 +) `value`·`onValueChange`·`min`·`max`·`step` — 태블릿 숫자 입력 |
 | Dropdowns | `ui/select`, `ui/dropdown-menu`, `ui/autocomplete`, `ui/multi-select` | Select `size`: default·sm, DropdownMenuItem `variant`: default·destructive |
 | Checkboxes · Radios · Switches · Labels | `ui/checkbox`, `ui/radio-group`, `ui/switch`, `ui/label` | Label `required` (빨간 점) |
-| Badges · Avatars · Tooltips · Separators · Skeletons | `ui/badge`, `ui/status-badge`, `ui/avatar`, `ui/tooltip`, `ui/separator`, `ui/skeleton` | Badge `variant`: default·secondary·destructive·outline. StatusBadge(설비·공정 상태) `status`: run·idle·error·maintenance·offline / `size`: default(20)·sm(16, 표 칸·판정 표시) / 문구는 children(없으면 상태 이름, 예: 양호·유의·불량) |
+| Badges · Avatars · Tooltips · Separators · Skeletons | `ui/badge`, `ui/status-badge`, `ui/avatar`, `ui/tooltip`, `ui/separator`, `ui/skeleton` | Badge `variant`: default·secondary·destructive·outline · 상태 info(진행 중·정보)·success(완료)·warning(주의)·destructive-subtle(실패·문제, 연한 바탕) — 고르는 법은 아래 "배지 variant 고르기". StatusBadge(설비·공정 상태) `status`: run·idle·error·maintenance·offline / `size`: default(20)·sm(16, 표 칸·판정 표시) / 문구는 children(없으면 상태 이름, 예: 양호·유의·불량) |
 | Cards | `ui/card`, `ui/stat-card` (`StatCard`, `SectionCards`) | Card `variant`: default(흰 카드, 여백 16)·panel(대시보드 좌우 반투명 큰 패널, 제목 24) / `size`: default(16)·sm(12). StatCard `label`·`value`·`badge`·`summary`·`detail`·`trend`(up·down)·`tone`(default·emphasis=진한 바탕·selected=고른 카드, accent 바탕) |
 | Tabs | `ui/tabs` | TabsList `variant`: default·line·solid(대시보드 상단 전환 — 탭마다 따로 선 버튼, 선택 = primary) / `fill`: 꽉 채우기(부모 폭을 채우고 탭이 똑같이 나눠 퍼짐, 사용자가 요청할 때만 켬. 기본은 내용만큼) |
 | Popovers · Dialogs · Sheets | `ui/popover`, `ui/dialog`, `ui/alert-dialog`, `ui/sheet`, `ui/dialog-body` | Sheet `side`: right·left·top·bottom. 팝업 내용: `DialogBodyTable`(columns·rows)·`DialogBodyInfo`(items)·`DialogBodyLotInput`·`DialogBodyTextarea`·`DialogBodyOptionList`(options)·`DialogBodyOptionButtons`(options·onSelect) |
@@ -148,7 +148,7 @@ UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 
 | Sidebar | `ui/sidebar`, `ui/sidebar-brand`, `ui/nav-user` | collapsible="icon"으로 접힘(폭 56, 펼침 256), NavUser `layout`: full·avatar. 조립 규칙은 4장 |
 | Tables | `ui/table`, `ui/data-table` | DataTable `columns`(sortValue·muted)·`selectable`·`searchText`·`actions` |
 | Forms | `ui/field` (`Field`, `FieldLabel`, `FieldDescription`, `FieldError`) | 오류는 `Field data-invalid` + 컨트롤 `aria-invalid` |
-| Charts | `ui/chart`, `ui/chart-presets`, `ui/chart-dashboard` | 기본: `ChartBar`·`ChartLine`·`ChartPie`·`ChartBarGradient`·`ChartBarItem`(`tone`·`target`)·`ChartBarLabeled`·`ChartCombo`. 대시보드: `ChartRadial`(`values` 1개=작은 링·3개=큰 링, `tone` default·metric, `caption`·`valueText`)·`ChartColumn`(카드용 작은 막대, `series` 1~2·`tone`)·`ChartTrend`(작은 꺾은선 + `ChartBrush` 구간 선택, `tone` default·metric)·`ChartMultiLine`(작은 여러 줄 꺾은선, 계열 2~4개 = chart-1~4, 구간 선택이 필요하면 아래에 `ChartBrush`(`count`·`value`·`onValueChange`)를 이어 붙이고 고른 구간만큼 data를 잘라 넘김)·`ChartColumnTarget`(작은 막대 + 예측 표시선, 막대 chart-1 · 예측선 warning, `valueKey`·`targetKey`·`valueLabel`·`targetLabel`)·`ChartGroupedBar`(빌렛 위치별 실제값=구간 색 + AI 예측=production)·`ChartLegendList`(`orientation` horizontal·vertical). `ChartLegendContent`도 `orientation` 지원(가로 범례는 4개까지 한 줄, 5개부터 두 줄 — 칸은 글자 길이만큼, 글자는 한 줄 고정. 항목이 많은 원형 차트도 그대로 쓴다). 막대 tone: default·operation·performance·quality·production·electricity·gas·fuel(연료, #46B2FF). 대시보드 차트 세로축은 눈금 글자 폭에 맞춰 자동으로 넓어지고 천 단위 쉼표가 붙는다. 꺾은선(Trend·MultiLine)은 값이 있는 범위에 맞춰 눈금을 잡고(좁은 범위도 변화가 보임), 막대는 0부터 |
+| Charts | `ui/chart`, `ui/chart-presets`, `ui/chart-dashboard` | 기본: `ChartBar`·`ChartLine`·`ChartPie`(`type`: pie·donut(가운데 빈 고리, 안쪽 반지름 = 바깥 75%), donut일 때 `caption`·`valueText` = 가운데 글자, 안 넘기면 빈 고리)·`ChartBarGradient`·`ChartBarItem`(`tone`·`target`)·`ChartBarLabeled`·`ChartCombo`. 대시보드: `ChartRadial`(`values` 1개=작은 링·3개=큰 링, `tone` default·metric, `caption`·`valueText`)·`ChartColumn`(카드용 작은 막대, `series` 1~2·`tone`)·`ChartTrend`(작은 꺾은선 + `ChartBrush` 구간 선택, `tone` default·metric)·`ChartMultiLine`(작은 여러 줄 꺾은선, 계열 2~4개 = chart-1~4, 구간 선택이 필요하면 아래에 `ChartBrush`(`count`·`value`·`onValueChange`)를 이어 붙이고 고른 구간만큼 data를 잘라 넘김)·`ChartColumnTarget`(작은 막대 + 예측 표시선, 막대 chart-1 · 예측선 warning, `valueKey`·`targetKey`·`valueLabel`·`targetLabel`)·`ChartGroupedBar`(빌렛 위치별 실제값=구간 색 + AI 예측=production)·`ChartLegendList`(`orientation` horizontal·vertical). `ChartLegendContent`도 `orientation` 지원(가로 범례는 4개까지 한 줄, 5개부터 두 줄 — 칸은 글자 길이만큼, 글자는 한 줄 고정. 항목이 많은 원형 차트도 그대로 쓴다). 막대 tone: default·operation·performance·quality·production·electricity·gas·fuel(연료, #46B2FF). 대시보드 차트 세로축은 눈금 글자 폭에 맞춰 자동으로 넓어지고 천 단위 쉼표가 붙는다. 꺾은선(Trend·MultiLine)은 값이 있는 범위에 맞춰 눈금을 잡고(좁은 범위도 변화가 보임), 막대는 0부터 |
 | Items | `ui/data-row` | DataRow(라벨 · 값 한 줄) `label`·`value` / `variant`: plain(한 줄, 높이 24)·boxed(테두리 작은 칸, text-xs — 이동평균·실시간·온도 같은 2열 요약 칸) / `tone`(값 글자색): default·operation·performance·quality·production·electricity·gas. 진행 막대가 필요하면 MetricRow |
 | Progress | `ui/progress`, `ui/metric-row` | Progress `size`: sm(8)·md(14) / `tone`: primary·operation(가동률)·production(생산량) / `showLabel`(md에서 막대 안 %). MetricRow `label`·`value`·`target`(md)·`percent`·`size`·`tone` — 지표 한 줄(sm = 라벨·값 한 줄, md = 라벨 위 + 값·목표 + % 막대) |
 | Toggles · Spinners · Kbd | `ui/toggle`, `ui/toggle-group`, `ui/spinner`, `ui/kbd` | Toggle `variant`: default·outline·solid·pill, `size`: default·sm |
@@ -158,6 +158,27 @@ UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 
 | 03_Patterns | `blocks/site-header`, `blocks/page-heading`, `blocks/section-title`, `blocks/filter-bar`, `blocks/form-action-bar`, `blocks/status-legend`, `ui/form-table` | Show 옵션 = props 유무. StatusLegend = 설비 상태 범례(StatusBadge 5개, Run·Idle·Error·Maintenance·Offline). SectionTitle = 옆 칸(aside) 맨 위 제목 줄(`title`, `onBack`=뒤로가기, `status`=StatusBadge, `action`=오른쪽 버튼 — 넣은 것만 보임). 정보·조건 표 = `FormTable` > `FormTableRow` > `FormTableField`(`label`, `type`: text·control), 한 줄에 칸 1~2개 |
 
 `button`의 `xs`·`icon-sm`, `badge`의 `ghost`·`link`, `avatar`의 `size`는 shadcn 호환용이며 디자인 파일에 없다. 새 화면에서는 쓰지 않는다.
+
+### 배지 variant 고르기
+
+먼저 나눈다: **설비·라인·공정의 가동 상태(가동·대기·오류·점검·꺼짐)와 판정(양호·유의·불량)은 `StatusBadge`**, 그 밖의 상태 표시(작업·요청 진행 상태, 영역 이름표 등)는 아래 표의 `Badge` variant다. 배지 색은 **뜻**으로 고른다. 디자인·이미지에 배지 색이 정해져 있으면 그 뜻에 맞는 variant를 쓴다.
+
+| variant | 쓰는 때 | 예 |
+|---|---|---|
+| `default` | 상태가 없는 기본 이름표. 화면의 주 색(primary)과 같은 계열로 보여야 할 때 | 구분·분류 이름표 |
+| `secondary` | `default`보다 약하게 보여야 하는 보조 이름표. `default`보다 눈에 띄면 안 된다. **쓰기 전에 사용자에게 묻는다**(한 화면에 배지가 많아 위계를 낮춰야 할 때만) | 부가 정보·개수 |
+| `outline` | 디자인·이미지의 배지가 테두리 모양일 때만 | — |
+| `info` | 안내·진행 중·현재 상태. 좋고 나쁨이 없는 상태 | 진행 중, 지금 보고 있는 항목 |
+| `success` | 긍정 결과 | 완료, 승인 |
+| `warning` | 확인·검토가 필요하지만 아직 실패는 아닌 것 | 주의, 검토 필요 |
+| `destructive-subtle` | 실패·문제. **기본은 이것** | 실패, 반려, 문제가 발생한 항목 |
+| `destructive` | `destructive-subtle`과 뜻이 같고 더 강하게 보인다(진한 바탕). 즉시 조치가 필요한 것 하나만 도드라지게 할 때만 쓰고, 표·목록에 반복되는 배지에는 쓰지 않는다 | 긴급 정지 요청 |
+
+- **강도 규칙:** 진한 바탕(`default`·`destructive`)은 강조, 연한 바탕(상태 4개)은 표시다. 표·목록처럼 같은 배지가 여러 번 나오면 연한 바탕을 쓴다.
+- **실패는 warning이 아니다:** 이미 실패·문제면 `destructive-subtle`, 아직 확인이 필요한 단계면 `warning`이다.
+- **한 화면 안에서 같은 뜻 = 같은 variant:** 같은 상태에 다른 색을 섞지 않는다.
+- **색만으로 구분하지 않는다:** 배지에는 항상 상태 글자를 쓴다(7장 6번).
+- **설비·공정 가동 상태와 판정은 `StatusBadge`, 그 밖의 상태는 `Badge` variant.** 같은 화면에서 둘을 섞어도 되지만, 같은 뜻을 두 부품으로 나눠 쓰지 않는다.
 
 ## 4. 화면 조립 패턴 (어드민)
 
@@ -208,7 +229,7 @@ div (h-dvh, bg-page-background) — 1440보다 좁으면 이 틀 안에서만 �
 - **스크롤바**: 좌우 패널 안 스크롤은 화살표·바탕 없이 가는 둥근 막대(폭 6, 좌우 여백 2)만 보이고, **스크롤하는 동안에만** 나타났다가 멈추고 0.8초 뒤 사라진다. 막대 색 = `muted-foreground` 50%. **TNV 부품에는 아직 없다 → 디자이너에게 넘김.** 가열·압연 테스트 화면은 디자이너가 정한 이 모양대로 임시 구현(`.panel-scroll` + 스크롤 중 `data-scrolling`)해 둔 상태다. 새 화면에서 같은 모양을 새로 지어내지 않는다.
 
 #### 상태 표시 (Run · Idle · Error · Maintenance · Offline)
-- 상태 배지 = `StatusBadge`(`status` run·idle·error·maintenance·offline), 상태 범례 = `StatusLegend`, 표 칸·판정 표시(양호·유의·불량) = `StatusBadge size="sm"` + 문구. `Badge`에 색 클래스를 덧입혀 따로 만들지 않는다.
+- 상태 배지 = `StatusBadge`(`status` run·idle·error·maintenance·offline), 상태 범례 = `StatusLegend`, 표 칸·판정 표시(양호·유의·불량) = `StatusBadge size="sm"` + 문구. 가동 상태·판정은 `Badge` 상태 variant로 대신하지 않고, `Badge`에 색 클래스를 덧입혀 따로 만들지도 않는다. 그 밖의 상태 표시는 3장 "배지 variant 고르기"대로 `Badge` variant를 쓴다.
 - 색(부품에 들어 있음): Run = `success` · Idle = `warning` · Error = `destructive` · Maintenance = `ees-maintenance` · Offline = `dark`, 모두 `-subtle` 바탕 · `-subtle-foreground` 글자.
 - **카드 제목 앞 상태 막대는 TNV 부품에 아직 없다 → 디자이너에게 넘김.** 새 화면에서는 "TNV에 없는 것이 필요할 때" 순서대로 "디자인 필요" 칸으로 두고, 디자이너에게 요청하라고 안내한다.
 

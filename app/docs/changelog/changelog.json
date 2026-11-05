@@ -16,7 +16,9 @@
           "Resizable(스플리터): 막대를 끌어 좌우·위아래 칸 크기 조절이 가능해요.",
           "브랜드 로고 Logo: TWINVUE 글자 로고예요. 높이만 바꾸면 너비는 비율대로 맞춰지고, 글자색은 다크·라이트에 맞게 바뀌어요.",
           "StatCard tone=selected: 고른 카드를 accent 바탕으로 표시해요. 다크에서는 강조 카드(emphasis)와 바탕색이 같아요.",
-          "옆 칸 제목 줄 SectionTitle: 제목에 뒤로가기·상태 배지·오른쪽 버튼을 넣은 것만 보여요."
+          "옆 칸 제목 줄 SectionTitle: 제목에 뒤로가기·상태 배지·오른쪽 버튼을 넣은 것만 보여요.",
+          "Badge 상태 variant 4개(info·success·warning·destructive-subtle): 연한 바탕 + 진한 글자예요. 설비 가동 상태·판정은 그대로 StatusBadge를 써요.",
+          "ChartPie type=donut: 가운데가 빈 고리 원형 차트예요. 가운데 글자(caption·valueText)는 넣을 때만 보여요."
         ]
       },
       {

@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { cn } from "cn"
-import { Bar, BarChart, CartesianGrid, Cell, ComposedChart, LabelList, Line, LineChart, Pie, PieChart, XAxis, YAxis } from "recharts"
+import { Bar, BarChart, CartesianGrid, Cell, ComposedChart, Label, LabelList, Line, LineChart, Pie, PieChart, XAxis, YAxis } from "recharts"
 
 import {
   ChartContainer,
@@ -65,27 +65,71 @@ function ChartLine({ data, config, xKey, className }: { data: Row[]; config: Cha
   )
 }
 
+// ChartPie type: pie(기본)·donut(가운데 빈 고리, 안쪽 반지름 = 바깥 75%). donut일 때 caption·valueText를 넘기면 가운데 글자, 안 넘기면 빈 고리
 function ChartPie({
   data,
   config,
   nameKey = "name",
   valueKey = "value",
+  type = "pie",
+  caption,
+  valueText,
   className,
 }: {
   data: Row[]
   config: ChartConfig
   nameKey?: string
   valueKey?: string
+  type?: "pie" | "donut"
+  caption?: React.ReactNode
+  valueText?: React.ReactNode
   className?: string
 }) {
+  const donut = type === "donut"
   return (
     <ChartContainer config={config} className={cn("aspect-auto h-47 w-full", className)}>
       <PieChart accessibilityLayer margin={{ top: 0, right: 0, bottom: 0, left: 0 }}>
         <ChartTooltip content={<ChartTooltipContent hideLabel nameKey={nameKey} />} />
-        <Pie data={data} dataKey={valueKey} nameKey={nameKey} outerRadius="100%" stroke="var(--card)" strokeWidth={2}>
+        {/* 반지름 = 범례를 뺀 남은 칸의 100%. 범례 한 줄이면 지금과 같은 80, 범례가 두 줄로 넘어가면 그만큼 작아져 겹치지 않는다 */}
+        <Pie
+          data={data}
+          dataKey={valueKey}
+          nameKey={nameKey}
+          outerRadius="100%"
+          innerRadius={donut ? "75%" : 0}
+          stroke="var(--card)"
+          strokeWidth={2}
+        >
           {data.map((d) => (
             <Cell key={String(d[nameKey])} fill={`var(--color-${d[nameKey]})`} />
           ))}
+          {donut && (caption != null || valueText != null) && (
+            <Label
+              position="center"
+              content={({ viewBox }) => {
+                // 받는 칸 = 범례를 뺀 원 영역(x·y·width·height). 원 중심 = 그 칸의 가운데
+                if (!viewBox) return null
+                const box = viewBox as { cx?: number; cy?: number; x?: number; y?: number; width?: number; height?: number }
+                const cx = box.cx ?? (box.x ?? 0) + (box.width ?? 0) / 2
+                const cy = box.cy ?? (box.y ?? 0) + (box.height ?? 0) / 2
+                const both = caption != null && valueText != null
+                return (
+                  <text x={cx} y={cy} textAnchor="middle" dominantBaseline="middle">
+                    {caption != null && (
+                      <tspan x={cx} y={both ? cy - 12 : cy} className="fill-muted-foreground text-xs font-medium">
+                        {caption}
+                      </tspan>
+                    )}
+                    {valueText != null && (
+                      <tspan x={cx} y={both ? cy + 8 : cy} className="fill-primary-text text-xl font-semibold tabular-nums">
+                        {valueText}
+                      </tspan>
+                    )}
+                  </text>
+                )
+              }}
+            />
+          )}
         </Pie>
         <ChartLegend content={<ChartLegendContent nameKey={nameKey} />} />
       </PieChart>
