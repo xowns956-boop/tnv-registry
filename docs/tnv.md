@@ -60,6 +60,10 @@ UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 
 | 지표 칸 안 작은 추이선(스파크라인) | `ChartTrend` `showLegend={false}` `showBrush={false}` |
 | 지표 칸 안 작은 막대 | `ChartColumn` |
 | 시간대별 물량 + 예상 | `ChartColumn` 계열 2개 |
+| 즐겨찾기 별(누르면 채워짐) | `FavoriteToggle` (`aria-label` 필수) |
+| 화면·영역 전체가 빈 안내(아이콘·제목·설명·버튼) | `Empty` (표 안 빈 줄은 DataTable `emptyText`) |
+| 열린 화면 탭이 0개 | `PageTabBar` 빈 상태 (`emptyText`) |
+| 카드 전체를 눌러 이동·선택 | `Card` `interactive` (고른 카드 표시는 `state="selected"`) |
 | 도넛·원형 구성비 | `ChartPie` |
 | 칸이 좁아 차트가 안 들어감 | 차트를 값 아래로 내려 배치 (빼지 않음) |
 
@@ -159,7 +163,7 @@ UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 
 | Dropdowns | `ui/select`, `ui/dropdown-menu`, `ui/autocomplete`, `ui/multi-select` | Select `size`: default·sm, DropdownMenuItem `variant`: default·destructive |
 | Checkboxes · Radios · Switches · Labels | `ui/checkbox`, `ui/radio-group`, `ui/switch`, `ui/label` | Label `required` (빨간 점) |
 | Badges · Avatars · Tooltips · Separators · Skeletons | `ui/badge`, `ui/status-badge`, `ui/avatar`, `ui/tooltip`, `ui/separator`, `ui/skeleton` | Badge `variant`: default·secondary·destructive·outline · 상태 info(진행 중·정보)·success(완료)·warning(주의)·destructive-subtle(실패·문제, 연한 바탕) — 고르는 법은 아래 "배지 variant 고르기". StatusBadge(설비·공정 상태) `status`: run·idle·error·maintenance·offline / `size`: default(20)·sm(16, 표 칸·판정 표시) / 문구는 children(없으면 상태 이름, 예: 양호·유의·불량) |
-| Cards | `ui/card`, `ui/stat-card` (`StatCard`, `SectionCards`) | Card `variant`: default(흰 카드, 여백 16)·panel(대시보드 좌우 반투명 큰 패널, 제목 24) / `size`: default(16)·sm(12). StatCard `label`·`value`·`badge`·`summary`·`detail`·`trend`(up·down)·`tone`(default·emphasis=진한 바탕·selected=고른 카드, accent 바탕) |
+| Cards | `ui/card`, `ui/stat-card` (`StatCard`, `SectionCards`) | Card `variant`: default(흰 카드, 여백 16)·panel(대시보드 좌우 반투명 큰 패널, 제목 24) / `size`: default(16)·sm(12) / `state`: default·selected(고른 카드, 바탕 accent) / `interactive`: 카드 전체를 누를 때만 켬(hover 테두리 ring · 누르는 동안 바탕 accent-active · focus 테두리 ring + 링, 키보드 Enter·Space로 누름). `state`·`interactive`는 variant=default에만 있다(panel은 무시). StatCard `label`·`value`·`badge`·`summary`·`detail`·`trend`(up·down)·`tone`(default·emphasis=진한 바탕·selected=고른 카드, accent 바탕) |
 | Tabs | `ui/tabs` | TabsList `variant`: default·line·solid(대시보드 상단 전환 — 탭마다 따로 선 버튼, 선택 = primary) / `fill`: 꽉 채우기(부모 폭을 채우고 탭이 똑같이 나눠 퍼짐, 사용자가 요청할 때만 켬. 기본은 내용만큼) |
 | Popovers · Dialogs · Sheets | `ui/popover`, `ui/dialog`, `ui/alert-dialog`, `ui/sheet`, `ui/dialog-body` | Sheet `side`: right·left·top·bottom. 팝업 내용: `DialogBodyTable`(columns·rows)·`DialogBodyInfo`(items)·`DialogBodyLotInput`·`DialogBodyTextarea`·`DialogBodyOptionList`(options)·`DialogBodyOptionButtons`(options·onSelect) |
 | Breadcrumbs · Pagination | `ui/breadcrumb`, `ui/pagination` | PaginationLink `isActive` |
@@ -173,8 +177,9 @@ UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 
 | Charts | `ui/chart`, `ui/chart-presets`, `ui/chart-dashboard` | 기본: `ChartBar`·`ChartLine`·`ChartPie`(`type`: pie·donut(가운데 빈 고리, 안쪽 반지름 = 바깥 75%), donut일 때 `caption`·`valueText` = 가운데 글자, 안 넘기면 빈 고리)·`ChartBarGradient`·`ChartBarItem`(`tone`·`target`)·`ChartBarLabeled`·`ChartCombo`. 대시보드: `ChartRadial`(`values` 1개=작은 링·3개=큰 링, `tone` default·metric, `caption`·`valueText`)·`ChartColumn`(카드용 작은 막대, `series` 1~2·`tone`)·`ChartTrend`(작은 꺾은선 + `ChartBrush` 구간 선택, `tone` default·metric)·`ChartMultiLine`(작은 여러 줄 꺾은선, 계열 2~4개 = chart-1~4, 구간 선택이 필요하면 아래에 `ChartBrush`(`count`·`value`·`onValueChange`)를 이어 붙이고 고른 구간만큼 data를 잘라 넘김)·`ChartColumnTarget`(작은 막대 + 예측 표시선, 막대 chart-1 · 예측선 warning, `valueKey`·`targetKey`·`valueLabel`·`targetLabel`)·`ChartGroupedBar`(빌렛 위치별 실제값=구간 색 + AI 예측=production)·`ChartLegendList`(`orientation` horizontal·vertical). `ChartLegendContent`도 `orientation` 지원(가로 범례는 4개까지 한 줄, 5개부터 두 줄 — 칸은 글자 길이만큼, 글자는 한 줄 고정. 항목이 많은 원형 차트도 그대로 쓴다). 막대 tone: default·operation·performance·quality·production·electricity·gas·fuel(연료, #46B2FF). 대시보드 차트 세로축은 눈금 글자 폭에 맞춰 자동으로 넓어지고 천 단위 쉼표가 붙는다. 꺾은선(Trend·MultiLine)은 값이 있는 범위에 맞춰 눈금을 잡고(좁은 범위도 변화가 보임), 막대는 0부터 |
 | Items | `ui/data-row` | DataRow(라벨 · 값 한 줄) `label`·`value` / `variant`: plain(한 줄, 높이 24)·boxed(테두리 작은 칸, text-xs — 이동평균·실시간·온도 같은 2열 요약 칸) / `tone`(값 글자색): default·operation·performance·quality·production·electricity·gas. 진행 막대가 필요하면 MetricRow |
 | Progress | `ui/progress`, `ui/metric-row` | Progress `size`: sm(8)·md(14) / `tone`: primary·operation(가동률)·production(생산량) / `showLabel`(md에서 막대 안 %). MetricRow `label`·`value`·`target`(md)·`percent`·`size`·`tone` — 지표 한 줄(sm = 라벨·값 한 줄, md = 라벨 위 + 값·목표 + % 막대) |
-| Toggles · Spinners · Kbd | `ui/toggle`, `ui/toggle-group`, `ui/spinner`, `ui/kbd` | Toggle `variant`: default·outline·solid·pill, `size`: default·sm |
-| Tree · Chips · Page Tabs | `ui/tree`, `ui/filter-chip`, `ui/page-tabs` | Tree `nodes`·`selectedId`, PageTab `active`·`onClose` |
+| Toggles · Spinners · Kbd | `ui/toggle`, `ui/toggle-group`, `ui/favorite-toggle`, `ui/spinner`, `ui/kbd` | Toggle `variant`: default·outline·solid·pill, `size`: default·sm. FavoriteToggle(즐겨찾기 별) `pressed`·`onPressedChange`, 빈 별 ↔ 채운 별(amber), `aria-label` 필수(예: "생산 실적 등록 즐겨찾기 해제") |
+| Tree · Chips · Page Tabs | `ui/tree`, `ui/filter-chip`, `ui/page-tabs` | Tree `nodes`·`selectedId`, PageTab `active`·`onClose`, PageTabBar `emptyText`(탭이 0개일 때 같은 줄에 안내, 기본 "열린 화면이 없어요") |
+| Empty | `ui/empty` | 빈 화면 안내: `Empty` > `EmptyHeader`(`EmptyMedia` 아이콘 칸·선택, `EmptyTitle`, `EmptyDescription`) + `EmptyContent`(주 버튼 default 1개 + 보조 outline). 탭을 모두 닫은 화면, 즐겨찾기·목록이 빈 경우 |
 | Layout | `ui/accordion`, `ui/toolbar`, `ui/resizable` | Resizable(칸 나누기·스플리터): `ResizablePanelGroup` `orientation`: horizontal(좌우)·vertical(위아래) → `ResizablePanel`(`defaultSize`·`minSize`, 문자열 "40%") + `ResizableHandle`(`withHandle`: 손잡이 표시). 그룹은 높이가 정해진 상자 안에 둔다 |
 | Logo | `ui/logo` (`Logo`) | TWINVUE 글자 로고. 높이만 `className`으로 조절(기본 `h-12` = 48, 너비는 비율대로). 글자는 `text-foreground`, N의 파란 획은 브랜드 색 고정. 대시보드 상단 바 로고 칸에 쓴다. 모양·색을 바꾸거나 다시 그리지 않는다 |
 | 03_Patterns | `blocks/site-header`, `blocks/page-heading`, `blocks/section-title`, `blocks/filter-bar`, `blocks/form-action-bar`, `blocks/status-legend`, `ui/form-table` | Show 옵션 = props 유무. StatusLegend = 설비 상태 범례(StatusBadge 5개, Run·Idle·Error·Maintenance·Offline). SectionTitle = 옆 칸(aside) 맨 위 제목 줄(`title`, `onBack`=뒤로가기, `status`=StatusBadge, `action`=오른쪽 버튼 — 넣은 것만 보임). 정보·조건 표 = `FormTable` > `FormTableRow` > `FormTableField`(`label`, `type`: text·control), 한 줄에 칸 1~2개 |
@@ -221,7 +226,7 @@ SidebarProvider
 - 사이드바는 `Sidebar` 구조 그대로: `SidebarHeader` 안에 `SidebarBrand`(접혀도 넣는다. 머리 칸 64) → `SidebarContent` → `SidebarGroup`(펼침일 때 `SidebarGroupLabel`) → `SidebarMenu` → `SidebarMenuItem` → `SidebarMenuButton`(`tooltip`에 메뉴명) → `SidebarFooter`(`NavUser`, 필요할 때만).
 - 사이드바 간격은 부품 기본값을 쓴다(메뉴 사이 8, 하위 메뉴 사이 6, 그룹 사이 8, 버튼 32, 접힘 때 아이콘 가운데). `className`으로 gap·padding·높이를 바꾸지 않는다.
 - 주요 버튼(`variant="default"`)은 화면 영역마다 하나. 나머지는 outline·secondary·ghost.
-- 빈 상태: DataTable `emptyText` / 불러오는 중: `Skeleton`·`Spinner` / 오류: `Alert variant="destructive"` 또는 `toast.error`.
+- 빈 상태: DataTable `emptyText`, 화면·영역 전체가 비면 `Empty` / 불러오는 중: `Skeleton`·`Spinner` / 오류: `Alert variant="destructive"` 또는 `toast.error`.
 
 ### 화면설계서(이미지)를 받았을 때 — 배치는 이미지 그대로 (반드시 지킨다)
 

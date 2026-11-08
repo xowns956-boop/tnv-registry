@@ -1146,7 +1146,7 @@
       "name": "tnv",
       "type": "registry:block",
       "title": "TNV Design System",
-      "description": "TNV Design System v0.1.0 전체 — 토큰 + 부품 71개 + AI 규칙 문서(docs/tnv.md)",
+      "description": "TNV Design System v0.1.0 전체 — 토큰 + 부품 73개 + AI 규칙 문서(docs/tnv.md)",
       "registryDependencies": [
         "http://localhost:3400/r/0.1.0/tnv-foundations.json",
         "http://localhost:3400/r/0.1.0/accordion.json",
@@ -1172,6 +1172,8 @@
         "http://localhost:3400/r/0.1.0/dialog-body.json",
         "http://localhost:3400/r/0.1.0/dialog.json",
         "http://localhost:3400/r/0.1.0/dropdown-menu.json",
+        "http://localhost:3400/r/0.1.0/empty.json",
+        "http://localhost:3400/r/0.1.0/favorite-toggle.json",
         "http://localhost:3400/r/0.1.0/field.json",
         "http://localhost:3400/r/0.1.0/filter-chip.json",
         "http://localhost:3400/r/0.1.0/form-table.json",
@@ -1434,7 +1436,7 @@
       "name": "card",
       "type": "registry:ui",
       "title": "card",
-      "description": "TNV v0.1 · Card — variant: default·panel / size: default·sm",
+      "description": "TNV v0.1 · Card — variant: default·panel / size: default·sm / state: default·selected / interactive",
       "dependencies": [
         "cn@0.5.0"
       ],
@@ -1694,6 +1696,44 @@
       "files": [
         {
           "path": "components/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "title": "empty",
+      "description": "TNV v0.1 · Empty — 빈 화면 안내: EmptyHeader(EmptyMedia·EmptyTitle·EmptyDescription) + EmptyContent(버튼)",
+      "dependencies": [
+        "cn@0.5.0"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "favorite-toggle",
+      "type": "registry:ui",
+      "title": "favorite-toggle",
+      "description": "TNV v0.1 · FavoriteToggle — pressed: false(빈 별)·true(채운 별) / state: default·hover·focus·disabled",
+      "dependencies": [
+        "cn@0.5.0",
+        "lucide-react@1.59.0",
+        "radix-ui@1.8.1"
+      ],
+      "registryDependencies": [
+        "http://localhost:3400/r/0.1.0/tnv-foundations.json"
+      ],
+      "files": [
+        {
+          "path": "components/ui/favorite-toggle.tsx",
           "type": "registry:ui"
         }
       ]
@@ -1974,7 +2014,7 @@
       "name": "page-tabs",
       "type": "registry:ui",
       "title": "page-tabs",
-      "description": "TNV v0.1 · Page Tabs (PageTab state: default·hover·active · PageTabBar)",
+      "description": "TNV v0.1 · Page Tabs (PageTab state: default·hover·active · PageTabBar tabs: default·empty)",
       "dependencies": [
         "cn@0.5.0",
         "lucide-react@1.59.0"

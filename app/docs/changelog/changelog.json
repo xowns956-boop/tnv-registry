@@ -18,7 +18,11 @@
           "고른 카드 표시(StatCard selected)",
           "옆 칸 제목 줄(SectionTitle): 뒤로가기·상태·버튼을 넣은 것만 보여요.",
           "배지 상태 색 4개(Badge info·success·warning·destructive-subtle): 설비 상태와 판정은 StatusBadge를 써요.",
-          "도넛 차트(ChartPie donut): 가운데에 글자를 넣을 수 있어요."
+          "도넛 차트(ChartPie donut): 가운데에 글자를 넣을 수 있어요.",
+          "즐겨찾기 별(FavoriteToggle): 누르면 별이 노랗게 채워져요.",
+          "빈 화면 안내(Empty): 아이콘·제목·설명·버튼으로 빈 화면을 알려요.",
+          "화면 탭 줄 빈 상태(PageTabBar): 열린 탭이 없으면 같은 줄에 안내 글자가 나와요.",
+          "누르는 카드(Card interactive)와 고른 카드 표시(Card selected)"
         ]
       },
       {
