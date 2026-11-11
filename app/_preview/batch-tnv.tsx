@@ -56,10 +56,12 @@ export function BatchTnv() {
           <ChartLegendList orientation="vertical" items={[{ label: "가동 : 76%", color: "var(--chart-operation)" }, { label: "성능 : 90%", color: "var(--chart-performance)" }, { label: "품질 : 65%", color: "var(--chart-quality)" }]} />
         </Row>
         <Row label="Chart/Radar · series=1·2 × tone=default·metric">
-          <ChartRadar data={radar} axisKey="axis" series={[{ key: "now", label: "현재" }]} />
-          <ChartRadar data={radar} axisKey="axis" tone="metric" series={[{ key: "now", label: "현재" }]} />
-          <ChartRadar data={radar} axisKey="axis" series={[{ key: "now", label: "현재" }, { key: "prev", label: "이전" }]} />
-          <ChartRadar data={radar} axisKey="axis" tone="metric" series={[{ key: "now", label: "현재" }, { key: "prev", label: "이전" }]} />
+          <div className="grid w-full max-w-180 grid-cols-2 gap-6">
+            <ChartRadar data={radar} axisKey="axis" series={[{ key: "now", label: "현재" }]} />
+            <ChartRadar data={radar} axisKey="axis" tone="metric" series={[{ key: "now", label: "현재" }]} />
+            <ChartRadar data={radar} axisKey="axis" series={[{ key: "now", label: "현재" }, { key: "prev", label: "이전" }]} />
+            <ChartRadar data={radar} axisKey="axis" tone="metric" series={[{ key: "now", label: "현재" }, { key: "prev", label: "이전" }]} />
+          </div>
         </Row>
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {tones.map((t) => (
