@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { ChartColumn, ChartColumnTarget, ChartGroupedBar, ChartLegendList, ChartMultiLine, ChartRadial, ChartTrend } from "@/components/ui/chart-dashboard"
+import { ChartColumn, ChartColumnTarget, ChartGroupedBar, ChartLegendList, ChartMultiLine, ChartRadar, ChartRadial, ChartTrend } from "@/components/ui/chart-dashboard"
 import { ChartBarLabeled } from "@/components/ui/chart-presets"
 import { DataRow } from "@/components/ui/data-row"
 import { Logo } from "@/components/ui/logo"
@@ -12,6 +12,14 @@ import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Row, Section } from "./section"
 
 // 미리보기 전용 더미 데이터
+const radar = [
+  { axis: "속도", now: 80, prev: 70 },
+  { axis: "명확성", now: 70, prev: 75 },
+  { axis: "일관성", now: 85, prev: 70 },
+  { axis: "접근성", now: 65, prev: 85 },
+  { axis: "편안함", now: 75, prev: 65 },
+  { axis: "신뢰", now: 90, prev: 80 },
+]
 const cols = ["1월", "2월", "3월", "4월", "5월", "6월"].map((m, i) => ({ m, ys: [150, 180, 170, 210, 140, 200][i], ts: [110, 130, 60, 120, 120, 100][i] }))
 const trend = Array.from({ length: 24 }, (_, i) => ({ t: `${i + 1}`, real: 200 + Math.round(Math.sin(i / 2) * 20), fcst: 190 + Math.round(Math.cos(i / 3) * 15) }))
 const billets = Array.from({ length: 68 }, (_, i) => ({
@@ -46,6 +54,12 @@ export function BatchTnv() {
           <ChartRadial values={[63]} valueText="63%" aria-label="달성률 63%" />
           <ChartRadial values={[63]} tone="metric" valueText="63%" aria-label="달성률 63%" />
           <ChartLegendList orientation="vertical" items={[{ label: "가동 : 76%", color: "var(--chart-operation)" }, { label: "성능 : 90%", color: "var(--chart-performance)" }, { label: "품질 : 65%", color: "var(--chart-quality)" }]} />
+        </Row>
+        <Row label="Chart/Radar · series=1·2 × tone=default·metric">
+          <ChartRadar data={radar} axisKey="axis" series={[{ key: "now", label: "현재" }]} />
+          <ChartRadar data={radar} axisKey="axis" tone="metric" series={[{ key: "now", label: "현재" }]} />
+          <ChartRadar data={radar} axisKey="axis" series={[{ key: "now", label: "현재" }, { key: "prev", label: "이전" }]} />
+          <ChartRadar data={radar} axisKey="axis" tone="metric" series={[{ key: "now", label: "현재" }, { key: "prev", label: "이전" }]} />
         </Row>
         <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
           {tones.map((t) => (

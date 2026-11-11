@@ -1454,7 +1454,7 @@
       "name": "chart-dashboard",
       "type": "registry:ui",
       "title": "chart-dashboard",
-      "description": "TNV v0.1 · Charts 대시보드 차트 (Radial · Column · ColumnTarget · ChartBrush · Trend · MultiLine · GroupedBar · Legend)",
+      "description": "TNV v0.1 · Charts 대시보드 차트 (Radial · Radar · Column · ColumnTarget · ChartBrush · Trend · MultiLine · GroupedBar · Legend)",
       "dependencies": [
         "cn@0.5.0",
         "recharts@3.8.0"

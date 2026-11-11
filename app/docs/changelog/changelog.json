@@ -22,7 +22,8 @@
           "즐겨찾기 별(FavoriteToggle): 누르면 별이 노랗게 채워져요.",
           "빈 화면 안내(Empty): 아이콘·제목·설명·버튼으로 빈 화면을 알려요.",
           "화면 탭 줄 빈 상태(PageTabBar): 열린 탭이 없으면 같은 줄에 안내 글자가 나와요.",
-          "누르는 카드(Card interactive)와 고른 카드 표시(Card selected)"
+          "누르는 카드(Card interactive)와 고른 카드 표시(Card selected)",
+          "레이더 차트(ChartRadar): 항목 6개 점수를 육각형으로 보여 주고, 현재·이전을 겹쳐 비교할 수 있어요."
         ]
       },
       {

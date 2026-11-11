@@ -27,7 +27,7 @@ UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 
 
 **원칙: 이미지 요소는 TNV 부품으로 표현할 수 있으면 최대한 표현한다. 모양·색이 달라도 같은 역할이면 TNV 부품으로 바꾼다.**
 
-**"없음"으로 둘 수 있는 경우는 하나뿐이다: 그 역할 자체를 하는 부품이 TNV 코드에 하나도 없을 때.** (예: 워드클라우드, 히트맵, 레이더 차트처럼 같은 정보를 보여 줄 부품이 없음)
+**"없음"으로 둘 수 있는 경우는 하나뿐이다: 그 역할 자체를 하는 부품이 TNV 코드에 하나도 없을 때.** (예: 워드클라우드, 히트맵처럼 같은 정보를 보여 줄 부품이 없음)
 
 **아래 이유로는 절대 "없음"·"디자인 필요" 칸으로 두지 않는다.**
 - 모양이 다르다 (도넛 vs 링, 원 vs 둥근 사각, 선 굵기, 마커 모양)
@@ -66,6 +66,7 @@ UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 
 | 지표 카드 아래 바로가기 줄 | `StatCard` `detail` 칸 + `Button variant="link"` |
 | 카드 전체를 눌러 이동·선택 | `Card` `interactive` (고른 카드 표시는 `state="selected"`) |
 | 도넛·원형 구성비 | `ChartPie` |
+| 항목별 점수 비교(레이더·육각형) | `ChartRadar` (현재·이전 비교는 `series` 2개) |
 | 칸이 좁아 차트가 안 들어감 | 차트를 값 아래로 내려 배치 (빼지 않음) |
 
 1. **찾기**: 요소마다 적은 역할 이름으로 3장 부품 표·역할별 대응표·레지스트리 목록에서 찾는다. 이름이 달라도 역할이 같은 부품(예: Chip·Tag·Badge)이 있는지 한 번 더 찾는다. 있으면 그걸 쓴다.
@@ -182,7 +183,7 @@ UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 
 | Sidebar | `ui/sidebar`, `ui/sidebar-brand`, `ui/nav-user` | collapsible="icon"으로 접힘(폭 56, 펼침 256), NavUser `layout`: full·avatar. 조립 규칙은 4장 |
 | Tables | `ui/table`, `ui/data-table` | DataTable `columns`(sortValue·muted)·`selectable`·`searchText`·`actions` |
 | Forms | `ui/field` (`Field`, `FieldLabel`, `FieldDescription`, `FieldError`) | 오류는 `Field data-invalid` + 컨트롤 `aria-invalid` |
-| Charts | `ui/chart`, `ui/chart-presets`, `ui/chart-dashboard` | 기본: `ChartBar`·`ChartLine`·`ChartPie`(`type`: pie·donut(가운데 빈 고리, 안쪽 반지름 = 바깥 75%), donut일 때 `caption`·`valueText` = 가운데 글자, 안 넘기면 빈 고리)·`ChartBarGradient`·`ChartBarItem`(`tone`·`target`)·`ChartBarLabeled`·`ChartCombo`. 대시보드: `ChartRadial`(`values` 1개=작은 링·3개=큰 링, `tone` default·metric, `caption`·`valueText`)·`ChartColumn`(카드용 작은 막대, `series` 1~2·`tone`)·`ChartTrend`(작은 꺾은선 + `ChartBrush` 구간 선택, `tone` default·metric)·`ChartMultiLine`(작은 여러 줄 꺾은선, 계열 2~4개 = chart-1~4, 구간 선택이 필요하면 아래에 `ChartBrush`(`count`·`value`·`onValueChange`)를 이어 붙이고 고른 구간만큼 data를 잘라 넘김)·`ChartColumnTarget`(작은 막대 + 예측 표시선, 막대 chart-1 · 예측선 warning, `valueKey`·`targetKey`·`valueLabel`·`targetLabel`)·`ChartGroupedBar`(빌렛 위치별 실제값=구간 색 + AI 예측=production)·`ChartLegendList`(`orientation` horizontal·vertical). `ChartLegendContent`도 `orientation` 지원(가로 범례는 4개까지 한 줄, 5개부터 두 줄 — 칸은 글자 길이만큼, 글자는 한 줄 고정. 항목이 많은 원형 차트도 그대로 쓴다). 막대 tone: default·operation·performance·quality·production·electricity·gas·fuel(연료, #46B2FF). 대시보드 차트 세로축은 눈금 글자 폭에 맞춰 자동으로 넓어지고 천 단위 쉼표가 붙는다. 꺾은선(Trend·MultiLine)은 값이 있는 범위에 맞춰 눈금을 잡고(좁은 범위도 변화가 보임), 막대는 0부터 |
+| Charts | `ui/chart`, `ui/chart-presets`, `ui/chart-dashboard` | 기본: `ChartBar`·`ChartLine`·`ChartPie`(`type`: pie·donut(가운데 빈 고리, 안쪽 반지름 = 바깥 75%), donut일 때 `caption`·`valueText` = 가운데 글자, 안 넘기면 빈 고리)·`ChartBarGradient`·`ChartBarItem`(`tone`·`target`)·`ChartBarLabeled`·`ChartCombo`. 대시보드: `ChartRadial`(`values` 1개=작은 링·3개=큰 링, `tone` default·metric, `caption`·`valueText`)·`ChartRadar`(레이더·육각형 차트 240×184, 축 6개·값 0~100, `axisKey`·`series` 1~2개 = 현재·이전, `tone` default(chart-1·chart-2)·metric(operation·performance), 2개일 때만 아래 범례)·`ChartColumn`(카드용 작은 막대, `series` 1~2·`tone`)·`ChartTrend`(작은 꺾은선 + `ChartBrush` 구간 선택, `tone` default·metric)·`ChartMultiLine`(작은 여러 줄 꺾은선, 계열 2~4개 = chart-1~4, 구간 선택이 필요하면 아래에 `ChartBrush`(`count`·`value`·`onValueChange`)를 이어 붙이고 고른 구간만큼 data를 잘라 넘김)·`ChartColumnTarget`(작은 막대 + 예측 표시선, 막대 chart-1 · 예측선 warning, `valueKey`·`targetKey`·`valueLabel`·`targetLabel`)·`ChartGroupedBar`(빌렛 위치별 실제값=구간 색 + AI 예측=production)·`ChartLegendList`(`orientation` horizontal·vertical). `ChartLegendContent`도 `orientation` 지원(가로 범례는 4개까지 한 줄, 5개부터 두 줄 — 칸은 글자 길이만큼, 글자는 한 줄 고정. 항목이 많은 원형 차트도 그대로 쓴다). 막대 tone: default·operation·performance·quality·production·electricity·gas·fuel(연료, #46B2FF). 대시보드 차트 세로축은 눈금 글자 폭에 맞춰 자동으로 넓어지고 천 단위 쉼표가 붙는다. 꺾은선(Trend·MultiLine)은 값이 있는 범위에 맞춰 눈금을 잡고(좁은 범위도 변화가 보임), 막대는 0부터 |
 | Items | `ui/data-row` | DataRow(라벨 · 값 한 줄) `label`·`value` / `variant`: plain(한 줄, 높이 24)·boxed(테두리 작은 칸, text-xs — 이동평균·실시간·온도 같은 2열 요약 칸) / `tone`(값 글자색): default·operation·performance·quality·production·electricity·gas. 진행 막대가 필요하면 MetricRow |
 | Progress | `ui/progress`, `ui/metric-row` | Progress `size`: sm(8)·md(14) / `tone`: primary·operation(가동률)·production(생산량) / `showLabel`(md에서 막대 안 %). MetricRow `label`·`value`·`target`(md)·`percent`·`size`·`tone` — 지표 한 줄(sm = 라벨·값 한 줄, md = 라벨 위 + 값·목표 + % 막대) |
 | Toggles · Spinners · Kbd | `ui/toggle`, `ui/toggle-group`, `ui/favorite-toggle`, `ui/spinner`, `ui/kbd` | Toggle `variant`: default·outline·solid·pill, `size`: default·sm. FavoriteToggle(즐겨찾기 별) `pressed`·`onPressedChange`, 빈 별 ↔ 채운 별(amber), `aria-label` 필수(예: "생산 실적 등록 즐겨찾기 해제") |

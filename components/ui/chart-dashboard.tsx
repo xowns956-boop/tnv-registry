@@ -2,12 +2,12 @@
 
 import * as React from "react"
 import { cn } from "cn"
-import { Bar, BarChart, CartesianGrid, Cell, Line, LineChart, XAxis, YAxis } from "recharts"
+import { Bar, BarChart, CartesianGrid, Cell, Line, LineChart, PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, XAxis, YAxis } from "recharts"
 
-import { ChartContainer, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart"
+import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart"
 import { chartTone, type ChartTone } from "@/components/ui/chart-presets"
 
-// TNV v0.1 · Charts 대시보드 차트 (Radial · Column · ColumnTarget · ChartBrush · Trend · MultiLine · GroupedBar · Legend)
+// TNV v0.1 · Charts 대시보드 차트 (Radial · Radar · Column · ColumnTarget · ChartBrush · Trend · MultiLine · GroupedBar · Legend)
 // 대시보드 카드 안에 들어가는 작은 차트. 눈금 글자 text-xs muted-foreground, 격자선 border.
 
 type Row = Record<string, string | number>
@@ -160,6 +160,61 @@ function ChartRadial({
         </span>
       </div>
     </div>
+  )
+}
+
+// ── Radar · Chart/Radar ──
+// 레이더(육각형) 차트 240×184. 축 6개 기준, 값 0~100.
+// 격자 = 육각형 5겹(20 단위) + 중심에서 뻗는 축선(border) · 축 글자 text-xs muted-foreground
+// 계열 = 선 굵기 2 + 같은 색 칠 18%, 꼭짓점 점 없음. series 1개 = 범례 없음, 2개 = 아래 범례(ChartLegendContent)
+// tone: default = chart-1(현재)·chart-2(이전) / metric = operation(현재)·performance(이전)
+const radarColors = {
+  default: ["var(--chart-1)", "var(--chart-2)"],
+  metric: ["var(--chart-operation)", "var(--chart-performance)"],
+} as const
+
+function ChartRadar({
+  data,
+  axisKey,
+  series,
+  tone = "default",
+  className,
+}: {
+  data: Row[]
+  /** 축 이름이 든 키 (예: "axis" → 속도·명확성·일관성·접근성·편안함·신뢰) */
+  axisKey: string
+  /** 계열 1~2개. 첫 번째 = 현재, 두 번째 = 이전 */
+  series: { key: string; label: string }[]
+  tone?: "default" | "metric"
+  className?: string
+}) {
+  const shown = series.slice(0, 2)
+  const config = Object.fromEntries(shown.map((s, i) => [s.key, { label: s.label, color: radarColors[tone][i] }])) satisfies ChartConfig
+  return (
+    <ChartContainer
+      data-slot="chart-radar"
+      config={config}
+      className={cn("aspect-auto w-60", shown.length > 1 ? "h-55" : "h-46", className)}
+    >
+      <RadarChart data={data} outerRadius={64} margin={{ top: 0, right: 0, bottom: 0, left: 0 }} cy={92} accessibilityLayer>
+        <PolarGrid gridType="polygon" stroke="var(--border)" />
+        <PolarRadiusAxis domain={[0, 100]} tickCount={6} tick={false} axisLine={false} />
+        <PolarAngleAxis dataKey={axisKey} tick={axisTick} />
+        <ChartTooltip content={<ChartTooltipContent indicator="line" />} />
+        {[...shown].reverse().map((s) => (
+          <Radar
+            key={s.key}
+            dataKey={s.key}
+            stroke={`var(--color-${s.key})`}
+            strokeWidth={2}
+            fill={`var(--color-${s.key})`}
+            fillOpacity={0.18}
+            dot={false}
+          />
+        ))}
+        {shown.length > 1 && <ChartLegend verticalAlign="bottom" content={<ChartLegendContent />} />}
+      </RadarChart>
+    </ChartContainer>
   )
 }
 
@@ -483,4 +538,4 @@ function ChartGroupedBar({
   )
 }
 
-export { ChartLegendList, ChartRadial, ChartColumn, ChartColumnTarget, ChartBrush, ChartTrend, ChartMultiLine, ChartGroupedBar }
+export { ChartLegendList, ChartRadial, ChartRadar, ChartColumn, ChartColumnTarget, ChartBrush, ChartTrend, ChartMultiLine, ChartGroupedBar }
