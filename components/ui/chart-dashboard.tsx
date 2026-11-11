@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import { cn } from "cn"
-import { Bar, BarChart, CartesianGrid, Cell, Line, LineChart, PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, XAxis, YAxis } from "recharts"
+import { Bar, BarChart, CartesianGrid, Cell, Line, LineChart, PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, Text, XAxis, YAxis } from "recharts"
 
 import { ChartContainer, ChartLegend, ChartLegendContent, ChartTooltip, ChartTooltipContent, type ChartConfig } from "@/components/ui/chart"
 import { chartTone, type ChartTone } from "@/components/ui/chart-presets"
@@ -164,10 +164,49 @@ function ChartRadial({
 }
 
 // ── Radar · Chart/Radar ──
-// 레이더(육각형) 차트 240×184. 축 6개 기준, 값 0~100.
+// 레이더(육각형) 차트. 가로 = 부모 칸 폭(꽉 채움, 도형은 가운데) · 높이 184(범례 있으면 220). 축 6개 기준, 값 0~100.
+// 도형 반지름은 높이 기준 64(디자인 파일과 같음). 칸이 넓어지면 축 글자가 쓸 자리가 넓어진다.
+// 축 이름이 옆자리보다 길면 띄어쓰기에서 줄을 바꿔 칸 안에 다 보이게 한다(줄 높이 16).
 // 격자 = 육각형 5겹(20 단위) + 중심에서 뻗는 축선(border) · 축 글자 text-xs muted-foreground
 // 계열 = 선 굵기 2 + 같은 색 칠 18%, 꼭짓점 점 없음. series 1개 = 범례 없음, 2개 = 아래 범례(ChartLegendContent)
 // tone: default = chart-1(현재)·chart-2(이전) / metric = operation(현재)·performance(이전)
+const RADAR_RADIUS = 64
+const RADAR_CY = 92
+const RADAR_LABEL_GAP = 4
+
+type RadarTickProps = {
+  x?: number
+  y?: number
+  cx?: number
+  cy?: number
+  textAnchor?: "start" | "middle" | "end"
+  payload?: { value?: React.ReactNode }
+}
+
+// 축 글자: 꼭짓점 바깥에 두고, 그 쪽 칸 끝까지 남은 폭 안에서 줄을 바꾼다
+function RadarAxisTick({ x = 0, y = 0, cx = 0, cy = RADAR_CY, textAnchor = "middle", payload }: RadarTickProps) {
+  const total = cx * 2
+  const room =
+    textAnchor === "start" ? total - x - RADAR_LABEL_GAP : textAnchor === "end" ? x - RADAR_LABEL_GAP : 2 * Math.min(x, total - x)
+  const verticalAnchor = y < cy - 1 ? "end" : y > cy + 1 ? "start" : "middle"
+  const dx = textAnchor === "start" ? RADAR_LABEL_GAP : textAnchor === "end" ? -RADAR_LABEL_GAP : 0
+  const dy = verticalAnchor === "end" ? -RADAR_LABEL_GAP : verticalAnchor === "start" ? RADAR_LABEL_GAP : 0
+  return (
+    <Text
+      x={x + dx}
+      y={y + dy}
+      width={Math.max(room, 24)}
+      textAnchor={textAnchor}
+      verticalAnchor={verticalAnchor}
+      lineHeight={16}
+      fontSize={12}
+      fill="var(--muted-foreground)"
+    >
+      {String(payload?.value ?? "")}
+    </Text>
+  )
+}
+
 const radarColors = {
   default: ["var(--chart-1)", "var(--chart-2)"],
   metric: ["var(--chart-operation)", "var(--chart-performance)"],
@@ -194,12 +233,35 @@ function ChartRadar({
     <ChartContainer
       data-slot="chart-radar"
       config={config}
-      className={cn("aspect-auto w-60", shown.length > 1 ? "h-55" : "h-46", className)}
+      className={cn("aspect-auto w-full min-w-0", shown.length > 1 ? "h-55" : "h-46", className)}
     >
-      <RadarChart data={data} outerRadius={64} margin={{ top: 0, right: 0, bottom: 0, left: 0 }} cy={92} accessibilityLayer>
+      <RadarChart
+        data={data}
+        outerRadius={RADAR_RADIUS}
+        cx="50%"
+        cy={RADAR_CY}
+        margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+        style={{ overflow: "visible" }}
+        accessibilityLayer
+      >
         <PolarGrid gridType="polygon" stroke="var(--border)" />
         <PolarRadiusAxis domain={[0, 100]} tickCount={6} tick={false} axisLine={false} />
-        <PolarAngleAxis dataKey={axisKey} tick={axisTick} />
+        <PolarAngleAxis
+          dataKey={axisKey}
+          tick={(p) => {
+            const t = p as unknown as Record<string, unknown>
+            return (
+              <RadarAxisTick
+                x={Number(t.x)}
+                y={Number(t.y)}
+                cx={Number(t.cx)}
+                cy={Number(t.cy)}
+                textAnchor={t.textAnchor as RadarTickProps["textAnchor"]}
+                payload={t.payload as RadarTickProps["payload"]}
+              />
+            )
+          }}
+        />
         <ChartTooltip content={<ChartTooltipContent indicator="line" />} />
         {[...shown].reverse().map((s) => (
           <Radar
