@@ -5,7 +5,7 @@ import { cn } from "cn"
 import { XIcon } from "lucide-react"
 
 // TNV v0.1 · Page Tabs (PageTab state: default·hover·active · PageTabBar tabs: default·empty)
-// 열린 화면을 브라우저 탭처럼 보여 주는 줄. 각 탭은 아이콘 · 이름 · 닫기(Show Close).
+// 열린 화면을 브라우저 탭처럼 보여 주는 줄. 화면 맨 아래에 두고 위 1px 테두리. 각 탭은 아이콘 · 이름 · 닫기(Show Close).
 // tabs: default(탭 있음) · empty(탭 0개 → 같은 줄에 emptyText 안내)
 function PageTabBar({
   className,
@@ -19,7 +19,7 @@ function PageTabBar({
       role={empty ? undefined : "tablist"}
       data-slot="page-tab-bar"
       data-empty={empty || undefined}
-      className={cn("flex h-9 w-full items-stretch overflow-x-auto border-b border-border bg-page-background", className)}
+      className={cn("flex h-9 w-full items-stretch overflow-x-auto border-t border-border bg-page-background", className)}
       {...props}
     >
       {empty ? <p className="flex items-center pl-3 text-xs whitespace-nowrap text-muted-foreground">{emptyText}</p> : children}
@@ -54,7 +54,7 @@ function PageTab({
         type="button"
         role="tab"
         aria-selected={active}
-        className="flex h-full items-center gap-2 outline-none focus-visible:underline [&_svg]:size-4 [&_svg]:shrink-0"
+        className="flex h-full items-center gap-2 outline-none focus-visible:underline group-data-active/page-tab:[&>svg]:text-primary [&_svg]:size-4 [&_svg]:shrink-0"
         {...props}
       >
         {icon}

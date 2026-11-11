@@ -216,7 +216,7 @@ UI(부품·차트·패턴·상태 표시·레이아웃 조각)를 만드는 건 
 | Items | `ui/data-row` | DataRow(라벨 · 값 한 줄) `label`·`value` / `variant`: plain(한 줄, 높이 24)·boxed(테두리 작은 칸, text-xs — 이동평균·실시간·온도 같은 2열 요약 칸) / `tone`(값 글자색): default·operation·performance·quality·production·electricity·gas. 진행 막대가 필요하면 MetricRow |
 | Progress | `ui/progress`, `ui/metric-row` | Progress `size`: sm(8)·md(14) / `tone`: primary·operation(가동률)·production(생산량) / `showLabel`(md에서 막대 안 %). MetricRow `label`·`value`·`target`(md)·`percent`·`size`·`tone` — 지표 한 줄(sm = 라벨·값 한 줄, md = 라벨 위 + 값·목표 + % 막대) |
 | Toggles · Spinners · Kbd | `ui/toggle`, `ui/toggle-group`, `ui/favorite-toggle`, `ui/spinner`, `ui/kbd` | Toggle `variant`: default·outline·solid·pill, `size`: default·sm. FavoriteToggle(즐겨찾기 별) `pressed`·`onPressedChange`, 빈 별 ↔ 채운 별(amber), `aria-label` 필수(예: "생산 실적 등록 즐겨찾기 해제") |
-| Tree · Chips · Page Tabs | `ui/tree`, `ui/filter-chip`, `ui/page-tabs` | Tree `nodes`·`selectedId`, PageTab `active`·`onClose`, PageTabBar `emptyText`(탭이 0개일 때 같은 줄에 안내, 기본 "열린 화면이 없어요") |
+| Tree · Chips · Page Tabs | `ui/tree`, `ui/filter-chip`, `ui/page-tabs` | Tree `nodes`·`selectedId`, PageTab `active`·`onClose`, PageTabBar(화면 맨 아래, 위 1px 테두리 — 4장) `emptyText`(탭이 0개일 때 같은 줄에 안내, 기본 "열린 화면이 없어요") |
 | Empty | `ui/empty` | 빈 화면 안내: `Empty` > `EmptyHeader`(`EmptyMedia` 아이콘 칸·선택, `EmptyTitle`, `EmptyDescription`) + `EmptyContent`(주 버튼 default 1개 + 보조 outline). 탭을 모두 닫은 화면, 즐겨찾기·목록이 빈 경우 |
 | Layout | `ui/accordion`, `ui/toolbar`, `ui/resizable` | Resizable(칸 나누기·스플리터): `ResizablePanelGroup` `orientation`: horizontal(좌우)·vertical(위아래) → `ResizablePanel`(`defaultSize`·`minSize`, 문자열 "40%") + `ResizableHandle`(`withHandle`: 손잡이 표시). 그룹은 높이가 정해진 상자 안에 둔다 |
 | Logo | `ui/logo` (`Logo`) | TWINVUE 글자 로고. 높이만 `className`으로 조절(기본 `h-12` = 48, 너비는 비율대로). 글자는 `text-foreground`, N의 파란 획은 브랜드 색 고정. 대시보드 상단 바 로고 칸에 쓴다. 모양·색을 바꾸거나 다시 그리지 않는다 |
@@ -252,19 +252,20 @@ SidebarProvider
 ├─ Sidebar (SidebarBrand · SidebarGroup · SidebarMenuButton · NavUser)
 └─ SidebarInset (bg-page-background)
    ├─ SiteHeader (빵부스러기 · 검색 · 사용자)
-   ├─ PageTabBar (열린 화면 탭, 선택)
-   └─ main (p-6, gap-6)
-      ├─ PageHeading (제목 · 설명 · 보조 버튼 · 주요 버튼 1개)
-      ├─ FilterBar (검색 Input · Select · DatePicker · FilterBarReset)
-      ├─ SectionCards (StatCard ×4)
-      ├─ DataTable 또는 Card 안 차트
-      └─ FormActionBar (등록·수정 화면 맨 아래)
+   ├─ main (p-6, gap-6, flex-1)
+   │  ├─ PageHeading (제목 · 설명 · 보조 버튼 · 주요 버튼 1개)
+   │  ├─ FilterBar (검색 Input · Select · DatePicker · FilterBarReset)
+   │  ├─ SectionCards (StatCard ×4)
+   │  ├─ DataTable 또는 Card 안 차트
+   │  └─ FormActionBar (등록·수정 화면 맨 아래)
+   └─ PageTabBar (열린 화면 탭, 선택 — 화면 맨 아래, 위 1px 테두리)
 ```
 
 - 사이드바는 `Sidebar` 구조 그대로: `SidebarHeader` 안에 `SidebarBrand`(접혀도 넣는다. 머리 칸 64) → `SidebarContent` → `SidebarGroup`(펼침일 때 `SidebarGroupLabel`) → `SidebarMenu` → `SidebarMenuItem` → `SidebarMenuButton`(`tooltip`에 메뉴명) → `SidebarFooter`(`NavUser`, 필요할 때만).
 - 설정 메뉴는 `SidebarFooter`(맨 아래 고정)에 두지 않고 메뉴 목록(`SidebarMenu`) 맨 끝 항목으로 둔다. 하위 화면(예: 설정 › 즐겨찾기 관리)은 그 항목의 `SidebarMenuSub`로 단다. `SidebarFooter`는 `NavUser`처럼 사용자 정보만 둔다.
 - 사이드바 간격은 부품 기본값을 쓴다(메뉴 사이 8, 하위 메뉴 사이 6, 그룹 사이 8, 버튼 32, 접힘 때 아이콘 가운데). `className`으로 gap·padding·높이를 바꾸지 않는다.
 - 주요 버튼(`variant="default"`)은 화면 영역마다 하나. 나머지는 outline·secondary·ghost.
+- 열린 화면 탭(`PageTabBar`)은 화면 맨 아래(`main` 다음)에 둔다. 부품에 위 1px 테두리가 들어 있다. 화면설계서(이미지)에서 탭 줄이 위쪽(헤더 아래 등)에 있으면, 위쪽 배치 옵션은 아직 TNV에 없다 → 1장 5번 "없는 옵션"으로 보고 탭 줄은 맨 아래에 두고, 위쪽 자리에 "디자인 필요: PageTabBar 위쪽 배치" 칸을 둔다. `className`으로 테두리를 지우거나(`border-t-0` 등) 위치용으로 덮어쓰지 않는다.
 - 빈 상태: DataTable `emptyText`, 화면·영역 전체가 비면 `Empty` / 불러오는 중: `Skeleton`·`Spinner` / 오류: `Alert variant="destructive"` 또는 `toast.error`.
 - 본문 높이 채우기(어드민 화면): 콘텐츠가 본문(`main`)보다 짧으면 마지막 줄 카드가 남은 높이를 채워 본문 아래 여백(`p-6`)까지 닿게 한다. 화면 아래에 빈 공간을 남기지 않는다. 카드 안 차트는 정해진 높이를 그대로 두고 카드 안에서 세로 가운데에 둔다. 대시보드 화면은 아래 "대시보드 › 패널 › 높이 채우기"를 따른다.
 
