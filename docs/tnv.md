@@ -264,6 +264,7 @@ SidebarProvider
 - 사이드바는 `Sidebar` 구조 그대로: `SidebarHeader` 안에 `SidebarBrand`(접혀도 넣는다. 머리 칸 64) → `SidebarContent` → `SidebarGroup`(펼침일 때 `SidebarGroupLabel`) → `SidebarMenu` → `SidebarMenuItem` → `SidebarMenuButton`(`tooltip`에 메뉴명) → `SidebarFooter`(`NavUser`, 필요할 때만).
 - 설정 메뉴는 `SidebarFooter`(맨 아래 고정)에 두지 않고 메뉴 목록(`SidebarMenu`) 맨 끝 항목으로 둔다. 하위 화면(예: 설정 › 즐겨찾기 관리)은 그 항목의 `SidebarMenuSub`로 단다. `SidebarFooter`는 `NavUser`처럼 사용자 정보만 둔다.
 - 사이드바 간격은 부품 기본값을 쓴다(메뉴 사이 8, 하위 메뉴 사이 6, 그룹 사이 8, 버튼 32, 접힘 때 아이콘 가운데). `className`으로 gap·padding·높이를 바꾸지 않는다.
+- Tabs 간격(탭 줄 ↔ 내용 16)은 부품 기본값을 쓴다. `className`으로 gap을 바꾸지 않는다. 탭이 카드 머리·내용을 통째로 바꾸면 `Tabs`가 `Card`를 감싼다(`Tabs` > `Card` > `CardHeader`(TabsList) + `CardContent`(TabsContent)) → 카드 자체 간격이 그대로 나온다. `Card` 안에 `Tabs`를 넣고 간격을 덮어쓰지 않는다. 디자인 파일 원본이 촘촘한 화면(간격 0~4)도 원본 간격을 옮기지 않고 부품 기본값을 쓴다.
 - 주요 버튼(`variant="default"`)은 화면 영역마다 하나. 나머지는 outline·secondary·ghost.
 - 열린 화면 탭(`PageTabBar`)은 화면 맨 아래(`main` 다음)에 둔다. 부품에 위 1px 테두리가 들어 있다. 화면설계서(이미지)에서 탭 줄이 위쪽(헤더 아래 등)에 있으면, 위쪽 배치 옵션은 아직 TNV에 없다 → 1장 5번 "없는 옵션"으로 보고 탭 줄은 맨 아래에 두고, 위쪽 자리에 "디자인 필요: PageTabBar 위쪽 배치" 칸을 둔다. `className`으로 테두리를 지우거나(`border-t-0` 등) 위치용으로 덮어쓰지 않는다.
 - 빈 상태: DataTable `emptyText`, 화면·영역 전체가 비면 `Empty` / 불러오는 중: `Skeleton`·`Spinner` / 오류: `Alert variant="destructive"` 또는 `toast.error`.
