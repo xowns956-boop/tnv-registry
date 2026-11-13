@@ -1,4 +1,4 @@
-# Source: Figma TNV Design System (uGVI6qGaR7PcZ7g0SrRnGK) · exported 2026-10-22
+# Source: TNV 디자인 파일 · exported 2026-10-22
 ## 1_Primitive · Spacing
 spacing/0=0
 spacing/0-5=2

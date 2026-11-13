@@ -1,4 +1,4 @@
-# Source: Figma TNV Design System (uGVI6qGaR7PcZ7g0SrRnGK) · 2_Semantic · Color · Light|Dark · exported 2026-10-23 (다크 차트색 라이트 계열로 통일)
+# Source: TNV 디자인 파일 · 2_Semantic · Color · Light|Dark · exported 2026-10-23 (다크 차트색 라이트 계열로 통일)
 base/background={white}|{tnv-dark/surface}
 base/foreground={tnv/gray-900}|{tnv-dark/fg}
 card/card={white}|{tnv-dark/card}

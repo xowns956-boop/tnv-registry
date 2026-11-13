@@ -1,4 +1,4 @@
-# Source: Figma TNV Design System (uGVI6qGaR7PcZ7g0SrRnGK) · 1_Primitive · Color · exported 2026-10-22
+# Source: TNV 디자인 파일 · 1_Primitive · Color · exported 2026-10-22
 white=#ffffff
 black=#000000
 brand/50=#f1f6fd
